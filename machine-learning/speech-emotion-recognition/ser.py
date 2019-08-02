@@ -47,5 +47,4 @@ print("Accuracy: {:.2f}%".format(accuracy*100))
 if not os.path.isdir("result"):
     os.mkdir("result")
 
-
 pickle.dump(model, open("result/mlp_classifier.model", "wb"))
