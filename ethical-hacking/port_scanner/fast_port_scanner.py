@@ -41,7 +41,9 @@ def main(host, ports):
     for t in range(N_THREADS):
         # for each thread, start it
         t = Thread(target=scan_thread)
+        # when we set daemon to true, that thread will end when the main thread ends
         t.daemon = True
+        # start the daemon thread
         t.start()
 
     for worker in ports:
