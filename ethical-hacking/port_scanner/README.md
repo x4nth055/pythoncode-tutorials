@@ -4,7 +4,6 @@ To run simple port scanner:
 python simple_port_scanner.py
 ```
 To run fast port scanner:
--
 ```
 python fast_port_scanner --help
 ```
