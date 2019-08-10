@@ -3,6 +3,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
 ## List of Content
 - ### [Ethical Hacking](https://www.thepythoncode.com/topic/ethical-hacking)
     -  ### [Scapy](https://www.thepythoncode.com/topic/scapy)
+        - [Getting Started With Scapy: Python Network Manipulation Tool](https://www.thepythoncode.com/article/getting-started-with-scapy)
         - [Building an ARP Spoofer](https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy). ([code](scapy/arp-spoofer))
         - [Detecting ARP Spoof attacks](https://www.thepythoncode.com/article/detecting-arp-spoof-attacks-using-scapy). ([code](scapy/arp-spoof-detector))
         - DHCP Listener script. ([code](scapy/dhcp_listener))
