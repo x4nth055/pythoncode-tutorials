@@ -1,28 +1,11 @@
 from scapy.all import *
-from scapy.layers.dhcp import DHCP
 import time
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 
 hosts = []
 Ether = 1
 
 
 def listen_dhcp():
-    global k
     # Make sure it is DHCP with the filter options
     k = sniff(prn=print_packet, filter='udp and (port 67 or port 68)')
 
@@ -30,6 +13,7 @@ def print_packet(packet):
     target_mac, requested_ip, hostname, vendor_id = [None] * 4
     if packet.haslayer(Ether):
         target_mac = packet.getlayer(Ether).src
+    # get the DHCP options
     dhcp_options = packet[DHCP].options
     for item in dhcp_options:
         try:

@@ -1,2 +1,18 @@
-# pythoncode-tutorials
-PythonCode Tutorials
+# Python Code Tutorials
+This is a repository of all the tutorials of [The Python Code](https://www.thepythoncode.com) website.
+## List of Content
+- ### [Ethical Hacking](https://www.thepythoncode.com/topic/ethical-hacking)
+    -  ### [Scapy](https://www.thepythoncode.com/topic/scapy)
+        - [Building an ARP Spoofer](https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy). ([code](scapy/arp-spoofer))
+        - [Detecting ARP Spoof attacks](https://www.thepythoncode.com/article/detecting-arp-spoof-attacks-using-scapy). ([code](scapy/arp-spoof-detector))
+        - DHCP Listener script. ([code](scapy/dhcp_listener))
+        - [Fake Access Point Generator](https://www.thepythoncode.com/article/create-fake-access-points-scapy). ([code](scapy/fake-access-point))
+        - [Simple Network Scanner](https://www.thepythoncode.com/article/building-network-scanner-using-scapy). ([code](scapy/network-scanner))
+        - [Writing a DNS Spoofer](https://www.thepythoncode.com/article/make-dns-spoof-python). ([code](scapy/dns-spoof))
+    - [Writing a Keylogger in Python from Scratch](https://www.thepythoncode.com/article/write-a-keylogger-python). ([code](ethical-hacking/keylogger))
+    - [Making a Port Scanner using sockets in Python](https://www.thepythoncode.com/article/make-port-scanner-python). ([code](ethical-hacking/port_scanner))
+
+- ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
+    - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
+    - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
+
