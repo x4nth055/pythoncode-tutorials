@@ -8,6 +8,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Detecting ARP Spoof attacks](https://www.thepythoncode.com/article/detecting-arp-spoof-attacks-using-scapy). ([code](scapy/arp-spoof-detector))
         - DHCP Listener script. ([code](scapy/dhcp_listener))
         - [Fake Access Point Generator](https://www.thepythoncode.com/article/create-fake-access-points-scapy). ([code](scapy/fake-access-point))
+        - [Forcing a device to disconnect using scapy in Python](https://www.thepythoncode.com/article/force-a-device-to-disconnect-scapy). ([code](scapy/network-kicker))
         - [Simple Network Scanner](https://www.thepythoncode.com/article/building-network-scanner-using-scapy). ([code](scapy/network-scanner))
         - [Writing a DNS Spoofer](https://www.thepythoncode.com/article/make-dns-spoof-python). ([code](scapy/dns-spoof))
     - [Writing a Keylogger in Python from Scratch](https://www.thepythoncode.com/article/write-a-keylogger-python). ([code](ethical-hacking/keylogger))
