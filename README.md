@@ -16,6 +16,9 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Making a Port Scanner using sockets in Python](https://www.thepythoncode.com/article/make-port-scanner-python). ([code](ethical-hacking/port_scanner))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
+    - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
+        - [How to Build a Spam Classifier using Keras in Python](https://www.thepythoncode.com/article/build-spam-classifier-keras-python)
+        
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
 
