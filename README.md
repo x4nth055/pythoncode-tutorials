@@ -25,4 +25,5 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
+    - [How to Get Hardware and System Information in Python](https://www.thepythoncode.com/article/get-hardware-system-information-python). ([code](general/sys-info))
 
