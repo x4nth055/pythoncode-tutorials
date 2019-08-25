@@ -12,6 +12,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Forcing a device to disconnect using scapy in Python](https://www.thepythoncode.com/article/force-a-device-to-disconnect-scapy). ([code](scapy/network-kicker))
         - [Simple Network Scanner](https://www.thepythoncode.com/article/building-network-scanner-using-scapy). ([code](scapy/network-scanner))
         - [Writing a DNS Spoofer](https://www.thepythoncode.com/article/make-dns-spoof-python). ([code](scapy/dns-spoof))
+        - [How to Sniff HTTP Packets in the Network using Scapy in Python](https://www.thepythoncode.com/article/sniff-http-packets-scapy-python). ([code](scapy/http-sniffer))
     - [Writing a Keylogger in Python from Scratch](https://www.thepythoncode.com/article/write-a-keylogger-python). ([code](ethical-hacking/keylogger))
     - [Making a Port Scanner using sockets in Python](https://www.thepythoncode.com/article/make-port-scanner-python). ([code](ethical-hacking/port_scanner))
 
