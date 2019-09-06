@@ -1,13 +1,21 @@
 import argparse
 import socket # for connecting
+from colorama import init, Fore
 
-from threading import Thread
+from threading import Thread, Lock
 from queue import Queue
+
+# some colors
+init()
+GREEN = Fore.GREEN
+RESET = Fore.RESET
+GRAY = Fore.LIGHTBLACK_EX
 
 # number of threads, feel free to tune this parameter as you wish
 N_THREADS = 200
 # thread queue
 q = Queue()
+print_lock = Lock()
 
 def port_scan(port):
     """
@@ -17,9 +25,11 @@ def port_scan(port):
         s = socket.socket()
         s.connect((host, port))
     except:
-        print(f"{host:15}:{port:5} is closed  ", end='\r')
+        with print_lock:
+            print(f"{GRAY}{host:15}:{port:5} is closed  {RESET}", end='\r')
     else:
-        print(f"{host:15}:{port:5} is open    ")
+        with print_lock:
+            print(f"{GREEN}{host:15}:{port:5} is open    {RESET}")
     finally:
         s.close()
 
