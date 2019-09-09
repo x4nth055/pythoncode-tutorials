@@ -18,3 +18,6 @@ keyboard.send("space")
 # setting 0.1 seconds to wait between keypresses to look fancy
 keyboard.write("Python Programming is always fun!", delay=0.1)
 
+# remove all keyboard hooks in use
+keyboard.unhook_all()
+
