@@ -1,1 +1,3 @@
 keras
+matplotlib
+numpy

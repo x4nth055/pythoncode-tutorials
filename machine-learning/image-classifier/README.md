@@ -2,7 +2,7 @@
 To run this:
 - `pip3 install -r requirements.txt`
 - First, you need to train the model using `python train.py`
-- Edit the code in `test.py` for you optimal model weights in `results` folder ( currently empty because you need to train first ) and run:
+- Edit the code in `test.py` for you optimal model weights in `results` folder ( currently does not because you need to train first ) and run:
     ```
     python test.py
     ```
