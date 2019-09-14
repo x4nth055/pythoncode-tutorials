@@ -1,3 +1,4 @@
 keras
 matplotlib
 numpy
+tensorflow==1.13.1
