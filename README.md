@@ -34,4 +34,5 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Process Monitor in Python](https://www.thepythoncode.com/article/make-process-monitor-python). ([code](general/process-monitor))
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](general/wikipedia-extractor))
+    - [How to Extract YouTube Data in Python](https://www.thepythoncode.com/article/get-youtube-data-python). ([code](general/youtube-extractor))
 
