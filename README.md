@@ -38,4 +38,5 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](general/wikipedia-extractor))
     - [How to Extract YouTube Data in Python](https://www.thepythoncode.com/article/get-youtube-data-python). ([code](general/youtube-extractor))
+    - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](general/weather-extractor))
 
