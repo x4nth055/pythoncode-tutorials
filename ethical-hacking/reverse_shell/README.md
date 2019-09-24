@@ -8,9 +8,9 @@ You don't need to install anything.
     ```
     Listening as 0.0.0.0:5003 ...
     ```
-- Running the client (target machine):
+- Running the client (target machine) that connects to 192.168.1.104 (server's IP Address) :
     ```
-    python client.py
+    python client.py 192.168.1.104
     ```
     **Output:**
     ```
