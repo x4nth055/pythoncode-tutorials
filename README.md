@@ -40,7 +40,8 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
-    - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](general/wikipedia-extractor))
-    - [How to Extract YouTube Data in Python](https://www.thepythoncode.com/article/get-youtube-data-python). ([code](general/youtube-extractor))
-    - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](general/weather-extractor))
+    - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
+    - [How to Extract YouTube Data in Python](https://www.thepythoncode.com/article/get-youtube-data-python). ([code](web-scraping/youtube-extractor))
+    - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](web-scraping/weather-extractor))
+    - [How to Download All Images from a Web Page in Python](https://www.thepythoncode.com/article/download-web-page-images-python). ([code](web-scraping/download-images))
 
