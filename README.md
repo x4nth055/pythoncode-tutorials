@@ -38,6 +38,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
     - [How to Generate and Read QR Code in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python). ([code](general/generating-reading-qrcode))
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
+    - [How to Compress and Decompress Files in Python](https://www.thepythoncode.com/article/compress-decompress-files-tarfile-python). ([code](general/compressing-files))
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
