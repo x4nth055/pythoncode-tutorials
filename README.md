@@ -26,6 +26,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Make an Image Classifier in Python using Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
+    - [How to Use Transfer Learning for Image Classification using Keras in Python](https://www.thepythoncode.com/article/use-transfer-learning-for-image-flower-classification-keras-python). ([code](machine-learning/image-classifier-using-transfer-learning))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
@@ -46,3 +47,4 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](web-scraping/weather-extractor))
     - [How to Download All Images from a Web Page in Python](https://www.thepythoncode.com/article/download-web-page-images-python). ([code](web-scraping/download-images))
 
+For any feedback, please consider pulling requests.
