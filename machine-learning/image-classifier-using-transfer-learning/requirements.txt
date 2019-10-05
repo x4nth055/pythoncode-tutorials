@@ -1,3 +1,4 @@
 tensorflow
 keras
 numpy
+matplotlib
