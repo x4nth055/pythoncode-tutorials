@@ -46,5 +46,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract YouTube Data in Python](https://www.thepythoncode.com/article/get-youtube-data-python). ([code](web-scraping/youtube-extractor))
     - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](web-scraping/weather-extractor))
     - [How to Download All Images from a Web Page in Python](https://www.thepythoncode.com/article/download-web-page-images-python). ([code](web-scraping/download-images))
+    - [How to Extract All Website Links in Python](https://www.thepythoncode.com/article/extract-all-website-links-python). ([code](web-scraping/link-extractor))
 
 For any feedback, please consider pulling requests.
