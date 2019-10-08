@@ -37,14 +37,6 @@ def main(domain, n_threads, subdomains):
         worker.daemon = True
         worker.start()
 
-    
-
-
-def print_n_threads():
-    while True:
-        print("Number of alive threads:", active_count())
-        time.sleep(10)
-
 
 if __name__ == "__main__":
     import argparse
