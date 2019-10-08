@@ -17,6 +17,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Making a Port Scanner using sockets in Python](https://www.thepythoncode.com/article/make-port-scanner-python). ([code](ethical-hacking/port_scanner))
     - [How to Create a Reverse Shell in Python](https://www.thepythoncode.com/article/create-reverse-shell-python). ([code](ethical-hacking/reverse_shell))
     - [How to Encrypt and Decrypt Files in Python](https://www.thepythoncode.com/article/encrypt-decrypt-files-symmetric-python). ([code](ethical-hacking/file-encryption))
+    - [How to Make a Subdomain Scanner in Python](https://www.thepythoncode.com/article/make-subdomain-scanner-python). ([code](ethical-hacking/subdomain-scanner))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
