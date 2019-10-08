@@ -1,7 +1,6 @@
 import requests
-from threading import Thread, active_count
+from threading import Thread
 from queue import Queue
-import time
 
 q = Queue()
 
@@ -50,10 +49,6 @@ if __name__ == "__main__":
     domain = args.domain
     wordlist = args.wordlist
     num_threads = args.num_threads
-
-    # t = Thread(target=print_n_threads)
-    # t.daemon = True
-    # t.start()
 
     main(domain=domain, n_threads=num_threads, subdomains=open(wordlist).read().splitlines())
     q.join()
