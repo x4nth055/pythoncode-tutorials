@@ -23,13 +23,13 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
         - [How to Build a Spam Classifier using Keras in Python](https://www.thepythoncode.com/article/build-spam-classifier-keras-python). ([code](machine-learning/nlp/spam-classifier))
         - [How to Build a Text Generator using Keras in Python](https://www.thepythoncode.com/article/text-generation-keras-python). ([code](machine-learning/nlp/text-generator))
-
-    - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
+    - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
+        - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
+        - [How to Make an Image Classifier in Python using Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
+        - [How to Use Transfer Learning for Image Classification using Keras in Python](https://www.thepythoncode.com/article/use-transfer-learning-for-image-flower-classification-keras-python). ([code](machine-learning/image-classifier-using-transfer-learning))
+        - [How to Perform Edge Detection in Python using OpenCV](https://www.thepythoncode.com/article/canny-edge-detection-opencv-python). ([code](machine-learning/edge-detection))
+        - [How to Detect Shapes in Images in Python](https://www.thepythoncode.com/article/detect-shapes-hough-transform-opencv-python). ([code](machine-learning/shape-detection))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
-    - [How to Make an Image Classifier in Python using Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
-    - [How to Use Transfer Learning for Image Classification using Keras in Python](https://www.thepythoncode.com/article/use-transfer-learning-for-image-flower-classification-keras-python). ([code](machine-learning/image-classifier-using-transfer-learning))
-    - [How to Perform Edge Detection in Python using OpenCV](https://www.thepythoncode.com/article/canny-edge-detection-opencv-python). ([code](machine-learning/edge-detection))
-    - [How to Detect Shapes in Images in Python](https://www.thepythoncode.com/article/detect-shapes-hough-transform-opencv-python). ([code](machine-learning/shape-detection))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
     
