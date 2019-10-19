@@ -4,7 +4,7 @@ import cv2
 cap = cv2.VideoCapture(0)
 
 # initialize the face recognizer (default face haar cascade)
-face_cascade = cv2.CascadeClassifier("C:/Users/STRIX/Desktop/vscodes/repos/pythoncode-tutorials/machine-learning/face_detection/cascades/haarcascade_fontalface_default.xml")
+face_cascade = cv2.CascadeClassifier("cascades/haarcascade_fontalface_default.xml")
 
 while True:
     # read the image from the cam
