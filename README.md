@@ -29,6 +29,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Use Transfer Learning for Image Classification using Keras in Python](https://www.thepythoncode.com/article/use-transfer-learning-for-image-flower-classification-keras-python). ([code](machine-learning/image-classifier-using-transfer-learning))
         - [How to Perform Edge Detection in Python using OpenCV](https://www.thepythoncode.com/article/canny-edge-detection-opencv-python). ([code](machine-learning/edge-detection))
         - [How to Detect Shapes in Images in Python](https://www.thepythoncode.com/article/detect-shapes-hough-transform-opencv-python). ([code](machine-learning/shape-detection))
+        - [How to Recognize Optical Characters in Images in Python](https://www.thepythoncode.com/article/optical-character-recognition-pytesseract-python). ([code](machine-learning/optical-character-recognition))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
