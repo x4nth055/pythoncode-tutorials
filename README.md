@@ -18,6 +18,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create a Reverse Shell in Python](https://www.thepythoncode.com/article/create-reverse-shell-python). ([code](ethical-hacking/reverse_shell))
     - [How to Encrypt and Decrypt Files in Python](https://www.thepythoncode.com/article/encrypt-decrypt-files-symmetric-python). ([code](ethical-hacking/file-encryption))
     - [How to Make a Subdomain Scanner in Python](https://www.thepythoncode.com/article/make-subdomain-scanner-python). ([code](ethical-hacking/subdomain-scanner))
+    - [How to use Steganography to Hide Secret Data in Images in Python](https://www.thepythoncode.com/article/hide-secret-data-in-images-using-steganography-python). ([code](ethical-hacking/steganography))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
