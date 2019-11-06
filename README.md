@@ -51,6 +51,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Compress and Decompress Files in Python](https://www.thepythoncode.com/article/compress-decompress-files-tarfile-python). ([code](general/compressing-files))
     - [How to Extract PDF Tables in Python](https://www.thepythoncode.com/article/extract-pdf-tables-in-python-camelot). ([code](general/pdf-table-extractor))
     - [How to Use Pickle for Object Serialization in Python](https://www.thepythoncode.com/article/object-serialization-saving-and-loading-objects-using-pickle-python). ([code](general/object-serialization))
+    - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
