@@ -19,6 +19,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Encrypt and Decrypt Files in Python](https://www.thepythoncode.com/article/encrypt-decrypt-files-symmetric-python). ([code](ethical-hacking/file-encryption))
     - [How to Make a Subdomain Scanner in Python](https://www.thepythoncode.com/article/make-subdomain-scanner-python). ([code](ethical-hacking/subdomain-scanner))
     - [How to Use Steganography to Hide Secret Data in Images in Python](https://www.thepythoncode.com/article/hide-secret-data-in-images-using-steganography-python). ([code](ethical-hacking/steganography))
+    - [How to Brute-Force SSH Servers in Python](https://www.thepythoncode.com/article/brute-force-ssh-servers-using-paramiko-in-python). ([code](ethical-hacking/bruteforce-ssh))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
