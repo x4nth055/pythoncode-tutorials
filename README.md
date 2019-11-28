@@ -52,11 +52,9 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
     - [How to Compress and Decompress Files in Python](https://www.thepythoncode.com/article/compress-decompress-files-tarfile-python). ([code](general/compressing-files))
     - [How to Extract PDF Tables in Python](https://www.thepythoncode.com/article/extract-pdf-tables-in-python-camelot). ([code](general/pdf-table-extractor))
-    - [How to Use Pickle for Object Serialization in Python](https://www.thepythoncode.com/article/object-serialization-saving-and-loading-objects-using-pickle-python). ([code](general/object-serialization))
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
     - [How to Execute BASH Commands in a Remote Machine in Python](https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python). ([code](general/execute-ssh-commands))
-    - [How to Manipulate IP Addresses in Python using ipaddress module](https://www.thepythoncode.com/article/manipulate-ip-addresses-using-ipaddress-module-in-python). ([code](general/ipaddress-module))
-    - [How to Send Emails in Python using smtplib Module](https://www.thepythoncode.com/article/sending-emails-in-python-smtplib). ([code](general/email-sender))
+    - [How to Convert Python Files into Executables](https://www.thepythoncode.com/article/building-python-files-into-stand-alone-executables-using-pyinstaller)
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
@@ -64,5 +62,10 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](web-scraping/weather-extractor))
     - [How to Download All Images from a Web Page in Python](https://www.thepythoncode.com/article/download-web-page-images-python). ([code](web-scraping/download-images))
     - [How to Extract All Website Links in Python](https://www.thepythoncode.com/article/extract-all-website-links-python). ([code](web-scraping/link-extractor))
+
+- ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
+    - [How to Use Pickle for Object Serialization in Python](https://www.thepythoncode.com/article/object-serialization-saving-and-loading-objects-using-pickle-python). ([code](general/object-serialization))
+    - [How to Manipulate IP Addresses in Python using ipaddress module](https://www.thepythoncode.com/article/manipulate-ip-addresses-using-ipaddress-module-in-python). ([code](general/ipaddress-module))
+    - [How to Send Emails in Python using smtplib Module](https://www.thepythoncode.com/article/sending-emails-in-python-smtplib). ([code](general/email-sender))
 
 For any feedback, please consider pulling requests.
