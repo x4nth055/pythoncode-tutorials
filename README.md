@@ -62,6 +62,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Weather Data from Google in Python](https://www.thepythoncode.com/article/extract-weather-data-python). ([code](web-scraping/weather-extractor))
     - [How to Download All Images from a Web Page in Python](https://www.thepythoncode.com/article/download-web-page-images-python). ([code](web-scraping/download-images))
     - [How to Extract All Website Links in Python](https://www.thepythoncode.com/article/extract-all-website-links-python). ([code](web-scraping/link-extractor))
+    - [How to Make an Email Extractor in Python](https://www.thepythoncode.com/article/extracting-email-addresses-from-web-pages-using-python). ([code](web-scraping/email-extractor))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Use Pickle for Object Serialization in Python](https://www.thepythoncode.com/article/object-serialization-saving-and-loading-objects-using-pickle-python). ([code](general/object-serialization))
