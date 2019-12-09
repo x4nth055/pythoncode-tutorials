@@ -42,7 +42,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
-    - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
+
     - [How to Get Hardware and System Information in Python](https://www.thepythoncode.com/article/get-hardware-system-information-python). ([code](general/sys-info))
     - [How to Control your Mouse in Python](https://www.thepythoncode.com/article/control-mouse-python). ([code](general/mouse-controller))
     - [How to Control your Keyboard in Python](https://www.thepythoncode.com/article/control-keyboard-python). ([code](general/keyboard-controller))
@@ -50,7 +50,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
     - [How to Generate and Read QR Code in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python). ([code](general/generating-reading-qrcode))
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
-    - [How to Compress and Decompress Files in Python](https://www.thepythoncode.com/article/compress-decompress-files-tarfile-python). ([code](general/compressing-files))
+
     - [How to Extract PDF Tables in Python](https://www.thepythoncode.com/article/extract-pdf-tables-in-python-camelot). ([code](general/pdf-table-extractor))
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
     - [How to Execute BASH Commands in a Remote Machine in Python](https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python). ([code](general/execute-ssh-commands))
@@ -65,6 +65,8 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make an Email Extractor in Python](https://www.thepythoncode.com/article/extracting-email-addresses-from-web-pages-using-python). ([code](web-scraping/email-extractor))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
+    - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
+    - [How to Compress and Decompress Files in Python](https://www.thepythoncode.com/article/compress-decompress-files-tarfile-python). ([code](general/compressing-files))
     - [How to Use Pickle for Object Serialization in Python](https://www.thepythoncode.com/article/object-serialization-saving-and-loading-objects-using-pickle-python). ([code](general/object-serialization))
     - [How to Manipulate IP Addresses in Python using ipaddress module](https://www.thepythoncode.com/article/manipulate-ip-addresses-using-ipaddress-module-in-python). ([code](general/ipaddress-module))
     - [How to Send Emails in Python using smtplib Module](https://www.thepythoncode.com/article/sending-emails-in-python-smtplib). ([code](general/email-sender))
