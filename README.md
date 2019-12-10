@@ -70,5 +70,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use Pickle for Object Serialization in Python](https://www.thepythoncode.com/article/object-serialization-saving-and-loading-objects-using-pickle-python). ([code](general/object-serialization))
     - [How to Manipulate IP Addresses in Python using ipaddress module](https://www.thepythoncode.com/article/manipulate-ip-addresses-using-ipaddress-module-in-python). ([code](general/ipaddress-module))
     - [How to Send Emails in Python using smtplib Module](https://www.thepythoncode.com/article/sending-emails-in-python-smtplib). ([code](general/email-sender))
+    - [How to Handle Files in Python using OS Module](https://www.thepythoncode.com/article/file-handling-in-python-using-os-module). ([code](python-standard-library/handling-files))
 
 For any feedback, please consider pulling requests.
