@@ -1,4 +1,4 @@
 numpy
-tensorflow==1.13.1
+tensorflow==1.15.0
 keras
 requests
