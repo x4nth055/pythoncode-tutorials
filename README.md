@@ -72,5 +72,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Manipulate IP Addresses in Python using ipaddress module](https://www.thepythoncode.com/article/manipulate-ip-addresses-using-ipaddress-module-in-python). ([code](general/ipaddress-module))
     - [How to Send Emails in Python using smtplib Module](https://www.thepythoncode.com/article/sending-emails-in-python-smtplib). ([code](general/email-sender))
     - [How to Handle Files in Python using OS Module](https://www.thepythoncode.com/article/file-handling-in-python-using-os-module). ([code](python-standard-library/handling-files))
+    - [How to Generate Random Data in Python](https://www.thepythoncode.com/article/generate-random-data-in-python). ([code](python-standard-library/generating-random-data))
 
 For any feedback, please consider pulling requests.
