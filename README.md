@@ -64,6 +64,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Download All Images from a Web Page in Python](https://www.thepythoncode.com/article/download-web-page-images-python). ([code](web-scraping/download-images))
     - [How to Extract All Website Links in Python](https://www.thepythoncode.com/article/extract-all-website-links-python). ([code](web-scraping/link-extractor))
     - [How to Make an Email Extractor in Python](https://www.thepythoncode.com/article/extracting-email-addresses-from-web-pages-using-python). ([code](web-scraping/email-extractor))
+    - [How to Convert HTML Tables into CSV Files in Python](https://www.thepythoncode.com/article/convert-html-tables-into-csv-files-in-python). ([code](web-scraping/html-table-extractor))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
