@@ -24,7 +24,7 @@ To run this:
     ```
     python steganography.py -e image.PNG -t "This is some secret data."
     ```
-    This will write another image `imaged_encoded.PNG` with data encoded in it and **outputs:**
+    This will write another image `image_encoded.PNG` with data encoded in it and **outputs:**
     ```
     [*] Maximum bytes to encode: 125028
     [*] Encoding data...
