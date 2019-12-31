@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
-import sys
-
+import os
 
 def to_bin(data):
     """Convert `data` to binary format as string"""
@@ -79,14 +78,30 @@ def decode(image_name):
 
 
 if __name__ == "__main__":
-    input_image = sys.argv[1]
-    output_image = f"encoded_{input_image}"
-    secret_data = sys.argv[2]
-
-    # encode the data into the image
-    encoded_image = encode(image_name=input_image, secret_data=secret_data)
-    # save the output image (encoded image)
-    cv2.imwrite(output_image, encoded_image)
-    # decode the secret data from the image
-    decoded_data = decode(output_image)
-    print("[+] Decoded data:", decoded_data)
+    import argparse
+    parser = argparse.ArgumentParser(description="Steganography encoder/decoder, this Python scripts encode data within images.")
+    parser.add_argument("-t", "--text", help="The text data to encode into the image, this only should be specified for encoding")
+    parser.add_argument("-e", "--encode", help="Encode the following image")
+    parser.add_argument("-d", "--decode", help="Decode the following image")
+    
+    args = parser.parse_args()
+    secret_data = args.text
+    if args.encode:
+        # if the encode argument is specified
+        input_image = args.encode
+        print("input_image:", input_image)
+        # split the absolute path and the file
+        path, file = os.path.split(input_image)
+        # split the filename and the image extension
+        filename, ext = file.split(".")
+        output_image = os.path.join(path, f"{filename}_encoded.{ext}")
+        # encode the data into the image
+        encoded_image = encode(image_name=input_image, secret_data=secret_data)
+        # save the output image (encoded image)
+        cv2.imwrite(output_image, encoded_image)
+        print("[+] Saved encoded image.")
+    if args.decode:
+        input_image = args.decode
+        # decode the secret data from the image
+        decoded_data = decode(input_image)
+        print("[+] Decoded data:", decoded_data)
