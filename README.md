@@ -56,6 +56,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
     - [How to Execute BASH Commands in a Remote Machine in Python](https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python). ([code](general/execute-ssh-commands))
     - [How to Convert Python Files into Executables](https://www.thepythoncode.com/article/building-python-files-into-stand-alone-executables-using-pyinstaller)
+    - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
