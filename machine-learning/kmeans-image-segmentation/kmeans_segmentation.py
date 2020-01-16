@@ -28,8 +28,11 @@ print(centers.shape)
 # convert back to 8 bit values
 centers = np.uint8(centers)
 
+# flatten the labels array
+labels = labels.flatten()
+
 # convert all pixels to the color of the centroids
-segmented_image = centers[labels.flatten()]
+segmented_image = centers[labels]
 
 # reshape back to the original image dimension
 segmented_image = segmented_image.reshape(image.shape)
@@ -38,10 +41,14 @@ segmented_image = segmented_image.reshape(image.shape)
 plt.imshow(segmented_image)
 plt.show()
 
-# disable only the cluster number 2
+# disable only the cluster number 2 (turn the pixel into black)
 masked_image = np.copy(image)
+# convert to the shape of k clusters
+masked_image = masked_image.reshape((-1, k))
 masked_image[labels == 2] = [0, 0, 0]
 
+# convert back to original shape
+masked_image = masked_image.reshape(image.shape)
 # show the image
 plt.imshow(masked_image)
 plt.show()
