@@ -14,16 +14,12 @@ pixel_values = image.reshape((-1, 3))
 # convert to float
 pixel_values = np.float32(pixel_values)
 
-print(pixel_values.shape)
 # define stopping criteria
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 100, 0.2)
 
 # number of clusters (K)
 k = 3
 compactness, labels, (centers) = cv2.kmeans(pixel_values, k, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
-
-print(labels)
-print(centers.shape)
 
 # convert back to 8 bit values
 centers = np.uint8(centers)
@@ -43,9 +39,11 @@ plt.show()
 
 # disable only the cluster number 2 (turn the pixel into black)
 masked_image = np.copy(image)
-# convert to the shape of k clusters
-masked_image = masked_image.reshape((-1, k))
-masked_image[labels == 2] = [0, 0, 0]
+# convert to the shape of a vector of pixel values
+masked_image = masked_image.reshape((-1, 3))
+# color (i.e cluster) to disable
+cluster = 2
+masked_image[labels == cluster] = [0, 0, 0]
 
 # convert back to original shape
 masked_image = masked_image.reshape(image.shape)
