@@ -36,6 +36,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Detect Contours in Images using OpenCV in Python](https://www.thepythoncode.com/article/contour-detection-opencv-python). ([code](machine-learning/contour-detection))
         - [How to Recognize Optical Characters in Images in Python](https://www.thepythoncode.com/article/optical-character-recognition-pytesseract-python). ([code](machine-learning/optical-character-recognition))
         - [How to Use K-Means Clustering for Image Segmentation using OpenCV in Python](https://www.thepythoncode.com/article/kmeans-for-image-segmentation-opencv-python). ([code](machine-learning/kmeans-image-segmentation))
+        - [How to Perform YOLO Object Detection using OpenCV and PyTorch in Python](https://www.thepythoncode.com/article/yolo-object-detection-with-opencv-and-pytorch-in-python). ([code](machine-learning/object-detection))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
@@ -44,7 +45,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
-
     - [How to Get Hardware and System Information in Python](https://www.thepythoncode.com/article/get-hardware-system-information-python). ([code](general/sys-info))
     - [How to Control your Mouse in Python](https://www.thepythoncode.com/article/control-mouse-python). ([code](general/mouse-controller))
     - [How to Control your Keyboard in Python](https://www.thepythoncode.com/article/control-keyboard-python). ([code](general/keyboard-controller))
