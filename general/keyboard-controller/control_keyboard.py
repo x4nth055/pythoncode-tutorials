@@ -18,6 +18,11 @@ keyboard.send("space")
 # setting 0.1 seconds to wait between keypresses to look fancy
 keyboard.write("Python Programming is always fun!", delay=0.1)
 
+# record all keyboard clicks until esc is clicked
+events = keyboard.record('esc')
+# play these events
+keyboard.play(events)
+
 # remove all keyboard hooks in use
 keyboard.unhook_all()
 
