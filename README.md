@@ -78,5 +78,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Send Emails in Python using smtplib Module](https://www.thepythoncode.com/article/sending-emails-in-python-smtplib). ([code](general/email-sender))
     - [How to Handle Files in Python using OS Module](https://www.thepythoncode.com/article/file-handling-in-python-using-os-module). ([code](python-standard-library/handling-files))
     - [How to Generate Random Data in Python](https://www.thepythoncode.com/article/generate-random-data-in-python). ([code](python-standard-library/generating-random-data))
+    - [How to Use Threads to Speed Up your IO Tasks in Python](https://www.thepythoncode.com/article/using-threads-in-python). ([code](python-standard-library/using-threads))
 
 For any feedback, please consider pulling requests.
