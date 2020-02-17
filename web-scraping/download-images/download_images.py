@@ -5,13 +5,6 @@ from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin, urlparse
 
 
-def is_absolute(url):
-    """
-    Determines whether a `url` is absolute.
-    """
-    return bool(urlparse(url).netloc)
-
-
 def is_valid(url):
     """
     Checks whether `url` is a valid URL.
@@ -28,14 +21,11 @@ def get_all_images(url):
     urls = []
     for img in tqdm(soup.find_all("img"), "Extracting images"):
         img_url = img.attrs.get("src")
-
         if not img_url:
             # if img does not contain src attribute, just skip
             continue
-
-        if not is_absolute(img_url):
-            # if img has relative URL, make it absolute by joining
-            img_url = urljoin(url, img_url)
+        # make the URL absolute by joining domain with the URL that is just extracted
+        img_url = urljoin(url, img_url)
         # remove URLs like '/hsts-pixel.gif?c=3.2.5'
         try:
             pos = img_url.index("?")
