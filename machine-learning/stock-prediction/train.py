@@ -16,16 +16,8 @@ if not os.path.isdir("logs"):
 if not os.path.isdir("data"):
     os.mkdir("data")
 
-# load the CSV file from disk (dataset) if it already exists (without downloading)
-if os.path.isfile(ticker_data_filename):
-    ticker = pd.read_csv(ticker_data_filename)
-
 # load the data
 data = load_data(ticker, N_STEPS, lookup_step=LOOKUP_STEP, test_size=TEST_SIZE, feature_columns=FEATURE_COLUMNS)
-
-if not os.path.isfile(ticker_data_filename):
-    # save the CSV file (dataset)
-    data["df"].to_csv(ticker_data_filename)
 
 # construct the model
 model = create_model(N_STEPS, loss=LOSS, units=UNITS, cell=CELL, n_layers=N_LAYERS,
