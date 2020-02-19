@@ -58,6 +58,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Convert Python Files into Executables](https://www.thepythoncode.com/article/building-python-files-into-stand-alone-executables-using-pyinstaller)
     - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
     - [How to Download Torrent Files in Python](https://www.thepythoncode.com/article/download-torrent-files-in-python). ([code](general/torrent-downloader))
+    - [How to Play and Record Audio in Python](https://www.thepythoncode.com/article/play-and-record-audio-sound-in-python). ([code](general/recording-and-playing-audio))
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
