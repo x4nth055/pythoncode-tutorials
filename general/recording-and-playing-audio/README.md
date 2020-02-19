@@ -22,7 +22,7 @@ To run this:
     ```
     python audio_recorder.py -d 5 -o recorded.wav
     ```
-- To play audio, there are 3 options (`audio_player_1.py` using [playsound](), `audio_player_2.py` using [pydub](), `audio_player_3.py` using [pyaudio]()):
+- To play audio, there are 3 options (`audio_player_playsound.py` using [playsound](https://pypi.org/project/playsound/), `audio_player_pydub.py` using [pydub](https://github.com/jiaaro/pydub), `audio_player_pyaudio.py` using [pyaudio](https://people.csail.mit.edu/hubert/pyaudio/)), if you want to play `audio_file.mp3`::
     ```
-    python audio_player.py --help
+    python audio_player_playsound.py audio_file.mp3
     ```

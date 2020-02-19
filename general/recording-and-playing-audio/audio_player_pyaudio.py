@@ -1,7 +1,8 @@
 import pyaudio
 import wave
+import sys
 
-filename = "audio_file.wav"
+filename = sys.argv[1]
 
 # set the chunk size of 1024 samples
 chunk = 1024

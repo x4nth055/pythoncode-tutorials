@@ -1,3 +1,4 @@
 from playsound import playsound
+import sys
 
-playsound("recorded.wav")
+playsound(sys.argv[1])
