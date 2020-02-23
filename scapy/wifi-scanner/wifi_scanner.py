@@ -3,6 +3,7 @@ from threading import Thread
 import pandas
 import time
 import os
+import sys
 
 
 # initialize the networks dataframe that will contain all access points nearby
@@ -47,7 +48,7 @@ def change_channel():
 
 if __name__ == "__main__":
     # interface name, check using iwconfig
-    interface = "wlan0mon"
+    interface = sys.argv[1]
     # start the thread that prints all the networks
     printer = Thread(target=print_all)
     printer.daemon = True
