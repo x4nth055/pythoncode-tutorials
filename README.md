@@ -24,6 +24,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a XSS Vulnerability Scanner in Python](https://www.thepythoncode.com/article/make-a-xss-vulnerability-scanner-in-python). ([code](ethical-hacking/xss-vulnerability-scanner))
     - [How to Use Hash Algorithms in Python using hashlib](https://www.thepythoncode.com/article/hashing-functions-in-python-using-hashlib). ([code](ethical-hacking/hashing-functions/))
     - [How to Brute Force FTP Servers in Python](https://www.thepythoncode.com/article/brute-force-attack-ftp-servers-using-ftplib-in-python). ([code](ethical-hacking/ftp-cracker))
+    - [How to Extract Image Metadata in Python](https://www.thepythoncode.com/article/extracting-image-metadata-in-python). ([code](ethical-hacking/image-metadata-extractor))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
