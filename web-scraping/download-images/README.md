@@ -24,3 +24,4 @@ To run this:
     python download_images https://www.thepythoncode.com/topic/web-scraping
     ```
     A new folder `www.thepythoncode.com` will be created automatically that contains all the images of that web page.
+- If you want to download images from javascript-driven websites, consider using `download_images_js.py` script instead (it accepts the same parameters)
