@@ -31,6 +31,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
         - [How to Build a Spam Classifier using Keras in Python](https://www.thepythoncode.com/article/build-spam-classifier-keras-python). ([code](machine-learning/nlp/spam-classifier))
         - [How to Build a Text Generator using Keras in Python](https://www.thepythoncode.com/article/text-generation-keras-python). ([code](machine-learning/nlp/text-generator))
+        - [How to Perform Text Classification in Python using Tensorflow 2 and Keras](https://www.thepythoncode.com/article/text-classification-using-tensorflow-2-and-keras-in-python). ([code](machine-learning/nlp/text-classification))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
