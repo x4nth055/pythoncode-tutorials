@@ -86,5 +86,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Handle Files in Python using OS Module](https://www.thepythoncode.com/article/file-handling-in-python-using-os-module). ([code](python-standard-library/handling-files))
     - [How to Generate Random Data in Python](https://www.thepythoncode.com/article/generate-random-data-in-python). ([code](python-standard-library/generating-random-data))
     - [How to Use Threads to Speed Up your IO Tasks in Python](https://www.thepythoncode.com/article/using-threads-in-python). ([code](python-standard-library/using-threads))
+    - [How to List all Files and Directories in FTP Server using Python](https://www.thepythoncode.com/article/list-files-and-directories-in-ftp-server-in-python). ([code](python-standard-library/listing-files-in-ftp-server))
 
 For any feedback, please consider pulling requests.
