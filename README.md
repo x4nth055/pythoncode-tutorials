@@ -76,6 +76,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Convert HTML Tables into CSV Files in Python](https://www.thepythoncode.com/article/convert-html-tables-into-csv-files-in-python). ([code](web-scraping/html-table-extractor))
     - [How to Use Proxies to Anonymize your Browsing and Scraping using Python](https://www.thepythoncode.com/article/using-proxies-using-requests-in-python). ([code](web-scraping/using-proxies))
     - [How to Extract Script and CSS Files from Web Pages in Python](https://www.thepythoncode.com/article/extract-web-page-script-and-css-files-in-python). ([code](web-scraping/webpage-js-css-extractor))
+    - [How to Extract and Submit Web Forms from a URL using Python](https://www.thepythoncode.com/article/extracting-and-submitting-web-page-forms-in-python). ([code](web-scraping/extract-and-fill-forms))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
