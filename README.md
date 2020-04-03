@@ -58,14 +58,11 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Generate and Read QR Code in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python). ([code](general/generating-reading-qrcode))
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
     - [How to Extract PDF Tables in Python](https://www.thepythoncode.com/article/extract-pdf-tables-in-python-camelot). ([code](general/pdf-table-extractor))
-    - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
     - [How to Execute BASH Commands in a Remote Machine in Python](https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python). ([code](general/execute-ssh-commands))
     - [How to Convert Python Files into Executables](https://www.thepythoncode.com/article/building-python-files-into-stand-alone-executables-using-pyinstaller)
     - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
-    - [How to Download Torrent Files in Python](https://www.thepythoncode.com/article/download-torrent-files-in-python). ([code](general/torrent-downloader))
     - [How to Play and Record Audio in Python](https://www.thepythoncode.com/article/play-and-record-audio-sound-in-python). ([code](general/recording-and-playing-audio))
-    - [How to Use Google Custom Search Engine API in Python](https://www.thepythoncode.com/article/use-google-custom-search-engine-api-in-python). ([code](general/using-custom-search-engine-api))
-    - [How to Use Github API in Python](https://www.thepythoncode.com/article/using-github-api-in-python). ([code](general/github-api))
+    
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
     - [How to Access Wikipedia in Python](https://www.thepythoncode.com/article/access-wikipedia-python). ([code](web-scraping/wikipedia-extractor))
@@ -89,5 +86,11 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Generate Random Data in Python](https://www.thepythoncode.com/article/generate-random-data-in-python). ([code](python-standard-library/generating-random-data))
     - [How to Use Threads to Speed Up your IO Tasks in Python](https://www.thepythoncode.com/article/using-threads-in-python). ([code](python-standard-library/using-threads))
     - [How to List all Files and Directories in FTP Server using Python](https://www.thepythoncode.com/article/list-files-and-directories-in-ftp-server-in-python). ([code](python-standard-library/listing-files-in-ftp-server))
+
+- ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
+    - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
+    - [How to Download Torrent Files in Python](https://www.thepythoncode.com/article/download-torrent-files-in-python). ([code](general/torrent-downloader))
+    - [How to Use Google Custom Search Engine API in Python](https://www.thepythoncode.com/article/use-google-custom-search-engine-api-in-python). ([code](general/using-custom-search-engine-api))
+    - [How to Use Github API in Python](https://www.thepythoncode.com/article/using-github-api-in-python). ([code](general/github-api))
 
 For any feedback, please consider pulling requests.
