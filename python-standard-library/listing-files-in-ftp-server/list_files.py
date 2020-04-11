@@ -5,9 +5,6 @@ from datetime import datetime
 FTP_HOST = "ftp.ed.ac.uk"
 FTP_USER = "anonymous"
 FTP_PASS = ""
-# FTP_HOST = "192.168.1.1"
-# FTP_USER = "admin"
-# FTP_PASS = "586290929699"
 
 # some utility functions that we gonna need
 def get_size_format(n, suffix="B"):

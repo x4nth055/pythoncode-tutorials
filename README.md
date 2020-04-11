@@ -87,6 +87,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use Threads to Speed Up your IO Tasks in Python](https://www.thepythoncode.com/article/using-threads-in-python). ([code](python-standard-library/using-threads))
     - [How to List all Files and Directories in FTP Server using Python](https://www.thepythoncode.com/article/list-files-and-directories-in-ftp-server-in-python). ([code](python-standard-library/listing-files-in-ftp-server))
     - [How to Read Emails in Python](https://www.thepythoncode.com/article/reading-emails-in-python). ([code](python-standard-library/reading-email-messages))
+    - [How to Download and Upload Files in FTP Server using Python](https://www.thepythoncode.com/article/download-and-upload-files-in-ftp-server-using-python). ([code](python-standard-library/download-and-upload-files-in-ftp))
 
 - ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
