@@ -9,3 +9,7 @@ To run this:
     ```
     python live_shape_detector.py
     ```
+- To detect circles on `coins.jpg` image, consider:
+    ```
+    python circle_detector.py coins.jpg
+    ```
