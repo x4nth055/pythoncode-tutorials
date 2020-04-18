@@ -19,7 +19,7 @@ def encode(image_name, secret_data):
     image = cv2.imread(image_name)
     # maximum bytes to encode
     n_bytes = image.shape[0] * image.shape[1] * 3 // 8
-    print("[*] Maximum bytes to encode:", n_bytes)
+    print("[*] Maximum bytes to encode: {}").format(n_bytes)
     if len(secret_data) > n_bytes:
         raise ValueError("[!] Insufficient bytes, need bigger image or less data.")
     print("[*] Encoding data...")
@@ -89,12 +89,13 @@ if __name__ == "__main__":
     if args.encode:
         # if the encode argument is specified
         input_image = args.encode
-        print("input_image:", input_image)
+        print("[*] input_image: {}").format(input_image)
         # split the absolute path and the file
         path, file = os.path.split(input_image)
         # split the filename and the image extension
         filename, ext = file.split(".")
-        output_image = os.path.join(path, f"{filename}_encoded.{ext}")
+	output_filename = "{}_encoded.{}".format(filename,ext)
+        output_image = os.path.join(path, output_filename)
         # encode the data into the image
         encoded_image = encode(image_name=input_image, secret_data=secret_data)
         # save the output image (encoded image)
@@ -104,4 +105,4 @@ if __name__ == "__main__":
         input_image = args.decode
         # decode the secret data from the image
         decoded_data = decode(input_image)
-        print("[+] Decoded data:", decoded_data)
+        print("[+] Decoded data: {}").format(decoded_data)
