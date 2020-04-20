@@ -1,9 +1,9 @@
-from keras.datasets import cifar10 # importing the dataset from keras
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras.callbacks import ModelCheckpoint, TensorBoard
-from keras.utils import to_categorical
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
+from tensorflow.keras.callbacks import TensorBoard
+import tensorflow as tf
+import tensorflow_datasets as tfds
 import os
 
 # hyper-parameters
@@ -79,56 +79,76 @@ def create_model(input_shape):
     # print the summary of the model architecture
     model.summary()
 
-    # training the model using rmsprop optimizer
-    model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+    # training the model using adam optimizer
+    model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
     return model
 
 
 def load_data():
     """
-    This function loads CIFAR-10 dataset, normalized, and labels one-hot encoded
+    This function loads CIFAR-10 dataset, and preprocess it
     """
+    # Loading data using Keras 
     # loading the CIFAR-10 dataset, splitted between train and test sets
-    (X_train, y_train), (X_test, y_test) = cifar10.load_data()
-    print("Training samples:", X_train.shape[0])
-    print("Testing samples:", X_test.shape[0])
-    print(f"Images shape: {X_train.shape[1:]}")
+    # (X_train, y_train), (X_test, y_test) = cifar10.load_data()
+    # print("Training samples:", X_train.shape[0])
+    # print("Testing samples:", X_test.shape[0])
+    # print(f"Images shape: {X_train.shape[1:]}")
 
-    # converting image labels to binary class matrices
-    y_train = to_categorical(y_train, num_classes)
-    y_test = to_categorical(y_test, num_classes)
+    # # converting image labels to binary class matrices
+    # y_train = to_categorical(y_train, num_classes)
+    # y_test = to_categorical(y_test, num_classes)
 
-    # convert to floats instead of int, so we can divide by 255
-    X_train = X_train.astype("float32")
-    X_test = X_test.astype("float32")
-    X_train /= 255
-    X_test /= 255
+    # # convert to floats instead of int, so we can divide by 255
+    # X_train = X_train.astype("float32")
+    # X_test = X_test.astype("float32")
+    # X_train /= 255
+    # X_test /= 255
+    # return (X_train, y_train), (X_test, y_test)
+    # Loading data using Tensorflow Datasets
+    def preprocess_image(image, label):
+        # convert [0, 255] range integers to [0, 1] range floats
+        image = tf.image.convert_image_dtype(image, tf.float32)
+        return image, label
+    # loading the CIFAR-10 dataset, splitted between train and test sets
+    ds_train, info = tfds.load("cifar10", with_info=True, split="train", as_supervised=True)
+    ds_test = tfds.load("cifar10", split="test", as_supervised=True)
+    # repeat dataset forever, shuffle, preprocess, split by batch
+    ds_train = ds_train.repeat().shuffle(1024).map(preprocess_image).batch(batch_size)
+    ds_test = ds_test.repeat().shuffle(1024).map(preprocess_image).batch(batch_size)
+    return ds_train, ds_test, info
 
-    return (X_train, y_train), (X_test, y_test)
 
 
 if __name__ == "__main__":
 
     # load the data
-    (X_train, y_train), (X_test, y_test) = load_data()
+    ds_train, ds_test, info = load_data()
+    # (X_train, y_train), (X_test, y_test) = load_data()
 
     # constructs the model
-    model = create_model(input_shape=X_train.shape[1:])
+    # model = create_model(input_shape=X_train.shape[1:])
+    model = create_model(input_shape=info.features["image"].shape)
 
     # some nice callbacks
-    tensorboard = TensorBoard(log_dir="logs/cifar10-model-v1")
-    checkpoint = ModelCheckpoint("results/cifar10-loss-{val_loss:.2f}-acc-{val_acc:.2f}.h5",
-                                save_best_only=True,
-                                verbose=1)
+    logdir = os.path.join("logs", "cifar10-model-v1")
+    tensorboard = TensorBoard(log_dir=logdir)
 
     # make sure results folder exist
     if not os.path.isdir("results"):
         os.mkdir("results")
 
     # train
-    model.fit(X_train, y_train,
-            batch_size=batch_size,
-            epochs=epochs,
-            validation_data=(X_test, y_test),
-            callbacks=[tensorboard, checkpoint],
-            shuffle=True)
+    # model.fit(X_train, y_train,
+    #         batch_size=batch_size,
+    #         epochs=epochs,
+    #         validation_data=(X_test, y_test),
+    #         callbacks=[tensorboard, checkpoint],
+    #         shuffle=True)
+    model.fit(ds_train, epochs=epochs, validation_data=ds_test, verbose=1,
+              steps_per_epoch=info.splits["train"].num_examples // batch_size,
+              validation_steps=info.splits["test"].num_examples // batch_size,
+              callbacks=[tensorboard])
+
+    # save the model to disk
+    model.save("results/cifar10-model-v1.h5")
