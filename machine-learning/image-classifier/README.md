@@ -1,4 +1,4 @@
-# [How to Make an Image Classifier in Python using Keras](https://www.thepythoncode.com/article/image-classification-keras-python)
+# [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python)
 To run this:
 - `pip3 install -r requirements.txt`
 - First, you need to train the model using `python train.py`

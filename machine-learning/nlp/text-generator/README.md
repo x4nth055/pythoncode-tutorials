@@ -1,4 +1,4 @@
-# [How to Build a Text Generator using Keras in Python](https://www.thepythoncode.com/article/text-generation-keras-python)
+# [How to Build a Text Generator using TensorFlow and Keras in Python](https://www.thepythoncode.com/article/text-generation-keras-python)
 To run this:
 - `pip3 install -r requirements.txt`
 - To use pre-trained text generator model that was trained on Alice's wonderland text book or Python Code:
