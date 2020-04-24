@@ -1,4 +1,4 @@
 numpy
-tensorflow==1.15.2
-keras
+tensorflow==2.0.1
 requests
+tqdm
