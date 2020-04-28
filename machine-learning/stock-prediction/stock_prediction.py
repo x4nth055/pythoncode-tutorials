@@ -1,5 +1,6 @@
+import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
+from tensorflow.keras.layers import LSTM, Dense, Dropout, Bidirectional
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from yahoo_fin import stock_info as si
@@ -8,6 +9,11 @@ from collections import deque
 import numpy as np
 import pandas as pd
 import random
+
+# set seed, so we can get the same results after rerunning several times
+np.random.seed(314)
+tf.random.set_seed(314)
+random.seed(314)
 
 
 def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1, 
@@ -40,7 +46,7 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
 
     # make sure that the passed feature_columns exist in the dataframe
     for col in feature_columns:
-        assert col in df.columns
+        assert col in df.columns, f"'{col}' does not exist in the dataframe."
 
     if scale:
         column_scaler = {}
@@ -100,23 +106,30 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
     return result
 
 
-def create_model(input_length, units=256, cell=LSTM, n_layers=2, dropout=0.3,
-                loss="mean_absolute_error", optimizer="rmsprop"):
+def create_model(sequence_length, units=256, cell=LSTM, n_layers=2, dropout=0.3,
+                loss="mean_absolute_error", optimizer="rmsprop", bidirectional=False):
     model = Sequential()
     for i in range(n_layers):
         if i == 0:
             # first layer
-            model.add(cell(units, return_sequences=True, input_shape=(None, input_length)))
+            if bidirectional:
+                model.add(Bidirectional(cell(units, return_sequences=True), input_shape=(None, sequence_length)))
+            else:
+                model.add(cell(units, return_sequences=True, input_shape=(None, sequence_length)))
         elif i == n_layers - 1:
             # last layer
-            model.add(cell(units, return_sequences=False))
+            if bidirectional:
+                model.add(Bidirectional(cell(units, return_sequences=False)))
+            else:
+                model.add(cell(units, return_sequences=False))
         else:
             # hidden layers
-            model.add(cell(units, return_sequences=True))
+            if bidirectional:
+                model.add(Bidirectional(cell(units, return_sequences=True)))
+            else:
+                model.add(cell(units, return_sequences=True))
         # add dropout after each layer
         model.add(Dropout(dropout))
-    
     model.add(Dense(1, activation="linear"))
     model.compile(loss=loss, metrics=["mean_absolute_error"], optimizer=optimizer)
-
     return model

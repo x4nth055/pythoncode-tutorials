@@ -4,9 +4,9 @@ from tensorflow.keras.layers import LSTM
 
 
 # Window size or the sequence length
-N_STEPS = 100
+N_STEPS = 70
 # Lookup step, 1 is the next day
-LOOKUP_STEP = 90
+LOOKUP_STEP = 1
 
 # test ratio size, 0.2 is 20%
 TEST_SIZE = 0.2
@@ -24,17 +24,23 @@ CELL = LSTM
 UNITS = 256
 # 40% dropout
 DROPOUT = 0.4
+# whether to use bidirectional RNNs
+BIDIRECTIONAL = False
 
 ### training parameters
 
-# mean squared error loss
-LOSS = "mse"
-OPTIMIZER = "rmsprop"
+# mean absolute error loss
+# LOSS = "mae"
+# huber loss
+LOSS = "huber_loss"
+OPTIMIZER = "adam"
 BATCH_SIZE = 64
-EPOCHS = 300
+EPOCHS = 400
 
 # Apple stock market
 ticker = "AAPL"
 ticker_data_filename = os.path.join("data", f"{ticker}_{date_now}.csv")
-# model name to save
-model_name = f"{date_now}_{ticker}-{LOSS}-{CELL.__name__}-seq-{N_STEPS}-step-{LOOKUP_STEP}-layers-{N_LAYERS}-units-{UNITS}"
+# model name to save, making it as unique as possible based on parameters
+model_name = f"{date_now}_{ticker}-{LOSS}-{OPTIMIZER}-{CELL.__name__}-seq-{N_STEPS}-step-{LOOKUP_STEP}-layers-{N_LAYERS}-units-{UNITS}"
+if BIDIRECTIONAL:
+    model_name += "-b"

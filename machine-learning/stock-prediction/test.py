@@ -50,13 +50,13 @@ data = load_data(ticker, N_STEPS, lookup_step=LOOKUP_STEP, test_size=TEST_SIZE,
 
 # construct the model
 model = create_model(N_STEPS, loss=LOSS, units=UNITS, cell=CELL, n_layers=N_LAYERS,
-                    dropout=DROPOUT, optimizer=OPTIMIZER)
+                    dropout=DROPOUT, optimizer=OPTIMIZER, bidirectional=BIDIRECTIONAL)
 
 model_path = os.path.join("results", model_name) + ".h5"
 model.load_weights(model_path)
 
 # evaluate the model
-mse, mae = model.evaluate(data["X_test"], data["y_test"])
+mse, mae = model.evaluate(data["X_test"], data["y_test"], verbose=0)
 # calculate the mean absolute error (inverse scaling)
 mean_absolute_error = data["column_scaler"]["adjclose"].inverse_transform(mae.reshape(1, -1))[0][0]
 print("Mean Absolute Error:", mean_absolute_error)
