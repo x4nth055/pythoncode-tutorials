@@ -42,6 +42,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Recognize Optical Characters in Images in Python](https://www.thepythoncode.com/article/optical-character-recognition-pytesseract-python). ([code](machine-learning/optical-character-recognition))
         - [How to Use K-Means Clustering for Image Segmentation using OpenCV in Python](https://www.thepythoncode.com/article/kmeans-for-image-segmentation-opencv-python). ([code](machine-learning/kmeans-image-segmentation))
         - [How to Perform YOLO Object Detection using OpenCV and PyTorch in Python](https://www.thepythoncode.com/article/yolo-object-detection-with-opencv-and-pytorch-in-python). ([code](machine-learning/object-detection))
+        - [How to Blur Faces in Images using OpenCV in Python](https://www.thepythoncode.com/article/blur-faces-in-images-using-opencv-in-python). ([code](machine-learning/blur-faces))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
