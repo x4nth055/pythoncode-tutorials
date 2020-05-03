@@ -3,7 +3,7 @@ To run this:
 - `pip3 install -r requirements.txt`
 - To blur faces of the image `father-and-daughter.jpg`:
     ```
-    python blur_faces.py a-man-with-little-girl.jpg
+    python blur_faces.py father-and-daughter.jpg
     ```
     This should show the blurred image and save it of the name `image_blurred.jpg` in your current directory.
 
