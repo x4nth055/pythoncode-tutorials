@@ -96,5 +96,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Download Torrent Files in Python](https://www.thepythoncode.com/article/download-torrent-files-in-python). ([code](general/torrent-downloader))
     - [How to Use Google Custom Search Engine API in Python](https://www.thepythoncode.com/article/use-google-custom-search-engine-api-in-python). ([code](general/using-custom-search-engine-api))
     - [How to Use Github API in Python](https://www.thepythoncode.com/article/using-github-api-in-python). ([code](general/github-api))
+    - [How to Use Google Drive API in Python](https://www.thepythoncode.com/article/using-google-drive--api-in-python). ([code](general/using-google-drive-api))
 
 For any feedback, please consider pulling requests.
