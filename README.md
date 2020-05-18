@@ -26,6 +26,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Brute Force FTP Servers in Python](https://www.thepythoncode.com/article/brute-force-attack-ftp-servers-using-ftplib-in-python). ([code](ethical-hacking/ftp-cracker))
     - [How to Extract Image Metadata in Python](https://www.thepythoncode.com/article/extracting-image-metadata-in-python). ([code](ethical-hacking/image-metadata-extractor))
     - [How to Crack Zip File Passwords in Python](https://www.thepythoncode.com/article/crack-zip-file-password-in-python). ([code](ethical-hacking/zipfile-cracker))
+    - [How to Crack PDF Files in Python](https://www.thepythoncode.com/article/crack-pdf-file-password-in-python). ([code](ethical-hacking/pdf-cracker))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
