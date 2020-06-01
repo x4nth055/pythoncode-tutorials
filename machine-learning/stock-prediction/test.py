@@ -58,7 +58,7 @@ model.load_weights(model_path)
 # evaluate the model
 mse, mae = model.evaluate(data["X_test"], data["y_test"], verbose=0)
 # calculate the mean absolute error (inverse scaling)
-mean_absolute_error = data["column_scaler"]["adjclose"].inverse_transform(mae.reshape(1, -1))[0][0]
+mean_absolute_error = data["column_scaler"]["adjclose"].inverse_transform([[mae]])[0][0]
 print("Mean Absolute Error:", mean_absolute_error)
 # predict the future price
 future_price = predict(model, data)
