@@ -2,7 +2,7 @@ import keyboard
 
 # registering a hotkey that replaces one typed text with another
 # replaces every "@email" followed by a space with my actual email
-keyboard.add_abbreviation("@email", "rockikz@thepythoncode.com")
+keyboard.add_abbreviation("@email", "email@domain.com")
 
 # invokes a callback everytime a hotkey is pressed
 keyboard.add_hotkey("ctrl+alt+p", lambda: print("CTRL+ALT+P Pressed!"))
