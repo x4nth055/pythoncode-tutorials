@@ -58,7 +58,9 @@ if __name__ == "__main__":
     # parse arguments
     args = parser.parse_args()
     region = args.region
-    URL += region
+    if region:
+        region = region.replace(" ", "+")
+        URL += f"+{region}"
     # get data
     data = get_weather_data(URL)
     # print data
