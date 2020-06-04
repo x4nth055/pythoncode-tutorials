@@ -2,9 +2,9 @@ import requests
 import sys
 
 # get the API KEY here: https://developers.google.com/custom-search/v1/overview
-API_KEY = "AIzaSyCzSrJGrnLjkRovkjxvHTjaogMZX63MEo0"
+API_KEY = "<INSERT_YOUR_API_KEY_HERE>"
 # get your Search Engine ID on your CSE control panel
-SEARCH_ENGINE_ID = "017479214723175900468:rx94qcojslh"
+SEARCH_ENGINE_ID = "<INSERT_YOUR_SEARCH_ENGINE_ID_HERE>"
 # the search query you want, from the command line (e.g python search_engine.py 'python')
 try:
     query = sys.argv[1]
