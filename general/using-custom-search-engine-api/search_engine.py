@@ -2,14 +2,27 @@ import requests
 import sys
 
 # get the API KEY here: https://developers.google.com/custom-search/v1/overview
-API_KEY = "<INSERT_YOUR_API_KEY_HERE>"
+API_KEY = "AIzaSyCzSrJGrnLjkRovkjxvHTjaogMZX63MEo0"
 # get your Search Engine ID on your CSE control panel
-SEARCH_ENGINE_ID = "<INSERT_YOUR_SEARCH_ENGINE_ID_HERE>"
-# the search query you want, from the command line
-query = sys.argv[1]
+SEARCH_ENGINE_ID = "017479214723175900468:rx94qcojslh"
+# the search query you want, from the command line (e.g python search_engine.py 'python')
+try:
+    query = sys.argv[1]
+except:
+    print("Please specify a search query")
+    exit()
+try:
+    page = int(sys.argv[2])
+    # make sure page is positive
+    assert page > 0
+except:
+    print("Page number isn't specified, defaulting to 1")
+    page = 1
 # constructing the URL
 # doc: https://developers.google.com/custom-search/v1/using_rest
-url = f"https://www.googleapis.com/customsearch/v1?key={API_KEY}&cx={SEARCH_ENGINE_ID}&q={query}"
+# calculating start, (page=2) => (start=11), (page=3) => (start=21)
+start = (page - 1) * 10 + 1
+url = f"https://www.googleapis.com/customsearch/v1?key={API_KEY}&cx={SEARCH_ENGINE_ID}&q={query}&start={start}"
 
 # make the API request
 data = requests.get(url).json()
@@ -26,7 +39,7 @@ for i, search_item in enumerate(search_items, start=1):
     # extract the page url
     link = search_item.get("link")
     # print the results
-    print("="*10, f"Result #{i}", "="*10)
+    print("="*10, f"Result #{i+start-1}", "="*10)
     print("Title:", title)
     print("Description:", snippet)
     print("URL:", link, "\n")
