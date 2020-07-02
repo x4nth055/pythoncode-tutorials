@@ -94,6 +94,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to List all Files and Directories in FTP Server using Python](https://www.thepythoncode.com/article/list-files-and-directories-in-ftp-server-in-python). ([code](python-standard-library/listing-files-in-ftp-server))
     - [How to Read Emails in Python](https://www.thepythoncode.com/article/reading-emails-in-python). ([code](python-standard-library/reading-email-messages))
     - [How to Download and Upload Files in FTP Server using Python](https://www.thepythoncode.com/article/download-and-upload-files-in-ftp-server-using-python). ([code](python-standard-library/download-and-upload-files-in-ftp))
+    - [How to Work with JSON Files in Python](https://www.thepythoncode.com/article/working-with-json-files-in-python). ([code](python-standard-library/working-with-json))
 
 - ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
@@ -103,7 +104,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use Google Drive API in Python](https://www.thepythoncode.com/article/using-google-drive--api-in-python). ([code](general/using-google-drive-api))
     - [How to Translate Text in Python](https://www.thepythoncode.com/article/translate-text-in-python). ([code](general/using-google-translate-api))
 
-- ### Database
+- ### [Database](https://www.thepythoncode.com/topic/using-databases-in-python)
     - [How to Use MySQL Database in Python](https://www.thepythoncode.com/article/using-mysql-database-in-python). ([code](database/mysql-connector))
     - [How to Connect to a Remote MySQL Database in Python](https://www.thepythoncode.com/article/connect-to-a-remote-mysql-server-in-python). ([code](database/connect-to-remote-mysql-server))
     - [How to Use MongoDB Database in Python](https://www.thepythoncode.com/article/introduction-to-mongodb-in-python). ([code](database/mongodb-client))
