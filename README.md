@@ -95,6 +95,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Read Emails in Python](https://www.thepythoncode.com/article/reading-emails-in-python). ([code](python-standard-library/reading-email-messages))
     - [How to Download and Upload Files in FTP Server using Python](https://www.thepythoncode.com/article/download-and-upload-files-in-ftp-server-using-python). ([code](python-standard-library/download-and-upload-files-in-ftp))
     - [How to Work with JSON Files in Python](https://www.thepythoncode.com/article/working-with-json-files-in-python). ([code](python-standard-library/working-with-json))
+    - [How to Use Regular Expressions in Python](https://www.thepythoncode.com/article/work-with-regular-expressions-in-python). ([code](python-standard-library/regular-expressions))
 
 - ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
