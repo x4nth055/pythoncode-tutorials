@@ -104,6 +104,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use Github API in Python](https://www.thepythoncode.com/article/using-github-api-in-python). ([code](general/github-api))
     - [How to Use Google Drive API in Python](https://www.thepythoncode.com/article/using-google-drive--api-in-python). ([code](general/using-google-drive-api))
     - [How to Translate Text in Python](https://www.thepythoncode.com/article/translate-text-in-python). ([code](general/using-google-translate-api))
+    - [How to Make a URL Shortener in Python](https://www.thepythoncode.com/article/make-url-shortener-in-python). ([code](general/url-shortener))
 
 - ### [Database](https://www.thepythoncode.com/topic/using-databases-in-python)
     - [How to Use MySQL Database in Python](https://www.thepythoncode.com/article/using-mysql-database-in-python). ([code](database/mysql-connector))
