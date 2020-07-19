@@ -1,4 +1,5 @@
 import os
+import shutil
 
 # print the current directory
 print("The current directory:", os.getcwd())
@@ -46,8 +47,10 @@ os.remove("folder/renamed-text.txt")
 # remove the folder
 os.rmdir("folder")
 
-# remove nested folders
+# remove nested empty folders
 os.removedirs("nested1/nested2/nested3")
+# remote non-empty folders
+shutil.rmtree("nested1")
 
 open("text.txt", "w").write("This is a text file")
 
