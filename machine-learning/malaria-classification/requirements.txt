@@ -1,0 +1,5 @@
+tensorflow
+sklearn
+numpy
+matplotlib
+opencv-python

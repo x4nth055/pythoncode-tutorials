@@ -46,6 +46,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Perform YOLO Object Detection using OpenCV and PyTorch in Python](https://www.thepythoncode.com/article/yolo-object-detection-with-opencv-and-pytorch-in-python). ([code](machine-learning/object-detection))
         - [How to Blur Faces in Images using OpenCV in Python](https://www.thepythoncode.com/article/blur-faces-in-images-using-opencv-in-python). ([code](machine-learning/blur-faces))
         - [Skin Cancer Detection using TensorFlow in Python](https://www.thepythoncode.com/article/skin-cancer-detection-using-tensorflow-in-python). ([code](machine-learning/skin-cancer-detection))
+        - [How to Perform Malaria Cells Classification using TensorFlow 2 and Keras in Python](https://www.thepythoncode.com/article/malaria-cells-classification). ([code](machine-learning/malaria-classification))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
