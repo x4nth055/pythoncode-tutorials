@@ -55,6 +55,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Perform Voice Gender Recognition using TensorFlow in Python](https://www.thepythoncode.com/article/gender-recognition-by-voice-using-tensorflow-in-python). ([code](https://github.com/x4nth055/gender-recognition-by-voice))
     - [Introduction to Finance and Technical Indicators with Python](https://www.thepythoncode.com/article/introduction-to-finance-and-technical-indicators-with-python). ([code](machine-learning/technical-indicators))
     - [Algorithmic Trading with FXCM Broker in Python](https://www.thepythoncode.com/article/trading-with-fxcm-broker-using-fxcmpy-library-in-python). ([code](machine-learning/trading-with-fxcm))
+    - [How to Create Plots With Plotly In Python](https://www.thepythoncode.com/article/creating-dynamic-plots-with-plotly-visualization-tool-in-python). ([code](machine-learning/plotly-visualization))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
