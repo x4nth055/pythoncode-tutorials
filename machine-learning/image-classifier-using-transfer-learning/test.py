@@ -5,7 +5,7 @@ train_generator, validation_generator, class_names = load_data()
 # constructs the model
 model = create_model(input_shape=IMAGE_SHAPE)
 # load the optimal weights
-model.load_weights("results/MobileNetV2_finetune_last5_less_lr-loss-0.45-acc-0.86.h5")
+model.load_weights("results/MobileNetV2_finetune_last5-loss-0.66.h5")
 
 validation_steps_per_epoch = np.ceil(validation_generator.samples / batch_size)
 # print the validation loss & accuracy

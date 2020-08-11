@@ -1,11 +1,10 @@
-
 import tensorflow as tf
-from keras.models import Model
-from keras.applications import MobileNetV2, ResNet50, InceptionV3 # try to use them and see which is better
-from keras.layers import Dense
-from keras.callbacks import ModelCheckpoint, TensorBoard
-from keras.utils import get_file
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Model
+from tensorflow.keras.applications import MobileNetV2, ResNet50, InceptionV3 # try to use them and see which is better
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.callbacks import ModelCheckpoint, TensorBoard
+from tensorflow.keras.utils import get_file
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 import pathlib
 import numpy as np
@@ -65,7 +64,7 @@ def create_model(input_shape):
     # print the summary of the model architecture
     model.summary()
 
-    # training the model using rmsprop optimizer
+    # training the model using adam optimizer
     model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
     return model
 
@@ -81,8 +80,8 @@ if __name__ == "__main__":
     model_name = "MobileNetV2_finetune_last5"
 
     # some nice callbacks
-    tensorboard = TensorBoard(log_dir=f"logs/{model_name}")
-    checkpoint = ModelCheckpoint(f"results/{model_name}" + "-loss-{val_loss:.2f}-acc-{val_acc:.2f}.h5",
+    tensorboard = TensorBoard(log_dir=os.path.join("logs", model_name))
+    checkpoint = ModelCheckpoint(os.path.join("results", f"{model_name}" + "-loss-{val_loss:.2f}.h5"),
                                 save_best_only=True,
                                 verbose=1)
 
