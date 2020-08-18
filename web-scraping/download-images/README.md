@@ -3,7 +3,7 @@ To run this:
 - `pip3 install -r requirements.txt`
 - 
     ```
-    python download_images --help
+    python download_images.py --help
     ```
     **Output:**
     ```
@@ -21,7 +21,7 @@ To run this:
     ```
 - If you want to download all images from https://www.thepythoncode.com/topic/web-scraping for example:
     ```
-    python download_images https://www.thepythoncode.com/topic/web-scraping
+    python download_images.py https://www.thepythoncode.com/topic/web-scraping
     ```
     A new folder `www.thepythoncode.com` will be created automatically that contains all the images of that web page.
 - If you want to download images from javascript-driven websites, consider using `download_images_js.py` script instead (it accepts the same parameters)
