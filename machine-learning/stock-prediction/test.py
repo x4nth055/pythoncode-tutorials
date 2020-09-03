@@ -28,9 +28,9 @@ def get_accuracy(model, data):
     return accuracy_score(y_test, y_pred)
 
 
-def predict(model, data, classification=False):
+def predict(model, data):
     # retrieve the last sequence from data
-    last_sequence = data["last_sequence"][:N_STEPS]
+    last_sequence = data["last_sequence"][-N_STEPS:]
     # retrieve the column scalers
     column_scaler = data["column_scaler"]
     # reshape the last sequence

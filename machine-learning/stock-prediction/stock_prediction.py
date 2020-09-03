@@ -78,11 +78,10 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
             sequence_data.append([np.array(sequences), target])
 
     # get the last sequence by appending the last `n_step` sequence with `lookup_step` sequence
-    # for instance, if n_steps=50 and lookup_step=10, last_sequence should be of 59 (that is 50+10-1) length
-    # this last_sequence will be used to predict in future dates that are not available in the dataset
+    # for instance, if n_steps=50 and lookup_step=10, last_sequence should be of 60 (that is 50+10) length
+    # this last_sequence will be used to predict future stock prices not available in the dataset
     last_sequence = list(sequences) + list(last_sequence)
-    # shift the last sequence by -1
-    last_sequence = np.array(pd.DataFrame(last_sequence).shift(-1).dropna())
+    last_sequence = np.array(last_sequence)
     # add to result
     result['last_sequence'] = last_sequence
     
