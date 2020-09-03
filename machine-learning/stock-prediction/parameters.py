@@ -37,8 +37,8 @@ OPTIMIZER = "adam"
 BATCH_SIZE = 64
 EPOCHS = 400
 
-# Apple stock market
-ticker = "AAPL"
+# Tesla stock market
+ticker = "TSLA"
 ticker_data_filename = os.path.join("data", f"{ticker}_{date_now}.csv")
 # model name to save, making it as unique as possible based on parameters
 model_name = f"{date_now}_{ticker}-{LOSS}-{OPTIMIZER}-{CELL.__name__}-seq-{N_STEPS}-step-{LOOKUP_STEP}-layers-{N_LAYERS}-units-{UNITS}"
