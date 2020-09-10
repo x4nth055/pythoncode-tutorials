@@ -29,6 +29,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Crack Zip File Passwords in Python](https://www.thepythoncode.com/article/crack-zip-file-password-in-python). ([code](ethical-hacking/zipfile-cracker))
     - [How to Crack PDF Files in Python](https://www.thepythoncode.com/article/crack-pdf-file-password-in-python). ([code](ethical-hacking/pdf-cracker))
     - [How to Build a SQL Injection Scanner in Python](https://www.thepythoncode.com/code/sql-injection-vulnerability-detector-in-python). ([code](ethical-hacking/sql-injection-detector))
+    - [How to Extract Chrome Passwords in Python](https://www.thepythoncode.com/article/extract-chrome-passwords-python). ([code](ethical-hacking/chrome-password-extractor))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
