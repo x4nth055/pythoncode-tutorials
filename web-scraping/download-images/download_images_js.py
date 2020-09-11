@@ -44,7 +44,7 @@ def get_all_images(url):
         # finally, if the url is valid
         if is_valid(img_url):
             urls.append(img_url)
-    # close the session to end chromium.exe process
+    # close the session to end browser process
     session.close()
     return urls
 
