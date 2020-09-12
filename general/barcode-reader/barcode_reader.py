@@ -41,4 +41,5 @@ if __name__ == "__main__":
         img = decode(img)
         # show the image
         cv2.imshow("img", img)
+        # cv2.imwrite("barcode_detected.png", img)
         cv2.waitKey(0)
