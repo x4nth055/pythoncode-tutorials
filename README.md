@@ -110,6 +110,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Work with JSON Files in Python](https://www.thepythoncode.com/article/working-with-json-files-in-python). ([code](python-standard-library/working-with-json))
     - [How to Use Regular Expressions in Python](https://www.thepythoncode.com/article/work-with-regular-expressions-in-python). ([code](python-standard-library/regular-expressions))
     - [Logging in Python](https://www.thepythoncode.com/article/logging-in-python). ([code](python-standard-library/logging))
+    - [How to Make a Chat Application in Python](https://www.thepythoncode.com/article/make-a-chat-room-application-in-python). ([code](python-standard-library/chat-application))
 
 - ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
