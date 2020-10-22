@@ -95,6 +95,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract YouTube Comments in Python](https://www.thepythoncode.com/article/extract-youtube-comments-in-python). ([code](web-scraping/youtube-comments-extractor))
     - [How to Extract All PDF Links in Python](https://www.thepythoncode.com/article/extract-pdf-links-with-python). ([code](web-scraping/pdf-url-extractor))
     - [How to Extract Images from PDF in Python](https://www.thepythoncode.com/article/extract-pdf-images-in-python). ([code](web-scraping/pdf-image-extractor))
+    - [Automated Browser Testing with Edge and Selenium in Python](https://www.thepythoncode.com/article/automated-browser-testing-with-edge-and-selenium-in-python). ([code](web-scraping/selenium-edge-browser))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
