@@ -23,7 +23,7 @@ status, messages = imap.select("INBOX")
 # total number of emails
 messages = int(messages[0])
 
-for i in range(messages-4, messages-N-4, -1):
+for i in range(messages, messages-N, -1):
     # fetch the email message by ID
     res, msg = imap.fetch(str(i), "(RFC822)")
     for response in msg:
@@ -35,10 +35,12 @@ for i in range(messages-4, messages-N-4, -1):
             if isinstance(subject, bytes):
                 # if it's a bytes, decode to str
                 subject = subject.decode()
-            # email sender
-            from_ = msg.get("From")
+            # decode email sender
+            From, encoding = decode_header(msg.get("From"))[0]
+            if isinstance(From, bytes):
+                From = From.decode(encoding)
             print("Subject:", subject)
-            print("From:", from_)
+            print("From:", From)
             # if the email message is multipart
             if msg.is_multipart():
                 # iterate over email parts
@@ -83,9 +85,7 @@ for i in range(messages-4, messages-N-4, -1):
                 open(filepath, "w").write(body)
                 # open in the default browser
                 webbrowser.open(filepath)
-
             print("="*100)
-
 # close the connection and logout
 imap.close()
 imap.logout()
