@@ -1,0 +1,1 @@
+# [How to Apply HOG Feature Extraction in Python](https://www.thepythoncode.com/article/hog-feature-extraction-in-python)
