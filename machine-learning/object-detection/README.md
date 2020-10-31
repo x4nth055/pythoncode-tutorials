@@ -1,7 +1,7 @@
 # [How to Perform YOLO Object Detection using OpenCV and PyTorch in Python](https://www.thepythoncode.com/article/yolo-object-detection-with-opencv-and-pytorch-in-python)
 To run this:
 - `pip3 install -r requirements.txt`
-- Download the model weights and put them in `weights` folder.
+- Download the [model weights](https://pjreddie.com/media/files/yolov3.weights) and put them in `weights` folder.
 - To generate a object detection image on `images/dog.jpg`:
     ```
     python yolo_opencv.py images/dog.jpg
