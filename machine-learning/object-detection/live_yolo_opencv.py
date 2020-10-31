@@ -79,7 +79,7 @@ while True:
 
             color = [int(c) for c in COLORS[class_ids[i]]]
             cv2.rectangle(image, (x, y), (x + w, y + h), color=color, thickness=thickness)
-            text = f"{LABEL[class_ids[i]]}: {confidences[i]:.2f}"
+            text = f"{LABELS[class_ids[i]]}: {confidences[i]:.2f}"
             # calculate text width & height to draw the transparent boxes as background of the text
             (text_width, text_height) = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, fontScale=font_scale, thickness=thickness)[0]
             text_offset_x = x
