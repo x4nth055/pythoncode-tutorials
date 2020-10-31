@@ -57,6 +57,7 @@ def nms(boxes, iou_thresh):
     """
     Performs Non maximal suppression technique to `boxes` using `iou_thresh` threshold
     """
+    # print(boxes.shape)
     # If there are no bounding boxes do nothing
     if len(boxes) == 0:
         return boxes
@@ -261,5 +262,6 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
             a.text(x1 + lxc, y1 - lyc, conf_tx, fontsize = 12, color = 'k',
                    bbox = dict(facecolor = rgb, edgecolor = rgb, alpha = 0.6))        
         
+    plt.axis("off")
     plt.savefig("output.jpg")
     plt.show()
