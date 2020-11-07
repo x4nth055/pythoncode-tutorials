@@ -7,7 +7,7 @@ username = "username"
 password = "password"
 
 # initialize the Chrome driver
-driver = webdriver.Chrome(r"C:\Users\STRIX\Desktop\selenium\chromedriver")
+driver = webdriver.Chrome(r"chromedriver")
 # head to github login page
 driver.get("https://github.com/login")
 # find username/email field and send the username itself to the input field
