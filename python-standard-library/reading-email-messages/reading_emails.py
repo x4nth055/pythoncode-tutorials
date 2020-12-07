@@ -8,6 +8,11 @@ import os
 username = "youremailaddress@provider.com"
 password = "yourpassword"
 
+
+def clean(text):
+    # clean text for creating a folder
+    return "".join(c if c.isalnum() else "_" for c in text)
+
 # number of top emails to fetch
 N = 3
 
@@ -31,10 +36,10 @@ for i in range(messages, messages-N, -1):
             # parse a bytes email into a message object
             msg = email.message_from_bytes(response[1])
             # decode the email subject
-            subject = decode_header(msg["Subject"])[0][0]
+            subject, encoding = decode_header(msg["Subject"])[0]
             if isinstance(subject, bytes):
                 # if it's a bytes, decode to str
-                subject = subject.decode()
+                subject = subject.decode(encoding)
             # decode email sender
             From, encoding = decode_header(msg.get("From"))[0]
             if isinstance(From, bytes):
@@ -60,10 +65,11 @@ for i in range(messages, messages-N, -1):
                         # download attachment
                         filename = part.get_filename()
                         if filename:
-                            if not os.path.isdir(subject):
+                            folder_name = clean(subject)
+                            if not os.path.isdir(folder_name):
                                 # make a folder for this email (named after the subject)
-                                os.mkdir(subject)
-                            filepath = os.path.join(subject, filename)
+                                os.mkdir(folder_name)
+                            filepath = os.path.join(folder_name, filename)
                             # download attachment and save it
                             open(filepath, "wb").write(part.get_payload(decode=True))
             else:
@@ -76,11 +82,12 @@ for i in range(messages, messages-N, -1):
                     print(body)
             if content_type == "text/html":
                 # if it's HTML, create a new HTML file and open it in browser
-                if not os.path.isdir(subject):
+                folder_name = clean(subject)
+                if not os.path.isdir(folder_name):
                     # make a folder for this email (named after the subject)
-                    os.mkdir(subject)
-                filename = f"{subject[:50]}.html"
-                filepath = os.path.join(subject, filename)
+                    os.mkdir(folder_name)
+                filename = "index.html"
+                filepath = os.path.join(folder_name, filename)
                 # write the file
                 open(filepath, "w").write(body)
                 # open in the default browser
