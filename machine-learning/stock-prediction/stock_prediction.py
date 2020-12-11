@@ -16,7 +16,15 @@ tf.random.set_seed(314)
 random.seed(314)
 
 
-def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1, 
+def shuffle_in_unison(a, b):
+    # shuffle two arrays in the same way
+    state = np.random.get_state()
+    np.random.shuffle(a)
+    np.random.set_state(state)
+    np.random.shuffle(b)
+
+
+def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1, split_by_date=True,
                 test_size=0.2, feature_columns=['adjclose', 'volume', 'open', 'high', 'low']):
     """
     Loads data from Yahoo Finance source, as well as scaling, shuffling, normalizing and splitting.
@@ -24,8 +32,10 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
         ticker (str/pd.DataFrame): the ticker you want to load, examples include AAPL, TESL, etc.
         n_steps (int): the historical sequence length (i.e window size) used to predict, default is 50
         scale (bool): whether to scale prices from 0 to 1, default is True
-        shuffle (bool): whether to shuffle the data, default is True
+        shuffle (bool): whether to shuffle the dataset (both training & testing), default is True
         lookup_step (int): the future lookup step to predict, default is 1 (e.g next day)
+        split_by_date (bool): whether we split the dataset into training/testing by date, setting it 
+            to False will split datasets in a random way
         test_size (float): ratio for test data, default is 0.2 (20% testing data)
         feature_columns (list): the list of features to use to feed into the model, default is everything grabbed from yahoo_fin
     """
@@ -47,6 +57,10 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
     # make sure that the passed feature_columns exist in the dataframe
     for col in feature_columns:
         assert col in df.columns, f"'{col}' does not exist in the dataframe."
+
+    # add date as a column
+    if "date" not in df.columns:
+        df["date"] = df.index
 
     if scale:
         column_scaler = {}
@@ -72,16 +86,16 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
     sequence_data = []
     sequences = deque(maxlen=n_steps)
 
-    for entry, target in zip(df[feature_columns].values, df['future'].values):
+    for entry, target in zip(df[feature_columns + ["date"]].values, df['future'].values):
         sequences.append(entry)
         if len(sequences) == n_steps:
             sequence_data.append([np.array(sequences), target])
 
     # get the last sequence by appending the last `n_step` sequence with `lookup_step` sequence
     # for instance, if n_steps=50 and lookup_step=10, last_sequence should be of 60 (that is 50+10) length
-    # this last_sequence will be used to predict future stock prices not available in the dataset
-    last_sequence = list(sequences) + list(last_sequence)
-    last_sequence = np.array(last_sequence)
+    # this last_sequence will be used to predict future stock prices that are not available in the dataset
+    last_sequence = list([s[:len(feature_columns)] for s in sequences]) + list(last_sequence)
+    last_sequence = np.array(last_sequence).astype(np.float32)
     # add to result
     result['last_sequence'] = last_sequence
     
@@ -95,26 +109,43 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1,
     X = np.array(X)
     y = np.array(y)
 
-    # reshape X to fit the neural network
-    X = X.reshape((X.shape[0], X.shape[2], X.shape[1]))
-    
-    # split the dataset
-    result["X_train"], result["X_test"], result["y_train"], result["y_test"] = train_test_split(X, y, 
+    if split_by_date:
+        # split the dataset into training & testing sets by date (not randomly splitting)
+        train_samples = int((1 - test_size) * len(X))
+        result["X_train"] = X[:train_samples]
+        result["y_train"] = y[:train_samples]
+        result["X_test"]  = X[train_samples:]
+        result["y_test"]  = y[train_samples:]
+        if shuffle:
+            # shuffle the datasets for training (if shuffle parameter is set)
+            shuffle_in_unison(result["X_train"], result["y_train"])
+            shuffle_in_unison(result["X_test"], result["y_test"])
+    else:    
+        # split the dataset randomly
+        result["X_train"], result["X_test"], result["y_train"], result["y_test"] = train_test_split(X, y, 
                                                                                 test_size=test_size, shuffle=shuffle)
-    # return the result
+
+    # get the list of test set dates
+    dates = result["X_test"][:, -1, -1]
+    # retrieve test features from the original dataframe
+    result["test_df"] = result["df"].loc[dates]
+    # remove dates from the training/testing sets & convert to float32
+    result["X_train"] = result["X_train"][:, :, :len(feature_columns)].astype(np.float32)
+    result["X_test"] = result["X_test"][:, :, :len(feature_columns)].astype(np.float32)
+
     return result
 
 
-def create_model(sequence_length, units=256, cell=LSTM, n_layers=2, dropout=0.3,
+def create_model(sequence_length, n_features, units=256, cell=LSTM, n_layers=2, dropout=0.3,
                 loss="mean_absolute_error", optimizer="rmsprop", bidirectional=False):
     model = Sequential()
     for i in range(n_layers):
         if i == 0:
             # first layer
             if bidirectional:
-                model.add(Bidirectional(cell(units, return_sequences=True), input_shape=(None, sequence_length)))
+                model.add(Bidirectional(cell(units, return_sequences=True), batch_input_shape=(None, sequence_length, n_features)))
             else:
-                model.add(cell(units, return_sequences=True, input_shape=(None, sequence_length)))
+                model.add(cell(units, return_sequences=True, batch_input_shape=(None, sequence_length, n_features)))
         elif i == n_layers - 1:
             # last layer
             if bidirectional:
