@@ -9,7 +9,8 @@ file = open("subdomains.txt")
 content = file.read()
 # split by new lines
 subdomains = content.splitlines()
-
+# a list of discovered subdomains
+discovered_subdomains = []
 for subdomain in subdomains:
     # construct the url
     url = f"http://{subdomain}.{domain}"
@@ -21,3 +22,10 @@ for subdomain in subdomains:
         pass
     else:
         print("[+] Discovered subdomain:", url)
+        # append the discovered subdomain to our list
+        discovered_subdomains.append(url)
+
+# save the discovered subdomains into a file
+with open("discovered_subdomains.txt", "w") as f:
+    for subdomain in discovered_subdomains:
+        print(subdomain, file=f)

@@ -7,7 +7,9 @@ To run this:
     ```
     **Output:**
     ```
-    usage: fast_subdomain_scanner.py [-h] [-l WORDLIST] [-t NUM_THREADS] domain
+    usage: fast_subdomain_scanner.py [-h] [-l WORDLIST] [-t NUM_THREADS]       
+                                 [-o OUTPUT_FILE]
+                                 domain
 
     Faster Subdomain Scanner using Threads
 
@@ -23,6 +25,9 @@ To run this:
     -t NUM_THREADS, --num-threads NUM_THREADS
                             Number of threads to use to scan the domain. Default
                             is 10
+    -o OUTPUT_FILE, --output-file OUTPUT_FILE
+                            Specify the output text file to write discovered
+                            subdomains
     ```
 - If you want to scan hackthissite.org for subdomains using only 10 threads with a word list of 100 subdomains (`subdomains.txt`):
     ```
@@ -37,4 +42,9 @@ To run this:
     [+] Discovered subdomain: http://stats.hackthissite.org
     [+] Discovered subdomain: http://forums.hackthissite.org
     ```
+    If you want to output the discovered URLs to a file:
+    ```
+    python fast_subdomain_scanner.py hackthissite.org -l subdomains.txt -t 10 -o discovered_urls.txt
+    ```
+    This will create a new file `discovered_urls.txt` that includes the discovered subdomains.
 - For bigger subdomain wordlists, check [this repository](https://github.com/rbsec/dnscan).
