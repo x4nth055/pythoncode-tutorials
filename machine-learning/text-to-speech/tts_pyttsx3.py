@@ -30,3 +30,7 @@ print(voices)
 engine.setProperty("voice", voices[1].id)
 engine.say(text)
 engine.runAndWait()
+
+# saving speech audio into a file
+engine.save_to_file(text, "python.mp3")
+engine.runAndWait()
