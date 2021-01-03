@@ -31,6 +31,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a SQL Injection Scanner in Python](https://www.thepythoncode.com/code/sql-injection-vulnerability-detector-in-python). ([code](ethical-hacking/sql-injection-detector))
     - [How to Extract Chrome Passwords in Python](https://www.thepythoncode.com/article/extract-chrome-passwords-python). ([code](ethical-hacking/chrome-password-extractor))
     - [How to Use Shodan API in Python](https://www.thepythoncode.com/article/using-shodan-api-in-python). ([code](ethical-hacking/shodan-api))
+    - [How to Make an HTTP Proxy in Python](https://www.thepythoncode.com/article/writing-http-proxy-in-python-with-mitmproxy). ([code](ethical-hacking/http-mitm-proxy))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
