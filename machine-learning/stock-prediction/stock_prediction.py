@@ -129,6 +129,8 @@ def load_data(ticker, n_steps=50, scale=True, shuffle=True, lookup_step=1, split
     dates = result["X_test"][:, -1, -1]
     # retrieve test features from the original dataframe
     result["test_df"] = result["df"].loc[dates]
+    # remove duplicated dates in the testing dataframe
+    result["test_df"] = result["test_df"][~result["test_df"].index.duplicated(keep='first')]
     # remove dates from the training/testing sets & convert to float32
     result["X_train"] = result["X_train"][:, :, :len(feature_columns)].astype(np.float32)
     result["X_test"] = result["X_test"][:, :, :len(feature_columns)].astype(np.float32)
