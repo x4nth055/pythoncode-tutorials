@@ -34,6 +34,7 @@ def is_ssh_open(hostname, username, password):
     else:
         # connection was established successfully
         print(f"{GREEN}[+] Found combo:\n\tHOSTNAME: {hostname}\n\tUSERNAME: {username}\n\tPASSWORD: {password}{RESET}")
+        client.close()
         return True
 
 
