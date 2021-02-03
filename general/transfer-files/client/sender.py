@@ -26,7 +26,7 @@ def send_file(filename, host, port):
     # start sending the file
     progress = tqdm.tqdm(range(filesize), f"Sending {filename}", unit="B", unit_scale=True, unit_divisor=1024)
     with open(filename, "rb") as f:
-        for _ in progress:
+        while True:
             # read the bytes from the file
             bytes_read = f.read(BUFFER_SIZE)
             if not bytes_read:
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Simple File Sender")
     parser.add_argument("file", help="File name to send")
     parser.add_argument("host", help="The host/IP address of the receiver")
-    parser.add_argument("-p", "--port", help="Port to use, default is 5001", default=5001)
+    parser.add_argument("-p", "--port", help="Port to use, default is 5001", type=int, default=5001)
     args = parser.parse_args()
     filename = args.file
     host = args.host
