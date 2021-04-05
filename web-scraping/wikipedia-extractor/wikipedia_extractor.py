@@ -36,3 +36,11 @@ print("Links:", links, "\n")
 print("References:", references, "\n")
 print("Summary:", summary, "\n")
 
+# changing language
+# for a list of available languages, 
+# check http://meta.wikimedia.org/wiki/List_of_Wikipedias link.
+language = "es"
+wikipedia.set_lang(language)
+# get a page and print the summary in the new language
+print(f"Summary of web scraping in {language}:", wikipedia.page("Web Scraping").summary)
+
