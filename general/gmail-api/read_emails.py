@@ -94,13 +94,13 @@ def read_message(service, message_id):
         for header in headers:
             name = header.get("name")
             value = header.get("value")
-            if name == 'From':
+            if name.lower() == 'from':
                 # we print the From address
                 print("From:", value)
-            if name == "To":
+            if name.lower() == "to":
                 # we print the To address
                 print("To:", value)
-            if name == "Subject":
+            if name.lower() == "subject":
                 # make a directory with the name of the subject
                 folder_name = clean(value)
                 # we will also handle emails with the same subject name
@@ -116,7 +116,7 @@ def read_message(service, message_id):
                         folder_name = f"{folder_name}_{folder_counter}"
                 os.mkdir(folder_name)
                 print("Subject:", value)
-            if name == "Date":
+            if name.lower() == "date":
                 # we print the date when the message was sent
                 print("Date:", value)
         
