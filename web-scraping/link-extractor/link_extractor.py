@@ -9,6 +9,7 @@ colorama.init()
 GREEN = colorama.Fore.GREEN
 GRAY = colorama.Fore.LIGHTBLACK_EX
 RESET = colorama.Fore.RESET
+YELLOW = colorama.Fore.YELLOW
 
 # initialize the set of links (unique links)
 internal_urls = set()
@@ -62,7 +63,7 @@ def get_all_website_links(url):
     return urls
 
 
-def crawl(url, max_urls=50):
+def crawl(url, max_urls=30):
     """
     Crawls a web page and extracts all links.
     You'll find all links in `external_urls` and `internal_urls` global set variables.
@@ -71,6 +72,7 @@ def crawl(url, max_urls=50):
     """
     global total_urls_visited
     total_urls_visited += 1
+    print(f"{YELLOW}[*] Crawling: {url}{RESET}")
     links = get_all_website_links(url)
     for link in links:
         if total_urls_visited > max_urls:
@@ -93,6 +95,7 @@ if __name__ == "__main__":
     print("[+] Total Internal links:", len(internal_urls))
     print("[+] Total External links:", len(external_urls))
     print("[+] Total URLs:", len(external_urls) + len(internal_urls))
+    print("[+] Total crawled URLs:", max_urls)
 
     domain_name = urlparse(url).netloc
 
