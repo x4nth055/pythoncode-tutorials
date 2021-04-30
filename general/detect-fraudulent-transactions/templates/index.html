@@ -1,0 +1,27 @@
+<!doctype html>
+<title> Send Javascript with template demo </title>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{title}}</h1>
+    </div>
+    <div id="data"></div>
+    {% for topic, transaction in data: %}
+    <script>
+        var topic = "{{ topic }}";
+        var transaction = "{{ transaction }}";
+        if (topic.search("fraud") > 0) {
+            topic = topic.fontcolor("red")
+        } else {
+            topic = topic.fontcolor("green")
+        }
+        document.getElementById('data').innerHTML += "<br>" + topic + " " + transaction;
+    </script>
+    {% endfor %}
+</body>
+
+</html>
