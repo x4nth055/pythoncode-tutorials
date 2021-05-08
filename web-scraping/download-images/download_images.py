@@ -57,7 +57,7 @@ def download(url, pathname):
     # progress bar, changing the unit to bytes instead of iteration (default by tqdm)
     progress = tqdm(response.iter_content(1024), f"Downloading {filename}", total=file_size, unit="B", unit_scale=True, unit_divisor=1024)
     with open(filename, "wb") as f:
-        for data in progress:
+        for data in progress.iterable:
             # write data read to the file
             f.write(data)
             # update the progress bar manually

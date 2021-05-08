@@ -23,13 +23,14 @@ def get_all_images(url):
     session = HTMLSession()
     # make the HTTP request and retrieve response
     response = session.get(url)
-    # execute Javascript
-    response.html.render()
+    # execute Javascript with a timeout of 20 seconds
+    response.html.render(timeout=20)
     # construct the soup parser
     soup = bs(response.html.html, "html.parser")
     urls = []
     for img in tqdm(soup.find_all("img"), "Extracting images"):
-        img_url = img.attrs.get("src") or img.attrs.get("data-src")
+        img_url = img.attrs.get("src") or img.attrs.get("data-src") or img.attrs.get("data-original")
+        print(img_url)
         if not img_url:
             # if img does not contain src attribute, just skip
             continue
@@ -68,7 +69,7 @@ def download(url, pathname):
     # progress bar, changing the unit to bytes instead of iteration (default by tqdm)
     progress = tqdm(response.iter_content(1024), f"Downloading {filename}", total=file_size, unit="B", unit_scale=True, unit_divisor=1024)
     with open(filename, "wb") as f:
-        for data in progress:
+        for data in progress.iterable:
             # write data read to the file
             f.write(data)
             # update the progress bar manually
