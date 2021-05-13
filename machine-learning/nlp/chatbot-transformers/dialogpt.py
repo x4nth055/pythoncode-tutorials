@@ -17,7 +17,7 @@ model_name = "microsoft/DialoGPT-medium"
 # model_name = "microsoft/DialoGPT-small"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
-
+print("====Greedy search chat====")
 # chatting 5 times with greedy search
 for step in range(5):
     # take user input
@@ -35,7 +35,7 @@ for step in range(5):
     #print the output
     output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     print(f"DialoGPT: {output}")
-
+print("====Beam search chat====")
 # chatting 5 times with beam search
 for step in range(5):
     # take user input
@@ -55,7 +55,7 @@ for step in range(5):
     #print the output
     output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     print(f"DialoGPT: {output}")
-
+print("====Sampling chat====")
 # chatting 5 times with sampling
 for step in range(5):
     # take user input
@@ -75,7 +75,7 @@ for step in range(5):
     #print the output
     output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     print(f"DialoGPT: {output}")
-
+print("====Sampling chat with tweaking temperature====")
 # chatting 5 times with sampling & tweaking temperature
 for step in range(5):
     # take user input
@@ -96,7 +96,7 @@ for step in range(5):
     #print the output
     output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     print(f"DialoGPT: {output}")
-
+print("====Top-K sampling chat with tweaking temperature====")
 # chatting 5 times with Top K sampling & tweaking temperature
 for step in range(5):
     # take user input
@@ -117,7 +117,7 @@ for step in range(5):
     #print the output
     output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     print(f"DialoGPT: {output}")
-
+print("====Nucleus sampling (top-p) chat with tweaking temperature====")
 # chatting 5 times with nucleus sampling & tweaking temperature
 for step in range(5):
     # take user input
@@ -139,7 +139,7 @@ for step in range(5):
     #print the output
     output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     print(f"DialoGPT: {output}")
-
+print("====chatting 5 times with nucleus & top-k sampling & tweaking temperature & multiple sentences====")
 # chatting 5 times with nucleus & top-k sampling & tweaking temperature & multiple
 # sentences
 for step in range(5):
@@ -155,7 +155,7 @@ for step in range(5):
         max_length=1000,
         do_sample=True,
         top_p=0.95,
-        top_k=50,Y
+        top_k=50,
         temperature=0.75,
         num_return_sequences=5,
         pad_token_id=tokenizer.eos_token_id
