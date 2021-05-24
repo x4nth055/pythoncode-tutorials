@@ -49,7 +49,7 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--wordlist", help="File that contains all subdomains to scan, line by line. Default is subdomains.txt",
                         default="subdomains.txt")
     parser.add_argument("-t", "--num-threads", help="Number of threads to use to scan the domain. Default is 10", default=10, type=int)
-    parser.add_argument("-o", "--output-file", help="Specify the output text file to write discovered subdomains")
+    parser.add_argument("-o", "--output-file", help="Specify the output text file to write discovered subdomains", default="discovered-subdomains.txt")
     
     args = parser.parse_args()
     domain = args.domain
