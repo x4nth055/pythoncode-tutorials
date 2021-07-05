@@ -70,6 +70,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Algorithmic Trading with FXCM Broker in Python](https://www.thepythoncode.com/article/trading-with-fxcm-broker-using-fxcmpy-library-in-python). ([code](machine-learning/trading-with-fxcm))
     - [How to Create Plots With Plotly In Python](https://www.thepythoncode.com/article/creating-dynamic-plots-with-plotly-visualization-tool-in-python). ([code](machine-learning/plotly-visualization))
     - [Feature Selection using Scikit-Learn in Python](https://www.thepythoncode.com/article/feature-selection-and-feature-engineering-using-python). ([code](machine-learning/feature-selection))
+    - [Imbalance Learning With Imblearn and Smote Variants Libraries in Python](https://www.thepythoncode.com/article/handling-imbalance-data-imblearn-smote-variants-python). ([code](machine-learning/imbalance-learning))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
