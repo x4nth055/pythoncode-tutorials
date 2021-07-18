@@ -16,13 +16,13 @@ def get_video_info(url):
     # initialize the result
     result = {}
     # video title
-    result["title"] = soup.find("h1").text.strip()
+    result["title"] = soup.find("meta", itemprop="name")['content']
     # video views (converted to integer)
-    result["views"] = int(''.join([ c for c in soup.find("span", attrs={"class": "view-count"}).text if c.isdigit() ]))
+    result["views"] = soup.find("meta", itemprop="interactionCount")['content']
     # video description
-    result["description"] = soup.find("yt-formatted-string", {"class": "content"}).text
+    result["description"] = soup.find("meta", itemprop="description")['content']
     # date published
-    result["date_published"] = soup.find("div", {"id": "date"}).text[1:]
+    result["date_published"] = soup.find("meta", itemprop="datePublished")['content']
     # get the duration of the video
     result["duration"] = soup.find("span", {"class": "ytp-time-duration"}).text
     # get the video tags
