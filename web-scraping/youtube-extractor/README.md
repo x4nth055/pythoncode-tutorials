@@ -8,22 +8,17 @@ To run this:
     **Output:**
     ```
     Title: Me at the zoo
-    Views: 106602383
-    Published at: 23/04/2005
+    Views: 172639597
+    Published at: 2005-04-23
     Video Duration: 0:18
     Video tags: me at the zoo, jawed karim, first youtube video
-    Likes: 3825489
-    Dislikes: 111818
+    Likes: 8188077
+    Dislikes: 191986
 
-    Description: The first video on YouTube. Maybe it's time to go back to the zoo?
-
-    NEW VIDEO LIVE! https://www.youtube.com/watch?v=dQw4w...
-
-
-    == Ok, new video as soon as 10M subscriberz! ==
+    Description: The first video on YouTube. While you wait for Part 2, listen to this great song: https://www.youtube.com/watch?v=zj82_v2R6ts
 
 
     Channel Name: jawed
     Channel URL: https://www.youtube.com/channel/UC4QobU6STFB0P71PMvOGN5A
-    Channel Subscribers: 1.03M
+    Channel Subscribers: 1.98M subscribers
     ```
