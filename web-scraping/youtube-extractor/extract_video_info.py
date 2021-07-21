@@ -9,7 +9,7 @@ def get_video_info(url):
     # download HTML code
     response = session.get(url)
     # execute Javascript
-    response.html.render(sleep=1)
+    response.html.render(timeout=60)
     # create beautiful soup object to parse HTML
     soup = bs(response.html.html, "html.parser")
     # open("index.html", "w").write(response.html.html)
@@ -17,7 +17,7 @@ def get_video_info(url):
     result = {}
     # video title
     result["title"] = soup.find("meta", itemprop="name")['content']
-    # video views (converted to integer)
+    # video views
     result["views"] = soup.find("meta", itemprop="interactionCount")['content']
     # video description
     result["description"] = soup.find("meta", itemprop="description")['content']
