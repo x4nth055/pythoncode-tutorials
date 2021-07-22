@@ -93,6 +93,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
     - [How to Watermark PDF Files in Python](https://www.thepythoncode.com/article/watermark-in-pdf-using-python). ([code](general/add-watermark-pdf))
+    - [Highlighting Text in PDF with Python](https://www.thepythoncode.com/article/redact-and-highlight-text-in-pdf-with-python). ([code](handling-pdf-files/highlight-redact-text))
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
