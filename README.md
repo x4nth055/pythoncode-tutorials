@@ -95,6 +95,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Watermark PDF Files in Python](https://www.thepythoncode.com/article/watermark-in-pdf-using-python). ([code](general/add-watermark-pdf))
     - [Highlighting Text in PDF with Python](https://www.thepythoncode.com/article/redact-and-highlight-text-in-pdf-with-python). ([code](handling-pdf-files/highlight-redact-text))
     - [How to Extract Text from Images in PDF Files with Python](https://www.thepythoncode.com/article/extract-text-from-images-or-scanned-pdf-python). ([code](handling-pdf-files/pdf-ocr))
+    - [How to Convert PDF to Docx in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-docx-in-python). ([code](handling-pdf-files/convert-pdf-to-docx))
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
