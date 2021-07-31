@@ -96,6 +96,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Highlighting Text in PDF with Python](https://www.thepythoncode.com/article/redact-and-highlight-text-in-pdf-with-python). ([code](handling-pdf-files/highlight-redact-text))
     - [How to Extract Text from Images in PDF Files with Python](https://www.thepythoncode.com/article/extract-text-from-images-or-scanned-pdf-python). ([code](handling-pdf-files/pdf-ocr))
     - [How to Convert PDF to Docx in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-docx-in-python). ([code](handling-pdf-files/convert-pdf-to-docx))
+    - [How to Convert PDF to Images in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-images-in-python). ([code](handling-pdf-files/convert-pdf-to-image))
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
