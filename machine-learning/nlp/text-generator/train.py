@@ -113,7 +113,10 @@ model = Sequential([
     Dense(n_unique_chars, activation="softmax"),
 ])
 
-model.load_weights(f"results/{BASENAME}-{sequence_length}.h5")
+# define the model path
+model_weights_path = f"results/{BASENAME}-{sequence_length}.h5"
+# if os.path.isfile(model_weights_path):
+#     model.load_weights(model_weights_path)
 
 model.summary()
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
@@ -126,4 +129,4 @@ if not os.path.isdir("results"):
 # train the model
 model.fit(ds, steps_per_epoch=(len(encoded_text) - sequence_length) // BATCH_SIZE, epochs=EPOCHS)
 # save the model
-model.save(f"results/{BASENAME}-{sequence_length}.h5")
+model.save(model_weights_path)
