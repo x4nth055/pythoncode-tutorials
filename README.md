@@ -81,7 +81,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
     - [How to Generate and Read QR Code in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python). ([code](general/generating-reading-qrcode))
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
-    - [How to Extract PDF Tables in Python](https://www.thepythoncode.com/article/extract-pdf-tables-in-python-camelot). ([code](general/pdf-table-extractor))
     - [How to Execute BASH Commands in a Remote Machine in Python](https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python). ([code](general/execute-ssh-commands))
     - [How to Convert Python Files into Executables](https://www.thepythoncode.com/article/building-python-files-into-stand-alone-executables-using-pyinstaller)
     - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
@@ -92,13 +91,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
-    - [How to Watermark PDF Files in Python](https://www.thepythoncode.com/article/watermark-in-pdf-using-python). ([code](general/add-watermark-pdf))
-    - [Highlighting Text in PDF with Python](https://www.thepythoncode.com/article/redact-and-highlight-text-in-pdf-with-python). ([code](handling-pdf-files/highlight-redact-text))
-    - [How to Extract Text from Images in PDF Files with Python](https://www.thepythoncode.com/article/extract-text-from-images-or-scanned-pdf-python). ([code](handling-pdf-files/pdf-ocr))
-    - [How to Convert PDF to Docx in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-docx-in-python). ([code](handling-pdf-files/convert-pdf-to-docx))
-    - [How to Convert PDF to Images in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-images-in-python). ([code](handling-pdf-files/convert-pdf-to-image))
-    - [How to Compress PDF Files in Python](https://www.thepythoncode.com/article/compress-pdf-files-in-python). ([code](handling-pdf-files/pdf-compressor))
-    - [How to Encrypt and Decrypt PDF Files in Python](https://www.thepythoncode.com/article/encrypt-pdf-files-in-python). ([code](handling-pdf-files/encrypt-pdf))
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
@@ -114,8 +106,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract and Submit Web Forms from a URL using Python](https://www.thepythoncode.com/article/extracting-and-submitting-web-page-forms-in-python). ([code](web-scraping/extract-and-fill-forms))
     - [How to Get Domain Name Information in Python](https://www.thepythoncode.com/article/extracting-domain-name-information-in-python). ([code](web-scraping/get-domain-info))
     - [How to Extract YouTube Comments in Python](https://www.thepythoncode.com/article/extract-youtube-comments-in-python). ([code](web-scraping/youtube-comments-extractor))
-    - [How to Extract All PDF Links in Python](https://www.thepythoncode.com/article/extract-pdf-links-with-python). ([code](web-scraping/pdf-url-extractor))
-    - [How to Extract Images from PDF in Python](https://www.thepythoncode.com/article/extract-pdf-images-in-python). ([code](web-scraping/pdf-image-extractor))
     - [Automated Browser Testing with Edge and Selenium in Python](https://www.thepythoncode.com/article/automated-browser-testing-with-edge-and-selenium-in-python). ([code](web-scraping/selenium-edge-browser))
     - [How to Automate Login using Selenium in Python](https://www.thepythoncode.com/article/automate-login-to-websites-using-selenium-in-python). ([code](web-scraping/automate-login))
 
@@ -157,4 +147,16 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Connect to a Remote MySQL Database in Python](https://www.thepythoncode.com/article/connect-to-a-remote-mysql-server-in-python). ([code](database/connect-to-remote-mysql-server))
     - [How to Use MongoDB Database in Python](https://www.thepythoncode.com/article/introduction-to-mongodb-in-python). ([code](database/mongodb-client))
 
+- ### [Handling PDF Files](https://www.thepythoncode.com/topic/handling-pdf-files)
+    - [How to Extract All PDF Links in Python](https://www.thepythoncode.com/article/extract-pdf-links-with-python). ([code](web-scraping/pdf-url-extractor))
+    - [How to Extract PDF Tables in Python](https://www.thepythoncode.com/article/extract-pdf-tables-in-python-camelot). ([code](general/pdf-table-extractor))
+    - [How to Extract Images from PDF in Python](https://www.thepythoncode.com/article/extract-pdf-images-in-python). ([code](web-scraping/pdf-image-extractor))
+    - [How to Watermark PDF Files in Python](https://www.thepythoncode.com/article/watermark-in-pdf-using-python). ([code](general/add-watermark-pdf))
+    - [Highlighting Text in PDF with Python](https://www.thepythoncode.com/article/redact-and-highlight-text-in-pdf-with-python). ([code](handling-pdf-files/highlight-redact-text))
+    - [How to Extract Text from Images in PDF Files with Python](https://www.thepythoncode.com/article/extract-text-from-images-or-scanned-pdf-python). ([code](handling-pdf-files/pdf-ocr))
+    - [How to Convert PDF to Docx in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-docx-in-python). ([code](handling-pdf-files/convert-pdf-to-docx))
+    - [How to Convert PDF to Images in Python](https://www.thepythoncode.com/article/convert-pdf-files-to-images-in-python). ([code](handling-pdf-files/convert-pdf-to-image))
+    - [How to Compress PDF Files in Python](https://www.thepythoncode.com/article/compress-pdf-files-in-python). ([code](handling-pdf-files/pdf-compressor))
+    - [How to Encrypt and Decrypt PDF Files in Python](https://www.thepythoncode.com/article/encrypt-pdf-files-in-python). ([code](handling-pdf-files/encrypt-pdf))
+    
 For any feedback, please consider pulling requests.
