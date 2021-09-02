@@ -8,7 +8,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.mime.audio import MIMEAudio
 from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
 from mimetypes import guess_type as guess_mime_type
 
 from common import our_email, gmail_authenticate
