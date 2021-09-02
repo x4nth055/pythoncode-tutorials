@@ -3,4 +3,4 @@ keras
 tqdm
 numpy
 keras_metrics
-tensorflow==1.15.4
+tensorflow==2.5.1
