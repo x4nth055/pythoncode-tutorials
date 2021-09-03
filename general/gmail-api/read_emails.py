@@ -24,10 +24,11 @@ def clean(text):
     return "".join(c if c.isalnum() else "_" for c in text)
 
 
-def parse_parts(service, parts, folder_name):
+def parse_parts(service, parts, folder_name, message):
     """
     Utility function that parses the content of an email partition
     """
+    print("called parse_parts with folder_name:", folder_name)
     if parts:
         for part in parts:
             filename = part.get("filename")
@@ -39,7 +40,8 @@ def parse_parts(service, parts, folder_name):
             if part.get("parts"):
                 # recursively call this function when we see that a part
                 # has parts inside
-                parse_parts(service, part.get("parts"), folder_name)
+                print("calling parse_parts with folder_name:", folder_name)
+                parse_parts(service, part.get("parts"), folder_name, message)
             if mimeType == "text/plain":
                 # if the email part is text plain
                 if data:
@@ -66,7 +68,7 @@ def parse_parts(service, parts, folder_name):
                             print("Saving the file:", filename, "size:", get_size_format(file_size))
                             attachment_id = body.get("attachmentId")
                             attachment = service.users().messages() \
-                                        .attachments().get(id=attachment_id, userId='me', messageId=msg['id']).execute()
+                                        .attachments().get(id=attachment_id, userId='me', messageId=message['id']).execute()
                             data = attachment.get("data")
                             filepath = os.path.join(folder_name, filename)
                             if data:
@@ -74,7 +76,7 @@ def parse_parts(service, parts, folder_name):
                                     f.write(urlsafe_b64decode(data))                      
 
 
-def read_message(service, message_id):
+def read_message(service, message):
     """
     This function takes Gmail API `service` and the given `message_id` and does the following:
         - Downloads the content of the email
@@ -83,12 +85,13 @@ def read_message(service, message_id):
         - Downloads text/html content (if available) and saves it under the folder created as index.html
         - Downloads any file that is attached to the email and saves it in the folder created
     """
-    msg = service.users().messages().get(userId='me', id=message_id['id'], format='full').execute()
+    msg = service.users().messages().get(userId='me', id=message['id'], format='full').execute()
     # parts can be the message body, or attachments
     payload = msg['payload']
     headers = payload.get("headers")
     parts = payload.get("parts")
     folder_name = "email"
+    has_subject = False
     if headers:
         # this section prints email basic info & creates a folder for the email
         for header in headers:
@@ -101,6 +104,8 @@ def read_message(service, message_id):
                 # we print the To address
                 print("To:", value)
             if name.lower() == "subject":
+                # make our boolean True, the email has "subject"
+                has_subject = True
                 # make a directory with the name of the subject
                 folder_name = clean(value)
                 # we will also handle emails with the same subject name
@@ -119,8 +124,12 @@ def read_message(service, message_id):
             if name.lower() == "date":
                 # we print the date when the message was sent
                 print("Date:", value)
-        
-    parse_parts(service, parts, folder_name)
+    if not has_subject:
+        # if the email does not have a subject, then make a folder with "email" name
+        # since folders are created based on subjects
+        if not os.path.isdir(folder_name):
+            os.mkdir(folder_name)
+    parse_parts(service, parts, folder_name, message)
     print("="*50)
 
 if __name__ == "__main__":
