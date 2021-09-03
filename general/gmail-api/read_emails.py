@@ -28,7 +28,6 @@ def parse_parts(service, parts, folder_name, message):
     """
     Utility function that parses the content of an email partition
     """
-    print("called parse_parts with folder_name:", folder_name)
     if parts:
         for part in parts:
             filename = part.get("filename")
