@@ -39,7 +39,6 @@ def parse_parts(service, parts, folder_name, message):
             if part.get("parts"):
                 # recursively call this function when we see that a part
                 # has parts inside
-                print("calling parse_parts with folder_name:", folder_name)
                 parse_parts(service, part.get("parts"), folder_name, message)
             if mimeType == "text/plain":
                 # if the email part is text plain
@@ -72,7 +71,7 @@ def parse_parts(service, parts, folder_name, message):
                             filepath = os.path.join(folder_name, filename)
                             if data:
                                 with open(filepath, "wb") as f:
-                                    f.write(urlsafe_b64decode(data))                      
+                                    f.write(urlsafe_b64decode(data))
 
 
 def read_message(service, message):
