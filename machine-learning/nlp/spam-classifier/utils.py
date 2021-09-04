@@ -1,9 +1,8 @@
 import tqdm
 import numpy as np
-from keras.preprocessing.sequence import pad_sequences
-from keras.layers import Embedding, LSTM, Dropout, Dense
-from keras.models import Sequential
-import keras_metrics
+from tensorflow.keras.layers import Embedding, LSTM, Dropout, Dense
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.metrics import Recall, Precision
 
 SEQUENCE_LENGTH = 100 # the length of all sequences (number of words per sample)
 EMBEDDING_SIZE = 100  # Using 100-Dimensional GloVe embedding vectors
@@ -23,7 +22,6 @@ def get_embedding_vectors(tokenizer, dim=100):
             word = values[0]
             vectors = np.asarray(values[1:], dtype='float32')
             embedding_index[word] = vectors
-
     word_index = tokenizer.word_index
     # we do +1 because Tokenizer() starts from 1
     embedding_matrix = np.zeros((len(word_index)+1, dim))
@@ -32,7 +30,6 @@ def get_embedding_vectors(tokenizer, dim=100):
         if embedding_vector is not None:
             # words not found will be 0s
             embedding_matrix[i] = embedding_vector
-            
     return embedding_matrix
 
 
@@ -56,6 +53,6 @@ def get_model(tokenizer, lstm_units):
     # compile as rmsprop optimizer
     # aswell as with recall metric
     model.compile(optimizer="rmsprop", loss="categorical_crossentropy",
-                  metrics=["accuracy", keras_metrics.precision(), keras_metrics.recall()])
+                  metrics=["accuracy", Precision(), Recall()])
     model.summary()
     return model

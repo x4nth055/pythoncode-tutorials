@@ -1,29 +1,20 @@
-# to use CPU uncomment below code
-# import os
-# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+import tensorflow as tf
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    # only use GPU memory that we need, not allocate all the GPU memory
+    tf.config.experimental.set_memory_growth(gpus[0], enable=True)
 
-# import tensorflow as tf
-
-# config = tf.ConfigProto(intra_op_parallelism_threads=5,
-#                         inter_op_parallelism_threads=5, 
-#                         allow_soft_placement=True,
-#                         device_count = {'CPU' : 1,
-#                                         'GPU' : 0}
-#                        )
-
-
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils import to_categorical
-from keras.callbacks import ModelCheckpoint, TensorBoard
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import ModelCheckpoint, TensorBoard
 from sklearn.model_selection import train_test_split
 import time
 import numpy as np
 import pickle
 
-from utils import get_embedding_vectors, get_model, SEQUENCE_LENGTH, EMBEDDING_SIZE, TEST_SIZE
-from utils import BATCH_SIZE, EPOCHS, int2label, label2int
+from utils import get_model, SEQUENCE_LENGTH, TEST_SIZE
+from utils import BATCH_SIZE, EPOCHS, label2int
 
 
 def load_data():
@@ -69,26 +60,25 @@ print(X[0])
 
 y = [ label2int[label] for label in y ]
 y = to_categorical(y)
-
 print(y[0])
 
 # split and shuffle
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=7)
-
-# constructs the model with 128 LSTM units
-model = get_model(tokenizer=tokenizer, lstm_units=128)
-
-# initialize our ModelCheckpoint and TensorBoard callbacks
-# model checkpoint for saving best weights
-model_checkpoint = ModelCheckpoint("results/spam_classifier_{val_loss:.2f}", save_best_only=True,
-                                    verbose=1)
-# for better visualization
-tensorboard = TensorBoard(f"logs/spam_classifier_{time.time()}")
 # print our data shapes
 print("X_train.shape:", X_train.shape)
 print("X_test.shape:", X_test.shape)
 print("y_train.shape:", y_train.shape)
 print("y_test.shape:", y_test.shape)
+# constructs the model with 128 LSTM units
+model = get_model(tokenizer=tokenizer, lstm_units=128)
+
+# initialize our ModelCheckpoint and TensorBoard callbacks
+# model checkpoint for saving best weights
+model_checkpoint = ModelCheckpoint("results/spam_classifier_{val_loss:.2f}.h5", save_best_only=True,
+                                    verbose=1)
+# for better visualization
+tensorboard = TensorBoard(f"logs/spam_classifier_{time.time()}")
+
 # train the model
 model.fit(X_train, y_train, validation_data=(X_test, y_test),
           batch_size=BATCH_SIZE, epochs=EPOCHS,
