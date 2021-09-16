@@ -161,5 +161,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Compress PDF Files in Python](https://www.thepythoncode.com/article/compress-pdf-files-in-python). ([code](handling-pdf-files/pdf-compressor))
     - [How to Encrypt and Decrypt PDF Files in Python](https://www.thepythoncode.com/article/encrypt-pdf-files-in-python). ([code](handling-pdf-files/encrypt-pdf))
     - [How to Merge PDF Files in Python](https://www.thepythoncode.com/article/merge-pdf-files-in-python). ([code](handling-pdf-files/pdf-merger))
+    - [How to Sign PDF Files in Python](https://www.thepythoncode.com/article/sign-pdf-files-in-python). ([code](handling-pdf-files/pdf-signer))
     
 For any feedback, please consider pulling requests.
