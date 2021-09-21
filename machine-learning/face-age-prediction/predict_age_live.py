@@ -60,16 +60,6 @@ def get_faces(frame, confidence_threshold=0.5):
     return faces
 
 
-def display_img(title, img):
-    """Displays an image on screen and maintains the output until the user presses a key"""
-    # Display Image on screen
-    cv2.imshow(title, img)
-    # Mantain output until user presses a key
-    cv2.waitKey(0)
-    # Destroy windows when user presses a key
-    cv2.destroyAllWindows()
-
-
 def get_optimal_font_scale(text, width):
     """Determine the optimal font scale based on the hosting frame width"""
     for scale in reversed(range(0, 60, 1)):
@@ -105,52 +95,55 @@ def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
     return cv2.resize(image, dim, interpolation = inter)
 
 
-def predict_age(input_path: str):
+def predict_age():
     """Predict the age of the faces showing in the image"""
-    # Read Input Image
-    img = cv2.imread(input_path)
-    # Take a copy of the initial image and resize it
-    frame = img.copy()
-    if frame.shape[1] > frame_width:
-        frame = image_resize(frame, width=frame_width)
-    faces = get_faces(frame)
-    for i, (start_x, start_y, end_x, end_y) in enumerate(faces):
-        face_img = frame[start_y: end_y, start_x: end_x]
-        # image --> Input image to preprocess before passing it through our dnn for classification.
-        blob = cv2.dnn.blobFromImage(
-            image=face_img, scalefactor=1.0, size=(227, 227), 
-            mean=MODEL_MEAN_VALUES, swapRB=False
-        )
-        # Predict Age
-        age_net.setInput(blob)
-        age_preds = age_net.forward()
-        print("="*30, f"Face {i+1} Prediction Probabilities", "="*30)
-        for i in range(age_preds[0].shape[0]):
-            print(f"{AGE_INTERVALS[i]}: {age_preds[0, i]*100:.2f}%")
-        i = age_preds[0].argmax()
-        age = AGE_INTERVALS[i]
-        age_confidence_score = age_preds[0][i]
-        # Draw the box
-        label = f"Age:{age} - {age_confidence_score*100:.2f}%"
-        print(label)
-        # get the position where to put the text
-        yPos = start_y - 15
-        while yPos < 15:
-            yPos += 15
-        # write the text into the frame
-        cv2.putText(frame, label, (start_x, yPos),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), thickness=2)
-        # draw the rectangle around the face
-        cv2.rectangle(frame, (start_x, start_y), (end_x, end_y), color=(255, 0, 0), thickness=2)
-    # Display processed image
-    display_img('Age Estimator', frame)
-    # save the image if you want
-    # cv2.imwrite("predicted_age.jpg", frame)
+    
+    # create a new cam object
+    cap = cv2.VideoCapture(0)
 
+    while True:
+        _, img = cap.read()
+        # Take a copy of the initial image and resize it
+        frame = img.copy()
+        if frame.shape[1] > frame_width:
+            frame = image_resize(frame, width=frame_width)
+        faces = get_faces(frame)
+        for i, (start_x, start_y, end_x, end_y) in enumerate(faces):
+            face_img = frame[start_y: end_y, start_x: end_x]
+            # image --> Input image to preprocess before passing it through our dnn for classification.
+            blob = cv2.dnn.blobFromImage(
+                image=face_img, scalefactor=1.0, size=(227, 227), 
+                mean=MODEL_MEAN_VALUES, swapRB=False
+            )
+            # Predict Age
+            age_net.setInput(blob)
+            age_preds = age_net.forward()
+            print("="*30, f"Face {i+1} Prediction Probabilities", "="*30)
+            for i in range(age_preds[0].shape[0]):
+                print(f"{AGE_INTERVALS[i]}: {age_preds[0, i]*100:.2f}%")
+            i = age_preds[0].argmax()
+            age = AGE_INTERVALS[i]
+            age_confidence_score = age_preds[0][i]
+            # Draw the box
+            label = f"Age:{age} - {age_confidence_score*100:.2f}%"
+            print(label)
+            # get the position where to put the text
+            yPos = start_y - 15
+            while yPos < 15:
+                yPos += 15
+            # write the text into the frame
+            cv2.putText(frame, label, (start_x, yPos),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), thickness=2)
+            # draw the rectangle around the face
+            cv2.rectangle(frame, (start_x, start_y), (end_x, end_y), color=(255, 0, 0), thickness=2)
+        # Display processed image
+        cv2.imshow('Age Estimator', frame)
+        if cv2.waitKey(1) == ord("q"):
+            break
+        # save the image if you want
+        # cv2.imwrite("predicted_age.jpg", frame)
+    cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
-    # Parsing command line arguments entered by user
-    import sys
-    image_path = sys.argv[1]
-    predict_age(image_path)
+    predict_age()
