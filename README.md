@@ -95,6 +95,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
     - [How to Extract Audio from Video in Python](https://www.thepythoncode.com/article/extract-audio-from-video-in-python). ([code](general/video-to-audio-converter))
+    - [How to Combine a Static Image with Audio in Python](https://www.thepythoncode.com/article/add-static-image-to-audio-in-python). ([code](python-for-multimedia/add-photo-to-audio))
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
