@@ -56,7 +56,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Blur Faces in Images using OpenCV in Python](https://www.thepythoncode.com/article/blur-faces-in-images-using-opencv-in-python). ([code](machine-learning/blur-faces))
         - [Skin Cancer Detection using TensorFlow in Python](https://www.thepythoncode.com/article/skin-cancer-detection-using-tensorflow-in-python). ([code](machine-learning/skin-cancer-detection))
         - [How to Perform Malaria Cells Classification using TensorFlow 2 and Keras in Python](https://www.thepythoncode.com/article/malaria-cells-classification). ([code](machine-learning/malaria-classification))
-        - [How to Make a Barcode Reader in Python](https://www.thepythoncode.com/article/making-a-barcode-scanner-in-python). ([code](general/barcode-reader))
         - [Image Transformations using OpenCV in Python](https://www.thepythoncode.com/article/image-transformations-using-opencv-in-python). ([code](machine-learning/image-transformation))
         - [How to Apply HOG Feature Extraction in Python](https://www.thepythoncode.com/article/hog-feature-extraction-in-python). ([code](machine-learning/hog-feature-extraction))
         - [SIFT Feature Extraction using OpenCV in Python](https://www.thepythoncode.com/article/sift-feature-extraction-using-opencv-in-python). ([code](machine-learning/sift))
@@ -81,23 +80,17 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Control your Mouse in Python](https://www.thepythoncode.com/article/control-mouse-python). ([code](general/mouse-controller))
     - [How to Control your Keyboard in Python](https://www.thepythoncode.com/article/control-keyboard-python). ([code](general/keyboard-controller))
     - [How to Make a Process Monitor in Python](https://www.thepythoncode.com/article/make-process-monitor-python). ([code](general/process-monitor))
-    - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
-    - [How to Generate and Read QR Code in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python). ([code](general/generating-reading-qrcode))
     - [How to Download Files in Python](https://www.thepythoncode.com/article/download-files-python). ([code](general/file-downloader))
     - [How to Execute BASH Commands in a Remote Machine in Python](https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python). ([code](general/execute-ssh-commands))
     - [How to Convert Python Files into Executables](https://www.thepythoncode.com/article/building-python-files-into-stand-alone-executables-using-pyinstaller)
     - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
-    - [How to Play and Record Audio in Python](https://www.thepythoncode.com/article/play-and-record-audio-sound-in-python). ([code](general/recording-and-playing-audio))
     - [How to Get Geographic Locations in Python](https://www.thepythoncode.com/article/get-geolocation-in-python). ([code](general/geolocation))
     - [How to Assembly, Disassembly and Emulate Machine Code using Python](https://www.thepythoncode.com/article/arm-x86-64-assembly-disassembly-and-emulation-in-python). ([code](general/assembly-code))
     - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
     - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
-    - [How to Extract Audio from Video in Python](https://www.thepythoncode.com/article/extract-audio-from-video-in-python). ([code](general/video-to-audio-converter))
-    - [How to Combine a Static Image with Audio in Python](https://www.thepythoncode.com/article/add-static-image-to-audio-in-python). ([code](python-for-multimedia/add-photo-to-audio))
-    - [How to Concatenate Video Files in Python](https://www.thepythoncode.com/article/concatenate-video-files-in-python). ([code](python-for-multimedia/combine-video))
-    - [How to Concatenate Audio Files in Python](https://www.thepythoncode.com/article/concatenate-audio-files-in-python). ([code](python-for-multimedia/combine-audio))
+
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
@@ -168,4 +161,15 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Merge PDF Files in Python](https://www.thepythoncode.com/article/merge-pdf-files-in-python). ([code](handling-pdf-files/pdf-merger))
     - [How to Sign PDF Files in Python](https://www.thepythoncode.com/article/sign-pdf-files-in-python). ([code](handling-pdf-files/pdf-signer))
     
+- ### [Python for Multimedia](https://www.thepythoncode.com/topic/python-for-multimedia)
+    - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
+    - [How to Generate and Read QR Code in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python). ([code](general/generating-reading-qrcode))
+    - [How to Play and Record Audio in Python](https://www.thepythoncode.com/article/play-and-record-audio-sound-in-python). ([code](general/recording-and-playing-audio))
+    - [How to Make a Barcode Reader in Python](https://www.thepythoncode.com/article/making-a-barcode-scanner-in-python). ([code](general/barcode-reader))
+    - [How to Extract Audio from Video in Python](https://www.thepythoncode.com/article/extract-audio-from-video-in-python). ([code](general/video-to-audio-converter))
+    - [How to Combine a Static Image with Audio in Python](https://www.thepythoncode.com/article/add-static-image-to-audio-in-python). ([code](python-for-multimedia/add-photo-to-audio))
+    - [How to Concatenate Video Files in Python](https://www.thepythoncode.com/article/concatenate-video-files-in-python). ([code](python-for-multimedia/combine-video))
+    - [How to Concatenate Audio Files in Python](https://www.thepythoncode.com/article/concatenate-audio-files-in-python). ([code](python-for-multimedia/combine-audio))
+    
+
 For any feedback, please consider pulling requests.
