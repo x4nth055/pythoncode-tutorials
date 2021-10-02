@@ -97,6 +97,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Audio from Video in Python](https://www.thepythoncode.com/article/extract-audio-from-video-in-python). ([code](general/video-to-audio-converter))
     - [How to Combine a Static Image with Audio in Python](https://www.thepythoncode.com/article/add-static-image-to-audio-in-python). ([code](python-for-multimedia/add-photo-to-audio))
     - [How to Concatenate Video Files in Python](https://www.thepythoncode.com/article/concatenate-video-files-in-python). ([code](python-for-multimedia/combine-video))
+    - [How to Concatenate Audio Files in Python](https://www.thepythoncode.com/article/concatenate-audio-files-in-python). ([code](python-for-multimedia/combine-audio))
     
     
 - ### [Web Scraping](https://www.thepythoncode.com/topic/web-scraping)
