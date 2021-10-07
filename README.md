@@ -160,6 +160,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Encrypt and Decrypt PDF Files in Python](https://www.thepythoncode.com/article/encrypt-pdf-files-in-python). ([code](handling-pdf-files/encrypt-pdf))
     - [How to Merge PDF Files in Python](https://www.thepythoncode.com/article/merge-pdf-files-in-python). ([code](handling-pdf-files/pdf-merger))
     - [How to Sign PDF Files in Python](https://www.thepythoncode.com/article/sign-pdf-files-in-python). ([code](handling-pdf-files/pdf-signer))
+    - [How to Extract PDF Metadata in Python](https://www.thepythoncode.com/article/extract-pdf-metadata-in-python). ([code](handling-pdf-files/extract-pdf-metadata))
     
 - ### [Python for Multimedia](https://www.thepythoncode.com/topic/python-for-multimedia)
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
