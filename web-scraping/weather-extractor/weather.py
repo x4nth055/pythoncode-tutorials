@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup as bs
 import requests
 
-USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36"
 # US english
 LANGUAGE = "en-US,en;q=0.5"
 
@@ -35,7 +35,7 @@ def get_weather_data(url):
     days = soup.find("div", attrs={"id": "wob_dp"})
     for day in days.findAll("div", attrs={"class": "wob_df"}):
         # extract the name of the day
-        day_name = day.find("div", attrs={"class": "vk_lgy"}).attrs['aria-label']
+        day_name = day.findAll("div")[0].attrs['aria-label']
         # get weather status for that day
         weather = day.find("img").attrs["alt"]
         temp = day.findAll("span", {"class": "wob_t"})
