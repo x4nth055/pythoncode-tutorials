@@ -18,6 +18,6 @@ You don't need to install anything.
 
 - Now if victim.py is running, It will ask for password (default: open@bind)
   - <p align="left">
-     <img src="img/Step1.PNG">
+     <img src="img/Step2.PNG">
     </p>
 - After successfully authentication you will get a shell
