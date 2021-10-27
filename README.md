@@ -43,6 +43,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Perform Text Summarization using Transformers in Python](https://www.thepythoncode.com/article/text-summarization-using-huggingface-transformers-python). ([code](machine-learning/nlp/text-summarization))
         - [How to Fine Tune BERT for Text Classification using Transformers in Python](https://www.thepythoncode.com/article/finetuning-bert-using-huggingface-transformers-python). ([code](machine-learning/nlp/bert-text-classification))
         - [Conversational AI Chatbot with Transformers in Python](https://www.thepythoncode.com/article/conversational-ai-chatbot-with-huggingface-transformers-in-python). ([code](machine-learning/nlp/chatbot-transformers))
+        - [How to Pretrain BERT using Transformers in Python](https://www.thepythoncode.com/article/pretraining-bert-huggingface-transformers-in-python). ([code](machine-learning/nlp/pretraining-bert))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))

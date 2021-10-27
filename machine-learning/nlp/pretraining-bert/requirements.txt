@@ -1,0 +1,3 @@
+transformers==4.11.2
+datasets
+sentencepiece
