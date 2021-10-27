@@ -66,7 +66,7 @@ vocab_size = 30_522
 # maximum sequence length, lowering will result to faster training (when increasing batch size)
 max_length = 512
 # whether to truncate
-truncate_longer_samples = False
+truncate_longer_samples = True
 
 # initialize the WordPiece tokenizer
 tokenizer = BertWordPieceTokenizer()
