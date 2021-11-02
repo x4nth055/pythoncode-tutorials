@@ -173,6 +173,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Concatenate Video Files in Python](https://www.thepythoncode.com/article/concatenate-video-files-in-python). ([code](python-for-multimedia/combine-video))
     - [How to Concatenate Audio Files in Python](https://www.thepythoncode.com/article/concatenate-audio-files-in-python). ([code](python-for-multimedia/combine-audio))
     - [How to Extract Frames from Video in Python](https://www.thepythoncode.com/article/extract-frames-from-videos-in-python). ([code](python-for-multimedia/extract-frames-from-video))
+    - [How to Reverse Videos in Python](https://www.thepythoncode.com/article/reverse-video-in-python). ([code](python-for-multimedia/reverse-video))
     
 
 For any feedback, please consider pulling requests.
