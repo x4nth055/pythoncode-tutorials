@@ -33,6 +33,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use Shodan API in Python](https://www.thepythoncode.com/article/using-shodan-api-in-python). ([code](ethical-hacking/shodan-api))
     - [How to Make an HTTP Proxy in Python](https://www.thepythoncode.com/article/writing-http-proxy-in-python-with-mitmproxy). ([code](ethical-hacking/http-mitm-proxy))
     - [How to Extract Chrome Cookies in Python](https://www.thepythoncode.com/article/extract-chrome-cookies-python). ([code](ethical-hacking/chrome-cookie-extractor))
+    - [How to Extract Saved WiFi Passwords in Python](https://www.thepythoncode.com/article/extract-saved-wifi-passwords-in-python). ([code](ethical-hacking/get-wifi-passwords))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
