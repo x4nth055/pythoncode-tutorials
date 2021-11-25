@@ -34,7 +34,7 @@ stream = p.open(format=FORMAT,
 
 frames = []
 print("Recording...")
-for i in range(int(44100 / chunk * record_seconds)):
+for i in range(int(sample_rate / chunk * record_seconds)):
     data = stream.read(chunk)
     # if you want to hear your voice while recording
     # stream.write(data)
