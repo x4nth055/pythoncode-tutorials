@@ -46,6 +46,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Conversational AI Chatbot with Transformers in Python](https://www.thepythoncode.com/article/conversational-ai-chatbot-with-huggingface-transformers-in-python). ([code](machine-learning/nlp/chatbot-transformers))
         - [How to Pretrain BERT using Transformers in Python](https://www.thepythoncode.com/article/pretraining-bert-huggingface-transformers-in-python). ([code](machine-learning/nlp/pretraining-bert))
         - [How to Perform Machine Translation using Transformers in Python](https://www.thepythoncode.com/article/machine-translation-using-huggingface-transformers-in-python). ([code](machine-learning/nlp/machine-translation))
+        - [Speech Recognition using Transformers in Python](https://www.thepythoncode.com/article/speech-recognition-using-huggingface-transformers-in-python). ([code](machine-learning/nlp/speech-recognition-transformers))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
