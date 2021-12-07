@@ -85,7 +85,7 @@ def compute_metrics(pred):
 training_args = TrainingArguments(
     output_dir='./results',          # output directory
     num_train_epochs=3,              # total number of training epochs
-    per_device_train_batch_size=16,  # batch size per device during training
+    per_device_train_batch_size=8,  # batch size per device during training
     per_device_eval_batch_size=20,   # batch size for evaluation
     warmup_steps=500,                # number of warmup steps for learning rate scheduler
     weight_decay=0.01,               # strength of weight decay
@@ -93,6 +93,7 @@ training_args = TrainingArguments(
     load_best_model_at_end=True,     # load the best model when finished training (default metric is loss)
     # but you can specify `metric_for_best_model` argument to change to accuracy or other metric
     logging_steps=200,               # log & save weights each logging_steps
+    save_steps=200,
     evaluation_strategy="steps",     # evaluate each `logging_steps`
 )
 
