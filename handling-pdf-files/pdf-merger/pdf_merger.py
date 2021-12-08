@@ -17,7 +17,7 @@ def merge_pdfs(input_files: list, page_range: tuple, output_file: str, bookmark:
     for input_file in input_files:
         bookmark_name = os.path.splitext(os.path.basename(input_file))[0] if bookmark else None
         # pages To control which pages are appended from a particular file.
-        merger.append(fileobj=open(input_file, 'rb'), pages=page_range, bookmark=bookmark_name)
+        merger.append(fileobj=open(input_file, 'rb'), pages=page_range, import_bookmarks=False, bookmark=bookmark_name)
     # Insert the pdf at specific page
     merger.write(fileobj=open(output_file, 'wb'))
     merger.close()
@@ -46,13 +46,11 @@ def parse_args():
 if __name__ == "__main__":
     # Parsing command line arguments entered by user
     args = parse_args()
-    # convert a single str to a list
-    input_files = [str(x) for x in args['input_files'][0].split(',')]
     page_range = None
     if args['page_range']:
         page_range = tuple(int(x) for x in args['page_range'][0].split(','))
     # call the main function
     merge_pdfs(
-        input_files=input_files, page_range=page_range, 
+        input_files=args['input_files'], page_range=page_range, 
         output_file=args['output_file'], bookmark=args['bookmark']
     )
