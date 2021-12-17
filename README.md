@@ -181,6 +181,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Frames from Video in Python](https://www.thepythoncode.com/article/extract-frames-from-videos-in-python). ([code](python-for-multimedia/extract-frames-from-video))
     - [How to Reverse Videos in Python](https://www.thepythoncode.com/article/reverse-video-in-python). ([code](python-for-multimedia/reverse-video))
     - [How to Extract Video Metadata in Python](https://www.thepythoncode.com/article/extract-media-metadata-in-python). ([code](python-for-multimedia/extract-video-metadata))
+    - [How to Record a Specific Window in Python](https://www.thepythoncode.com/article/record-a-specific-window-in-python). ([code](python-for-multimedia/record-specific-window))
     
 
 For any feedback, please consider pulling requests.
