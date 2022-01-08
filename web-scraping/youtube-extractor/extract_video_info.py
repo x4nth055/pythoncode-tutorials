@@ -39,20 +39,31 @@ def get_video_info(url):
     likes_label = videoPrimaryInfoRenderer['videoActions']['menuRenderer']['topLevelButtons'][0]['toggleButtonRenderer']['defaultText']['accessibility']['accessibilityData']['label'] # "No likes" or "###,### likes"
     likes_str = likes_label.split(' ')[0].replace(',','')
     result["likes"] = '0' if likes_str == 'No' else likes_str
-    # number of dislikes - YouTube does not publish this anymore...?
+    # number of likes (old way) doesn't always work
+    # text_yt_formatted_strings = soup.find_all("yt-formatted-string", {"id": "text", "class": "ytd-toggle-button-renderer"})
+    # result["likes"] = ''.join([ c for c in text_yt_formatted_strings[0].attrs.get("aria-label") if c.isdigit() ])
+    # result["likes"] = 0 if result['likes'] == '' else int(result['likes'])
+    # number of dislikes - YouTube does not publish this anymore...
     # result["dislikes"] = ''.join([ c for c in text_yt_formatted_strings[1].attrs.get("aria-label") if c.isdigit() ])	
     # result["dislikes"] = '0' if result['dislikes'] == '' else result['dislikes']
     result['dislikes'] = 'UNKNOWN'
-    
     # channel details
     channel_tag = soup.find("meta", itemprop="channelId")['content']
     # channel name
     channel_name = soup.find("span", itemprop="author").next.next['content']
     # channel URL
     # channel_url = soup.find("span", itemprop="author").next['href']
-    channel_url = f"https://www.youtube.com{channel_tag}"
+    channel_url = f"https://www.youtube.com/{channel_tag}"
     # number of subscribers as str
     channel_subscribers = videoSecondaryInfoRenderer['owner']['videoOwnerRenderer']['subscriberCountText']['accessibility']['accessibilityData']['label']
+    # channel details (old way)
+    # channel_tag = soup.find("yt-formatted-string", {"class": "ytd-channel-name"}).find("a")
+    # # channel name (old way)
+    # channel_name = channel_tag.text
+    # # channel URL (old way)
+    # channel_url = f"https://www.youtube.com{channel_tag['href']}"
+    # number of subscribers as str (old way)
+    # channel_subscribers = soup.find("yt-formatted-string", {"id": "owner-sub-count"}).text.strip()
     result['channel'] = {'name': channel_name, 'url': channel_url, 'subscribers': channel_subscribers}
     return result
 
