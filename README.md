@@ -115,6 +115,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract YouTube Comments in Python](https://www.thepythoncode.com/article/extract-youtube-comments-in-python). ([code](web-scraping/youtube-comments-extractor))
     - [Automated Browser Testing with Edge and Selenium in Python](https://www.thepythoncode.com/article/automated-browser-testing-with-edge-and-selenium-in-python). ([code](web-scraping/selenium-edge-browser))
     - [How to Automate Login using Selenium in Python](https://www.thepythoncode.com/article/automate-login-to-websites-using-selenium-in-python). ([code](web-scraping/automate-login))
+    - [How to Make a Currency Converter in Python](https://www.thepythoncode.com/article/make-a-currency-converter-in-python). ([code](web-scraping/currency-converter))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
