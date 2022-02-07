@@ -172,6 +172,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract PDF Metadata in Python](https://www.thepythoncode.com/article/extract-pdf-metadata-in-python). ([code](handling-pdf-files/extract-pdf-metadata))
     - [How to Split PDF Files in Python](https://www.thepythoncode.com/article/split-pdf-files-in-python). ([code](handling-pdf-files/split-pdf))
     - [How to Extract Text from PDF in Python](https://www.thepythoncode.com/article/extract-text-from-pdf-in-python). ([code](handling-pdf-files/extract-text-from-pdf))
+    - [How to Convert HTML to PDF in Python](https://www.thepythoncode.com/article/convert-html-to-pdf-in-python). ([code](handling-pdf-files/convert-html-to-pdf))
     
 - ### [Python for Multimedia](https://www.thepythoncode.com/topic/python-for-multimedia)
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
