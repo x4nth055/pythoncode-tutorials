@@ -50,6 +50,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Speech Recognition using Transformers in Python](https://www.thepythoncode.com/article/speech-recognition-using-huggingface-transformers-in-python). ([code](machine-learning/nlp/speech-recognition-transformers))
         - [Text Generation with Transformers in Python](https://www.thepythoncode.com/article/text-generation-with-transformers-in-python). ([code](machine-learning/nlp/text-generation-transformers))
         - [How to Paraphrase Text using Transformers in Python](https://www.thepythoncode.com/article/paraphrase-text-using-transformers-in-python). ([code](machine-learning/nlp/text-paraphrasing))
+        - [Fake News Detection using Transformers in Python](https://www.thepythoncode.com/article/fake-news-classification-in-python). ([code](machine-learning/nlp/fake-news-classification))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
