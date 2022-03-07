@@ -1,0 +1,3 @@
+scapy==2.4.5
+netfilterqueue
+colorama
