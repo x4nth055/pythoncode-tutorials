@@ -1,0 +1,6 @@
+sklearn==0.24.2
+imbalanced-learn
+numpy
+pandas
+matplotlib
+seaborn

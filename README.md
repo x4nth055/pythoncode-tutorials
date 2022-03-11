@@ -83,6 +83,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create Plots With Plotly In Python](https://www.thepythoncode.com/article/creating-dynamic-plots-with-plotly-visualization-tool-in-python). ([code](machine-learning/plotly-visualization))
     - [Feature Selection using Scikit-Learn in Python](https://www.thepythoncode.com/article/feature-selection-and-feature-engineering-using-python). ([code](machine-learning/feature-selection))
     - [Imbalance Learning With Imblearn and Smote Variants Libraries in Python](https://www.thepythoncode.com/article/handling-imbalance-data-imblearn-smote-variants-python). ([code](machine-learning/imbalance-learning))
+    - [Credit Card Fraud Detection in Python](https://www.thepythoncode.com/article/credit-card-fraud-detection-using-sklearn-in-python#near-miss). ([code](machine-learning/credit-card-fraud-detection))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
