@@ -7,7 +7,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Getting Started With Scapy: Python Network Manipulation Tool](https://www.thepythoncode.com/article/getting-started-with-scapy)
         - [Building an ARP Spoofer](https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy). ([code](scapy/arp-spoofer))
         - [Detecting ARP Spoof attacks](https://www.thepythoncode.com/article/detecting-arp-spoof-attacks-using-scapy). ([code](scapy/arp-spoof-detector))
-        - DHCP Listener script. ([code](scapy/dhcp_listener))
+        - [How to Make a DHCP Listener using Scapy in Python](https://www.thepythoncode.com/article/dhcp-listener-using-scapy-in-python). ([code](scapy/dhcp_listener))
         - [Fake Access Point Generator](https://www.thepythoncode.com/article/create-fake-access-points-scapy). ([code](scapy/fake-access-point))
         - [Forcing a device to disconnect using scapy in Python](https://www.thepythoncode.com/article/force-a-device-to-disconnect-scapy). ([code](scapy/network-kicker))
         - [Simple Network Scanner](https://www.thepythoncode.com/article/building-network-scanner-using-scapy). ([code](scapy/network-scanner))
