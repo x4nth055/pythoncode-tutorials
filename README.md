@@ -86,6 +86,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Credit Card Fraud Detection in Python](https://www.thepythoncode.com/article/credit-card-fraud-detection-using-sklearn-in-python#near-miss). ([code](machine-learning/credit-card-fraud-detection))
     - [Customer Churn Prediction in Python](https://www.thepythoncode.com/article/customer-churn-detection-using-sklearn-in-python). ([code](machine-learning/customer-churn-detection))
     - [Recommender Systems using Association Rules Mining in Python](https://www.thepythoncode.com/article/build-a-recommender-system-with-association-rule-mining-in-python). ([code](machine-learning/recommender-system-using-association-rules))
+    - [Handling Imbalanced Datasets: A Case Study with Customer Churn](https://www.thepythoncode.com/article/handling-imbalanced-datasets-sklearn-in-python). ([code](machine-learning/handling-inbalance-churn-data))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
