@@ -197,7 +197,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Add Audio to Video in Python](https://www.thepythoncode.com/article/add-audio-to-video-in-python). ([code](python-for-multimedia/add-audio-to-video))
     - [How to Compress Images in Python](https://www.thepythoncode.com/article/compress-images-in-python). ([code](python-for-multimedia/compress-image))
 
-- ### [Web Programming]()
+- ### [Web Programming](https://www.thepythoncode.com/topic/web-programming)
     - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
     - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
     - [How to Build a CRUD App with Flask and SQLAlchemy in Python](https://www.thepythoncode.com/article/building-crud-app-with-flask-and-sqlalchemy). ([code](web-programming/bookshop-crud-app-flask))
