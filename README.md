@@ -100,8 +100,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
     - [How to Get Geographic Locations in Python](https://www.thepythoncode.com/article/get-geolocation-in-python). ([code](general/geolocation))
     - [How to Assembly, Disassembly and Emulate Machine Code using Python](https://www.thepythoncode.com/article/arm-x86-64-assembly-disassembly-and-emulation-in-python). ([code](general/assembly-code))
-    - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
-    - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
     - [How to Convert Pandas Dataframes to HTML Tables in Python](https://www.thepythoncode.com/article/convert-pandas-dataframe-to-html-table-python). ([code](general/dataframe-to-html))
@@ -198,5 +196,10 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Record a Specific Window in Python](https://www.thepythoncode.com/article/record-a-specific-window-in-python). ([code](python-for-multimedia/record-specific-window))
     - [How to Add Audio to Video in Python](https://www.thepythoncode.com/article/add-audio-to-video-in-python). ([code](python-for-multimedia/add-audio-to-video))
     - [How to Compress Images in Python](https://www.thepythoncode.com/article/compress-images-in-python). ([code](python-for-multimedia/compress-image))
+
+- ### [Web Programming]()
+    - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
+    - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
+    - [How to Build a CRUD App with Flask and SQLAlchemy in Python](https://www.thepythoncode.com/article/building-crud-app-with-flask-and-sqlalchemy). ([code](web-programming/bookshop-crud-app-flask))
 
 For any feedback, please consider pulling requests.
