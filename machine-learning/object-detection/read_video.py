@@ -17,7 +17,11 @@ colors = np.random.randint(0, 255, size=(len(labels), 3), dtype="uint8")
 net = cv2.dnn.readNetFromDarknet(config_path, weights_path)
 
 ln = net.getLayerNames()
-ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+try:
+    ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+except IndexError:
+    # in case getUnconnectedOutLayers() returns 1D array when CUDA isn't available
+    ln = [ln[i - 1] for i in net.getUnconnectedOutLayers()]
 # read the file from the command line
 video_file = sys.argv[1]
 cap = cv2.VideoCapture(video_file)

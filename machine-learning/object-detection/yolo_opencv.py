@@ -37,7 +37,11 @@ net.setInput(blob)
 
 # get all the layer names
 ln = net.getLayerNames()
-ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+try:
+    ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+except IndexError:
+    # in case getUnconnectedOutLayers() returns 1D array when CUDA isn't available
+    ln = [ln[i - 1] for i in net.getUnconnectedOutLayers()]
 # feed forward (inference) and get the network output
 # measure how much it took in seconds
 start = time.perf_counter()
