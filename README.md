@@ -106,6 +106,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
     - [How to Convert Pandas Dataframes to HTML Tables in Python](https://www.thepythoncode.com/article/convert-pandas-dataframe-to-html-table-python). ([code](general/dataframe-to-html))
+    - [How to Make a Simple Math Quiz Game in Python](https://www.thepythoncode.com/article/make-a-simple-math-quiz-game-in-python). ([code](general/simple-math-game))
 
     
     
