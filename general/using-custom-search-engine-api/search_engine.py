@@ -30,6 +30,10 @@ data = requests.get(url).json()
 search_items = data.get("items")
 # iterate over 10 results found
 for i, search_item in enumerate(search_items, start=1):
+    try:
+        long_description = search_item["pagemap"]["metatags"][0]["og:description"]
+    except KeyError:
+        long_description = "N/A"
     # get the page title
     title = search_item.get("title")
     # page snippet
@@ -42,4 +46,5 @@ for i, search_item in enumerate(search_items, start=1):
     print("="*10, f"Result #{i+start-1}", "="*10)
     print("Title:", title)
     print("Description:", snippet)
+    print("Long description:", long_description)
     print("URL:", link, "\n")
