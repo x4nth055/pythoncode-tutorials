@@ -27,7 +27,10 @@ def get_directory_size(directory):
                 total += entry.stat().st_size
             elif entry.is_dir():
                 # if it's a directory, recursively call this function
-                total += get_directory_size(entry.path)
+                try:
+                    total += get_directory_size(entry.path)
+                except FileNotFoundError:
+                    pass
     except NotADirectoryError:
         # if `directory` isn't a directory, get the file size then
         return os.path.getsize(directory)
