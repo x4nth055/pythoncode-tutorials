@@ -91,6 +91,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Logistic Regression using PyTorch in Python](https://www.thepythoncode.com/article/logistic-regression-using-pytorch). ([code](machine-learning/logistic-regression-in-pytorch))
     - [Dropout Regularization using PyTorch in Python](https://www.thepythoncode.com/article/dropout-regularization-in-pytorch). ([code](machine-learning/dropout-in-pytorch))
     - [K-Fold Cross Validation using Scikit-Learn in Python](https://www.thepythoncode.com/article/kfold-cross-validation-using-sklearn-in-python). ([code](machine-learning/k-fold-cross-validation-sklearn))
+    - [Dimensionality Reduction: Feature Extraction using Scikit-learn in Python](https://www.thepythoncode.com/article/dimensionality-reduction-using-feature-extraction-sklearn). ([code](machine-learning/dimensionality-reduction-feature-extraction))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
