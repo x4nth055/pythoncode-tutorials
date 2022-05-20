@@ -109,7 +109,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
     - [How to Convert Pandas Dataframes to HTML Tables in Python](https://www.thepythoncode.com/article/convert-pandas-dataframe-to-html-table-python). ([code](general/dataframe-to-html))
     - [How to Make a Simple Math Quiz Game in Python](https://www.thepythoncode.com/article/make-a-simple-math-quiz-game-in-python). ([code](general/simple-math-game))
-    - [How to Make a Button using PyGame in Python](https://www.thepythoncode.com/article/make-a-button-using-pygame-in-python). ([code](gui-programming/button-in-pygame))
     - [How to Make a Network Usage Monitor in Python](https://www.thepythoncode.com/article/make-a-network-usage-monitor-in-python). ([code](general/network-usage))
 
     
@@ -212,5 +211,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
 
 - ### GUI Programming
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
+    - [How to Make a Button using PyGame in Python](https://www.thepythoncode.com/article/make-a-button-using-pygame-in-python). ([code](gui-programming/button-in-pygame))
 
 For any feedback, please consider pulling requests.
