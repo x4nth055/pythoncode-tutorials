@@ -1,0 +1,4 @@
+python-dateutil
+requests
+bs4
+yahoo_fin

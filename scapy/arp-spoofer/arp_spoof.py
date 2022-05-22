@@ -79,7 +79,7 @@ def restore(target_ip, host_ip, verbose=True):
     # get the real MAC address of spoofed (gateway, i.e router)
     host_mac = get_mac(host_ip)
     # crafting the restoring packet
-    arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=host_ip, hwsrc=host_mac)
+    arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=host_ip, hwsrc=host_mac, op="is-at")
     # sending the restoring packet
     # to restore the network to its normal process
     # we send each reply seven times for a good measure (count=7)

@@ -58,7 +58,7 @@ def decrypt_data(data, key):
 def main():
     # local sqlite Chrome cookie database path
     db_path = os.path.join(os.environ["USERPROFILE"], "AppData", "Local",
-                            "Google", "Chrome", "User Data", "default", "Cookies")
+                            "Google", "Chrome", "User Data", "Default", "Network", "Cookies")
     # copy the file to current directory
     # as the database will be locked if chrome is currently open
     filename = "Cookies.db"
@@ -67,6 +67,8 @@ def main():
         shutil.copyfile(db_path, filename)
     # connect to the database
     db = sqlite3.connect(filename)
+    # ignore decoding errors
+    db.text_factory = lambda b: b.decode(errors="ignore")
     cursor = db.cursor()
     # get the cookies from `cookies` table
     cursor.execute("""

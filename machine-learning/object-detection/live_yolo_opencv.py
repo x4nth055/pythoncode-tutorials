@@ -16,7 +16,11 @@ COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
 net = cv2.dnn.readNetFromDarknet(config_path, weights_path)
 
 ln = net.getLayerNames()
-ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+try:
+    ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+except IndexError:
+    # in case getUnconnectedOutLayers() returns 1D array when CUDA isn't available
+    ln = [ln[i - 1] for i in net.getUnconnectedOutLayers()]
 
 cap = cv2.VideoCapture(0)
 

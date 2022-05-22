@@ -7,7 +7,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Getting Started With Scapy: Python Network Manipulation Tool](https://www.thepythoncode.com/article/getting-started-with-scapy)
         - [Building an ARP Spoofer](https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy). ([code](scapy/arp-spoofer))
         - [Detecting ARP Spoof attacks](https://www.thepythoncode.com/article/detecting-arp-spoof-attacks-using-scapy). ([code](scapy/arp-spoof-detector))
-        - DHCP Listener script. ([code](scapy/dhcp_listener))
+        - [How to Make a DHCP Listener using Scapy in Python](https://www.thepythoncode.com/article/dhcp-listener-using-scapy-in-python). ([code](scapy/dhcp_listener))
         - [Fake Access Point Generator](https://www.thepythoncode.com/article/create-fake-access-points-scapy). ([code](scapy/fake-access-point))
         - [Forcing a device to disconnect using scapy in Python](https://www.thepythoncode.com/article/force-a-device-to-disconnect-scapy). ([code](scapy/network-kicker))
         - [Simple Network Scanner](https://www.thepythoncode.com/article/building-network-scanner-using-scapy). ([code](scapy/network-scanner))
@@ -15,6 +15,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Sniff HTTP Packets in the Network using Scapy in Python](https://www.thepythoncode.com/article/sniff-http-packets-scapy-python). ([code](scapy/http-sniffer))
         - [How to Build a WiFi Scanner in Python using Scapy](https://www.thepythoncode.com/article/building-wifi-scanner-in-python-scapy). ([code](scapy/wifi-scanner))
         - [How to Make a SYN Flooding Attack in Python](https://www.thepythoncode.com/article/syn-flooding-attack-using-scapy-in-python). ([code](scapy/syn-flood))
+        - [How to Inject Code into HTTP Responses in the Network in Python](https://www.thepythoncode.com/article/injecting-code-to-html-in-a-network-scapy-python). ([code](scapy/http-code-injector/))
     - [Writing a Keylogger in Python from Scratch](https://www.thepythoncode.com/article/write-a-keylogger-python). ([code](ethical-hacking/keylogger))
     - [Making a Port Scanner using sockets in Python](https://www.thepythoncode.com/article/make-port-scanner-python). ([code](ethical-hacking/port_scanner))
     - [How to Create a Reverse Shell in Python](https://www.thepythoncode.com/article/create-reverse-shell-python). ([code](ethical-hacking/reverse_shell))
@@ -34,6 +35,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make an HTTP Proxy in Python](https://www.thepythoncode.com/article/writing-http-proxy-in-python-with-mitmproxy). ([code](ethical-hacking/http-mitm-proxy))
     - [How to Extract Chrome Cookies in Python](https://www.thepythoncode.com/article/extract-chrome-cookies-python). ([code](ethical-hacking/chrome-cookie-extractor))
     - [How to Extract Saved WiFi Passwords in Python](https://www.thepythoncode.com/article/extract-saved-wifi-passwords-in-python). ([code](ethical-hacking/get-wifi-passwords))
+    - [How to Make a MAC Address Changer in Python](https://www.thepythoncode.com/article/make-a-mac-address-changer-in-python). ([code](ethical-hacking/mac-address-changer))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
@@ -44,10 +46,13 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Perform Text Summarization using Transformers in Python](https://www.thepythoncode.com/article/text-summarization-using-huggingface-transformers-python). ([code](machine-learning/nlp/text-summarization))
         - [How to Fine Tune BERT for Text Classification using Transformers in Python](https://www.thepythoncode.com/article/finetuning-bert-using-huggingface-transformers-python). ([code](machine-learning/nlp/bert-text-classification))
         - [Conversational AI Chatbot with Transformers in Python](https://www.thepythoncode.com/article/conversational-ai-chatbot-with-huggingface-transformers-in-python). ([code](machine-learning/nlp/chatbot-transformers))
-        - [How to Pretrain BERT using Transformers in Python](https://www.thepythoncode.com/article/pretraining-bert-huggingface-transformers-in-python). ([code](machine-learning/nlp/pretraining-bert))
+        - [How to Train BERT from Scratch using Transformers in Python](https://www.thepythoncode.com/article/pretraining-bert-huggingface-transformers-in-python). ([code](machine-learning/nlp/pretraining-bert))
         - [How to Perform Machine Translation using Transformers in Python](https://www.thepythoncode.com/article/machine-translation-using-huggingface-transformers-in-python). ([code](machine-learning/nlp/machine-translation))
         - [Speech Recognition using Transformers in Python](https://www.thepythoncode.com/article/speech-recognition-using-huggingface-transformers-in-python). ([code](machine-learning/nlp/speech-recognition-transformers))
         - [Text Generation with Transformers in Python](https://www.thepythoncode.com/article/text-generation-with-transformers-in-python). ([code](machine-learning/nlp/text-generation-transformers))
+        - [How to Paraphrase Text using Transformers in Python](https://www.thepythoncode.com/article/paraphrase-text-using-transformers-in-python). ([code](machine-learning/nlp/text-paraphrasing))
+        - [Fake News Detection using Transformers in Python](https://www.thepythoncode.com/article/fake-news-classification-in-python). ([code](machine-learning/nlp/fake-news-classification))
+        - [Named Entity Recognition using Transformers and Spacy in Python](https://www.thepythoncode.com/article/named-entity-recognition-using-transformers-and-spacy). ([code](machine-learning/nlp/named-entity-recognition))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
@@ -67,6 +72,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Age Prediction using OpenCV in Python](https://www.thepythoncode.com/article/predict-age-using-opencv). ([code](machine-learning/face-age-prediction))
         - [Gender Detection using OpenCV in Python](https://www.thepythoncode.com/article/gender-detection-using-opencv-in-python). ([code](machine-learning/face-gender-detection))
         - [Age and Gender Detection using OpenCV in Python](https://www.thepythoncode.com/article/gender-and-age-detection-using-opencv-python). ([code](machine-learning/age-and-gender-detection))
+        - [Satellite Image Classification using TensorFlow in Python](https://www.thepythoncode.com/article/satellite-image-classification-using-tensorflow-python). ([code](machine-learning/satellite-image-classification))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
@@ -78,6 +84,14 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create Plots With Plotly In Python](https://www.thepythoncode.com/article/creating-dynamic-plots-with-plotly-visualization-tool-in-python). ([code](machine-learning/plotly-visualization))
     - [Feature Selection using Scikit-Learn in Python](https://www.thepythoncode.com/article/feature-selection-and-feature-engineering-using-python). ([code](machine-learning/feature-selection))
     - [Imbalance Learning With Imblearn and Smote Variants Libraries in Python](https://www.thepythoncode.com/article/handling-imbalance-data-imblearn-smote-variants-python). ([code](machine-learning/imbalance-learning))
+    - [Credit Card Fraud Detection in Python](https://www.thepythoncode.com/article/credit-card-fraud-detection-using-sklearn-in-python#near-miss). ([code](machine-learning/credit-card-fraud-detection))
+    - [Customer Churn Prediction in Python](https://www.thepythoncode.com/article/customer-churn-detection-using-sklearn-in-python). ([code](machine-learning/customer-churn-detection))
+    - [Recommender Systems using Association Rules Mining in Python](https://www.thepythoncode.com/article/build-a-recommender-system-with-association-rule-mining-in-python). ([code](machine-learning/recommender-system-using-association-rules))
+    - [Handling Imbalanced Datasets: A Case Study with Customer Churn](https://www.thepythoncode.com/article/handling-imbalanced-datasets-sklearn-in-python). ([code](machine-learning/handling-inbalance-churn-data))
+    - [Logistic Regression using PyTorch in Python](https://www.thepythoncode.com/article/logistic-regression-using-pytorch). ([code](machine-learning/logistic-regression-in-pytorch))
+    - [Dropout Regularization using PyTorch in Python](https://www.thepythoncode.com/article/dropout-regularization-in-pytorch). ([code](machine-learning/dropout-in-pytorch))
+    - [K-Fold Cross Validation using Scikit-Learn in Python](https://www.thepythoncode.com/article/kfold-cross-validation-using-sklearn-in-python). ([code](machine-learning/k-fold-cross-validation-sklearn))
+    - [Dimensionality Reduction: Feature Extraction using Scikit-learn in Python](https://www.thepythoncode.com/article/dimensionality-reduction-using-feature-extraction-sklearn). ([code](machine-learning/dimensionality-reduction-feature-extraction))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
@@ -91,10 +105,11 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Get the Size of Directories in Python](https://www.thepythoncode.com/article/get-directory-size-in-bytes-using-python). ([code](general/calculate-directory-size))
     - [How to Get Geographic Locations in Python](https://www.thepythoncode.com/article/get-geolocation-in-python). ([code](general/geolocation))
     - [How to Assembly, Disassembly and Emulate Machine Code using Python](https://www.thepythoncode.com/article/arm-x86-64-assembly-disassembly-and-emulation-in-python). ([code](general/assembly-code))
-    - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
-    - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
     - [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python). ([code](general/printing-in-colors))
     - [How to Create a Watchdog in Python](https://www.thepythoncode.com/article/create-a-watchdog-in-python). ([code](general/directory-watcher))
+    - [How to Convert Pandas Dataframes to HTML Tables in Python](https://www.thepythoncode.com/article/convert-pandas-dataframe-to-html-table-python). ([code](general/dataframe-to-html))
+    - [How to Make a Simple Math Quiz Game in Python](https://www.thepythoncode.com/article/make-a-simple-math-quiz-game-in-python). ([code](general/simple-math-game))
+    - [How to Make a Network Usage Monitor in Python](https://www.thepythoncode.com/article/make-a-network-usage-monitor-in-python). ([code](general/network-usage))
 
     
     
@@ -113,6 +128,8 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract YouTube Comments in Python](https://www.thepythoncode.com/article/extract-youtube-comments-in-python). ([code](web-scraping/youtube-comments-extractor))
     - [Automated Browser Testing with Edge and Selenium in Python](https://www.thepythoncode.com/article/automated-browser-testing-with-edge-and-selenium-in-python). ([code](web-scraping/selenium-edge-browser))
     - [How to Automate Login using Selenium in Python](https://www.thepythoncode.com/article/automate-login-to-websites-using-selenium-in-python). ([code](web-scraping/automate-login))
+    - [How to Make a Currency Converter in Python](https://www.thepythoncode.com/article/make-a-currency-converter-in-python). ([code](web-scraping/currency-converter))
+    - [How to Extract Google Trends Data in Python](https://www.thepythoncode.com/article/extract-google-trends-data-in-python). ([code](web-scraping/extract-google-trends-data))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
@@ -169,6 +186,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract PDF Metadata in Python](https://www.thepythoncode.com/article/extract-pdf-metadata-in-python). ([code](handling-pdf-files/extract-pdf-metadata))
     - [How to Split PDF Files in Python](https://www.thepythoncode.com/article/split-pdf-files-in-python). ([code](handling-pdf-files/split-pdf))
     - [How to Extract Text from PDF in Python](https://www.thepythoncode.com/article/extract-text-from-pdf-in-python). ([code](handling-pdf-files/extract-text-from-pdf))
+    - [How to Convert HTML to PDF in Python](https://www.thepythoncode.com/article/convert-html-to-pdf-in-python). ([code](handling-pdf-files/convert-html-to-pdf))
     
 - ### [Python for Multimedia](https://www.thepythoncode.com/topic/python-for-multimedia)
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
@@ -184,5 +202,16 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Video Metadata in Python](https://www.thepythoncode.com/article/extract-media-metadata-in-python). ([code](python-for-multimedia/extract-video-metadata))
     - [How to Record a Specific Window in Python](https://www.thepythoncode.com/article/record-a-specific-window-in-python). ([code](python-for-multimedia/record-specific-window))
     - [How to Add Audio to Video in Python](https://www.thepythoncode.com/article/add-audio-to-video-in-python). ([code](python-for-multimedia/add-audio-to-video))
+    - [How to Compress Images in Python](https://www.thepythoncode.com/article/compress-images-in-python). ([code](python-for-multimedia/compress-image))
+
+- ### [Web Programming](https://www.thepythoncode.com/topic/web-programming)
+    - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
+    - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
+    - [How to Build a CRUD App with Flask and SQLAlchemy in Python](https://www.thepythoncode.com/article/building-crud-app-with-flask-and-sqlalchemy). ([code](web-programming/bookshop-crud-app-flask))
+
+- ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
+    - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
+    - [How to Make a Button using PyGame in Python](https://www.thepythoncode.com/article/make-a-button-using-pygame-in-python). ([code](gui-programming/button-in-pygame))
+    - [How to Make a Drawing Program in Python](https://www.thepythoncode.com/article/make-a-drawing-program-with-python). ([code](gui-programming/drawing-tool-in-pygame))
 
 For any feedback, please consider pulling requests.
