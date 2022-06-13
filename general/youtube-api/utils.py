@@ -69,7 +69,6 @@ def print_video_infos(video_response):
     # get stats infos
     comment_count = statistics["commentCount"]
     like_count    = statistics["likeCount"]
-    dislike_count = statistics["dislikeCount"]
     view_count    = statistics["viewCount"]
     # get duration from content details
     duration = content_details["duration"]
@@ -89,7 +88,6 @@ def print_video_infos(video_response):
     Duration: {duration_str}
     Number of comments: {comment_count}
     Number of likes: {like_count}
-    Number of dislikes: {dislike_count}
     Number of views: {view_count}
     """)
 
