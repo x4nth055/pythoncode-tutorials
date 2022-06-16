@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="starter-template">
+    <h1>Welcome to our bookshop!</h1>
+</div>
+<button type="button" data-toggle="modal" class="btn btn-lg btn-primary" data-target="#insert_book">Add a book</button>
+
+<!-- Modal 1 for adding a book -->
+<div class="modal fade" id="insert_book" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add a book</h4>
+            </div>
+            <form action="{{url_for('add_book')}}" method="post">
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="author" class="col-xs-2 control-label">Author</label>
+                        <div class="col-xs-10">
+                            <input type="text" id="author" class="form-control" name="author" placeholder="Author" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="author" class="col-xs-2 control-label">Title</label>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" name="title" placeholder="Title" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="author" class="col-xs-2 control-label">Price</label>
+                        <div class="col-xs-10">
+                            <input type="number" class="form-control" name="price" placeholder="Price" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal 1 -->
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.isbn }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.price }}</td>
+                    <td><button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#update_book_{{book['isbn']}}">Update</button></td>
+
+
+                    <!-- Modal 2 for updating a book -->
+                    <div class="modal fade" id="update_book_{{book['isbn']}}" tabindex="-1" role="dialog"
+                        aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Update a book</h4>
+                                </div>
+                                <form action="{{url_for('update_book', isbn=book['isbn'])}}" method="post">
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label for="author" class="col-xs-2 control-label">Author</label>
+                                            <div class="col-xs-10">
+                                                <input type="text" id="author" class="form-control" name="author"
+                                                    value="{{book['author']}}" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="author" class="col-xs-2 control-label">Title</label>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" name="title"
+                                                    value="{{book['title']}}" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="author" class="col-xs-2 control-label">Price</label>
+                                            <div class="col-xs-10">
+                                                <input type="number" class="form-control" name="price"
+                                                    value="{{book['price']}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal 2 -->
+                    <td><button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#delete_book_{{book['isbn']}}">Delete</button></td>
+
+
+                    <!-- Modal 3 for deleting a book -->
+                    <div class="modal fade" id="delete_book_{{book['isbn']}}" tabindex="-1" role="dialog"
+                        aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Delete a book</h4>
+                                </div>
+                                <form action="{{url_for('delete', isbn=book['isbn'])}}" method="post">
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label class="col-sm-12 col-form-label">Do you want to delete the book <span
+                                                    style='font-weight:bold;color:red'>{{book['title']}}</span>
+                                                ?</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal 3-->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
