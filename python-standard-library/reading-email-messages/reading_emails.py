@@ -7,6 +7,10 @@ import os
 # account credentials
 username = "youremailaddress@provider.com"
 password = "yourpassword"
+# use your email provider's IMAP server, you can look for your provider's IMAP server on Google
+# or check this page: https://www.systoolsgroup.com/imap/
+# for office 365, it's this:
+imap_server = "outlook.office365.com"
 
 
 def clean(text):
@@ -17,7 +21,7 @@ def clean(text):
 N = 3
 
 # create an IMAP4 class with SSL, use your email provider's IMAP server
-imap = imaplib.IMAP4_SSL("imap.gmail.com")
+imap = imaplib.IMAP4_SSL(imap_server)
 # authenticate
 imap.login(username, password)
 

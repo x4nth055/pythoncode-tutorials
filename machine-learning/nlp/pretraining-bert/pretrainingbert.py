@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1An1VNpKKMRVrwcdQQNSe7Omh_fl2Gj-2
 """
 
-# !pip install datasets transformers==4.11.2 sentencepiece
+!pip install datasets transformers==4.18.0 sentencepiece
 
 from datasets import *
 from transformers import *
@@ -66,7 +66,7 @@ vocab_size = 30_522
 # maximum sequence length, lowering will result to faster training (when increasing batch size)
 max_length = 512
 # whether to truncate
-truncate_longer_samples = True
+truncate_longer_samples = False
 
 # initialize the WordPiece tokenizer
 tokenizer = BertWordPieceTokenizer()
@@ -103,7 +103,8 @@ tokenizer = BertTokenizerFast.from_pretrained(model_path)
 
 def encode_with_truncation(examples):
   """Mapping function to tokenize the sentences passed with truncation"""
-  return tokenizer(examples["text"], truncation=True, padding="max_length", max_length=max_length, return_special_tokens_mask=True)
+  return tokenizer(examples["text"], truncation=True, padding="max_length",
+                   max_length=max_length, return_special_tokens_mask=True)
 
 def encode_without_truncation(examples):
   """Mapping function to tokenize the sentences passed without truncation"""
@@ -116,20 +117,23 @@ encode = encode_with_truncation if truncate_longer_samples else encode_without_t
 train_dataset = d["train"].map(encode, batched=True)
 # tokenizing the testing dataset
 test_dataset = d["test"].map(encode, batched=True)
+
 if truncate_longer_samples:
-  # remove other columns and set input_ids and attention_mask as 
+  # remove other columns and set input_ids and attention_mask as PyTorch tensors
   train_dataset.set_format(type="torch", columns=["input_ids", "attention_mask"])
   test_dataset.set_format(type="torch", columns=["input_ids", "attention_mask"])
 else:
+  # remove other columns, and remain them as Python lists
   test_dataset.set_format(columns=["input_ids", "attention_mask", "special_tokens_mask"])
   train_dataset.set_format(columns=["input_ids", "attention_mask", "special_tokens_mask"])
-train_dataset, test_dataset
 
+from itertools import chain
 # Main data processing function that will concatenate all texts from our dataset and generate chunks of
 # max_seq_length.
+# grabbed from: https://github.com/huggingface/transformers/blob/main/examples/pytorch/language-modeling/run_mlm.py
 def group_texts(examples):
     # Concatenate all texts.
-    concatenated_examples = {k: sum(examples[k], []) for k in examples.keys()}
+    concatenated_examples = {k: list(chain(*examples[k])) for k in examples.keys()}
     total_length = len(concatenated_examples[list(examples.keys())[0]])
     # We drop the small remainder, we could add padding if the model supported it instead of this drop, you can
     # customize this part to your needs.
@@ -141,6 +145,7 @@ def group_texts(examples):
         for k, t in concatenated_examples.items()
     }
     return result
+
 # Note that with `batched=True`, this map processes 1,000 texts together, so group_texts throws away a
 # remainder for each of those groups of 1,000 texts. You can adjust that batch_size here but a higher value
 # might be slower to preprocess.
@@ -148,12 +153,15 @@ def group_texts(examples):
 # To speed up this part, we use multiprocessing. See the documentation of the map method for more information:
 # https://huggingface.co/docs/datasets/package_reference/main_classes.html#datasets.Dataset.map
 if not truncate_longer_samples:
-  train_dataset = train_dataset.map(group_texts, batched=True, batch_size=2_000,
+  train_dataset = train_dataset.map(group_texts, batched=True,
                                     desc=f"Grouping texts in chunks of {max_length}")
-  test_dataset = test_dataset.map(group_texts, batched=True, batch_size=2_000,
-                                  num_proc=4, desc=f"Grouping texts in chunks of {max_length}")
+  test_dataset = test_dataset.map(group_texts, batched=True,
+                                  desc=f"Grouping texts in chunks of {max_length}")
+  # convert them from lists to torch tensors
+  train_dataset.set_format("torch")
+  test_dataset.set_format("torch")
 
-len(test_dataset)
+len(train_dataset), len(test_dataset)
 
 # initialize the model with the config
 model_config = BertConfig(vocab_size=vocab_size, max_position_embeddings=max_length)
@@ -173,8 +181,8 @@ training_args = TrainingArguments(
     per_device_train_batch_size=10, # the training batch size, put it as high as your GPU memory fits
     gradient_accumulation_steps=8,  # accumulating the gradients before updating the weights
     per_device_eval_batch_size=64,  # evaluation batch size
-    logging_steps=500,             # evaluate, log and save model checkpoints every 1000 step
-    save_steps=500,
+    logging_steps=1000,             # evaluate, log and save model checkpoints every 1000 step
+    save_steps=1000,
     # load_best_model_at_end=True,  # whether to load the best model (in terms of loss) at the end of training
     # save_total_limit=3,           # whether you don't have much space so you let only 3 model weights saved in the disk
 )
@@ -192,11 +200,24 @@ trainer = Trainer(
 trainer.train()
 
 # when you load from pretrained
-# model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "checkpoint-10000"))
-# tokenizer = BertTokenizerFast.from_pretrained(model_path)
+model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "checkpoint-6000"))
+tokenizer = BertTokenizerFast.from_pretrained(model_path)
+# or simply use pipeline
 fill_mask = pipeline("fill-mask", model=model, tokenizer=tokenizer)
 
 # perform predictions
 example = "It is known that [MASK] is the capital of Germany"
 for prediction in fill_mask(example):
   print(prediction)
+
+# perform predictions
+examples = [
+  "Today's most trending hashtags on [MASK] is Donald Trump",
+  "The [MASK] was cloudy yesterday, but today it's rainy.",
+]
+for example in examples:
+  for prediction in fill_mask(example):
+    print(f"{prediction['sequence']}, confidence: {prediction['score']}")
+  print("="*50)
+
+!nvidia-smi
