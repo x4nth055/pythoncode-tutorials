@@ -1,5 +1,5 @@
 click==8.0.4
-dataclasses==0.8
+dataclasses
 Flask==2.0.3
 Flask-SQLAlchemy==2.5.1
 Flask-Bootstrap==3.3.7.1
@@ -8,7 +8,7 @@ importlib-metadata==4.8.3
 itsdangerous==2.0.1
 Jinja2==3.0.3
 MarkupSafe==2.0.1
-pkg_resources==0.0.0
+# pkg_resources
 PyMySQL==1.0.2
 SQLAlchemy==1.4.35
 typing_extensions==4.1.1
