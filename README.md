@@ -217,5 +217,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Drawing Program in Python](https://www.thepythoncode.com/article/make-a-drawing-program-with-python). ([code](gui-programming/drawing-tool-in-pygame))
     - [How to Make a File Explorer using Tkinter in Python](https://www.thepythoncode.com/article/create-a-simple-file-explorer-using-tkinter-in-python). ([code](gui-programming/file-explorer))
     - [How to Make a Calculator with Tkinter in Python](https://www.thepythoncode.com/article/make-a-calculator-app-using-tkinter-in-python). ([code](gui-programming/calculator-app))
+    - [How to Make a Typing Speed Tester with Tkinter in Python](https://www.thepythoncode.com/article/how-to-make-typing-speed-tester-in-python-using-tkinter). ([code](gui-programming/type-speed-tester))
 
 For any feedback, please consider pulling requests.
