@@ -3,6 +3,8 @@ import os
 import string
 import secrets
 
+import numpy as np
+
 # generate random integer between a and b (including a and b)
 randint = random.randint(1, 500)
 print("randint:", randint)
@@ -18,6 +20,14 @@ print("choice:", choice)
 # get 5 random elements from 0 to 1000
 choices = random.choices(range(1000), k=5)
 print("choices:", choices)
+
+# get a random vector of size 20
+vector = np.random.random((30,))
+print("vector:\n", vector)
+
+# get a random matrix of size (3, 3) in the range [0, 100]
+matrix = np.random.random((3, 3)) * 100
+print("matrix:\n", matrix)
 
 # generate a random floating point number from 0.0 <= x <= 1.0
 randfloat = random.random()
