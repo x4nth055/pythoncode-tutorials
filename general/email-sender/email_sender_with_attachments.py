@@ -14,8 +14,8 @@ files_to_send = [
 
 
 def send_mail(email, password, FROM, TO, msg):
-    # initialize the SMTP server
-    server = smtplib.SMTP("smtp.gmail.com", 587)
+    # in our case it's for Microsoft365, Outlook, Hotmail, and live.com
+    server = smtplib.SMTP(host="smtp.office365.com", port=587)
     # connect to the SMTP server as TLS mode (secure) and send EHLO
     server.starttls()
     # login to the account using the credentials
@@ -30,7 +30,7 @@ email = "email@example.com"
 password = "password"
 
 # the sender's email
-FROM = "email@example.com"
+FROM = email
 # the receiver's email
 TO   = "to@example.com"
 # the subject of the email (subject)
