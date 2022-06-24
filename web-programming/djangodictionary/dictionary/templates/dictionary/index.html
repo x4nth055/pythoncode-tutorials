@@ -1,0 +1,20 @@
+<!-- the index page is inheriting from the base page -->
+<!-- the extends tags are used for inheriting from the base page -->
+{% extends 'dictionary/base.html' %}
+
+<!-- the block content tags for containing content of the page -->
+{%  block content %}
+
+<form action="search">
+    <div class="input-group">
+        <input type="text" required class="form-control" name="search" placeholder="Search your favorite word.......">
+        <div class="input-group-append">
+            <button class="btn btn-success" type="submit">
+                Search
+            </button>
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}
