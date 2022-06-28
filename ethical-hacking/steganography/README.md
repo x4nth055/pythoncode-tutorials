@@ -40,7 +40,7 @@ To run this:
     [+] Decoded data: This is some secret data.
     ```
 
-- To encode the `foo.pdf` file into the `image.PNG` image:
+- To encode the `foo.pdf` file into the `image.PNG` image, using `steganography_advanced.py` script:
     ```
     $ python steganography_advanced.py -e image.PNG -f foo.pdf -b 1
     ```
