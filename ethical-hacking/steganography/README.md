@@ -39,3 +39,21 @@ To run this:
     [+] Decoding...
     [+] Decoded data: This is some secret data.
     ```
+
+- To encode the `foo.pdf` file into the `image.PNG` image:
+    ```
+    $ python steganography_advanced.py -e image.PNG -f foo.pdf -b 1
+    ```
+    **Output:**
+    ```
+    [*] Maximum bytes to encode: 125028
+    [*] Data size: 84158
+    [*] Encoding data...
+    [+] Saved encoded image.
+    ```
+- Now decoding it into a file `foo_decoded.pdf`:
+    ```
+    python steganography_advanced.py -d image_encoded.PNG -f foo_decoded.pdf -b 1
+    [+] Decoding...
+    [+] File decoded, foo_decoded.pdf is saved successfully.
+    ```
