@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+import secrets
 import random
 import string
 
@@ -34,25 +35,25 @@ for _ in range(args.amount):
         # generate random password with the length
         # of total_length based on all available characters
         passwords.append("".join(
-            [random.choice(string.digits + string.ascii_letters + string.punctuation) \
+            [secrets.choice(string.digits + string.ascii_letters + string.punctuation) \
                 for _ in range(args.total_length)]))
     else:
         password = []
         # If / how many numbers the password should contain  
         for _ in range(args.numbers):
-            password.append(random.choice(string.digits))
+            password.append(secrets.choice(string.digits))
 
         # If / how many uppercase characters the password should contain   
         for _ in range(args.uppercase):
-            password.append(random.choice(string.ascii_uppercase))
+            password.append(secrets.choice(string.ascii_uppercase))
         
         # If / how many lowercase characters the password should contain   
         for _ in range(args.lowercase):
-            password.append(random.choice(string.ascii_lowercase))
+            password.append(secrets.choice(string.ascii_lowercase))
 
         # If / how many special characters the password should contain   
         for _ in range(args.special_chars):
-            password.append(random.choice(string.punctuation))
+            password.append(secrets.choice(string.punctuation))
 
         # Shuffle the list with all the possible letters, numbers and symbols.
         random.shuffle(password)
