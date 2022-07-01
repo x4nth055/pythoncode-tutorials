@@ -36,6 +36,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Chrome Cookies in Python](https://www.thepythoncode.com/article/extract-chrome-cookies-python). ([code](ethical-hacking/chrome-cookie-extractor))
     - [How to Extract Saved WiFi Passwords in Python](https://www.thepythoncode.com/article/extract-saved-wifi-passwords-in-python). ([code](ethical-hacking/get-wifi-passwords))
     - [How to Make a MAC Address Changer in Python](https://www.thepythoncode.com/article/make-a-mac-address-changer-in-python). ([code](ethical-hacking/mac-address-changer))
+    - [How to Make a Password Generator in Python](https://www.thepythoncode.com/article/make-a-password-generator-in-python). ([code](ethical-hacking/password-generator))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
