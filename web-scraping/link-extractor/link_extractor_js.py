@@ -32,8 +32,6 @@ def get_all_website_links(url):
     """
     # all URLs of `url`
     urls = set()
-    # domain name of the URL without the protocol
-    domain_name = urlparse(url).netloc
     # initialize an HTTP session
     session = HTMLSession()
     # make HTTP request & retrieve response
@@ -98,7 +96,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     url = args.url
     max_urls = args.max_urls
-
+    domain_name = urlparse(url).netloc
     crawl(url, max_urls=max_urls)
 
     print("[+] Total Internal links:", len(internal_urls))
@@ -106,7 +104,6 @@ if __name__ == "__main__":
     print("[+] Total URLs:", len(external_urls) + len(internal_urls))
     print("[+] Total crawled URLs:", max_urls)
 
-    domain_name = urlparse(url).netloc
 
     # save the internal links to a file
     with open(f"{domain_name}_internal_links.txt", "w") as f:
