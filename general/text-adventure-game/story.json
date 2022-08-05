@@ -1,0 +1,9 @@
+{
+    "0": ["You embark on a new adventure, you are at a conjunction where do you go?", [1, 2], "Go Back", ""],
+    "1": ["You Encounter an angry Mob of Programmers, what do you do?", [3, 4], "Go Right", ""],
+    "2": ["You see the City of schaffhausen in front of you", [0, 3], "Go Left", ""],
+    "3": ["I dont know why you did that but okay.", [4, 5], "Use Banana", "minus-clock"],
+    "4": ["Seems like it worked they did not notice you. One of them slips you a banana", [4, 5], "Pull out Laptop", "plus-banana"],
+    "5": ["The Banana was poisonous", ["end"], "Eat Banana", ""],
+    "10": ["You fell over and now you are in grave pain ... ", ["end"], "Pull out Laptop", ""]
+}
