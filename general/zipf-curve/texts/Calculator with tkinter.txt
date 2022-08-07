@@ -1,0 +1,371 @@
+# Calculator with tkinter
+**How to make a simple calculator with tkinter which has a history function and variable insertion.**
+
+## Idea
+In this tutorial, we are going to make a calculator with Tkinter the built-in GUI Library in python. We are going to make a 3 by 3 Grid with buttons that represent the possible inputs, a live result showing system, a history of calculations feature, and variable insertion.
+
+So let's get right into it.
+
+## Imports
+As always we start with the imports. Because we make the UI with tkinter we need to import it, we import everything from `tkinter` so we don't have to write less code later on. We also import the font module from tkinter so we can change the fonts on our elements later.
+
+We continue by getting the `partial` function from `functools`. This is a genius function that excepts another function as a first argument and some args and kwargs and it will return a reference to this function with those arguments. This is especially useful when we want to insert one of our functions to a command argument of a button or a key binding.
+
+In the next line, we import `ctypes`, which allows us to enable high dpi, making our window look way sharper. This is done with the function call in the last line of this sections code block.
+
+Because we'll save our history in a JSON file we import the `json` module to parse json and stringify lists.
+
+We also need `re` the built-in regex module for our variable insertion feature.
+
+Last but not least we get math, but we do not don't need it we just import it so it can be used in the line edit of the calculator.
+
+```python
+from tkinter import *
+import tkinter.font as font
+from functools import partial
+import ctypes
+import json
+import re
+
+# so the functions that can be used from the math module can be used in the line edit.
+import math
+
+ctypes.windll.shcore.SetProcessDpiAwareness(1)
+```
+
+## Variables and tkinter setup
+
+Next up we make some variables and we set up the tkinter.
+
+The first two variables are just colors for our buttons and for the background of the history panel.
+
+Next, we set up tkinter by calling its Tk class and saving this object in the `root` variable. We then set the window dimensions with the `geometry()` method and the window title with `title()`.
+
+We then import an image from our directory which we can set to be the icon of our program.
+
+Last but not least we import the font `Consolas` in the size 12. We do this with the `Font` class from the font module of tkinter.
+
+```python
+# Colors
+buttonColor = (255, 255, 255)
+historyPanelBackground = (255, 255, 255)
+
+# Tkinter Setup
+root = Tk()
+root.geometry("550x270")
+root.title("Calculator")
+
+# Setting icon for the Application
+photo = PhotoImage(file = "icon.png")
+root.iconphoto(False, photo)
+
+# Loading Font from font name
+myFont = font.Font(family='Consolas', size=12)
+```
+
+## Formulas and variable insertions
+
+Now I am going to explain the variable insertion feature or at least I will try to! So the idea is that we can have a space after our equations where we declare variables that are inserted into the equation by placeholders. Let us look at this in a concrete example. If we type text below into the line edit.
+
+```
+{a} * {b} ? a=7 & b=3
+```
+
+... should net us this result ...
+
+```
+21
+```
+... because where `a` was the 7 will be placed and where the `b` is we will insert the 3 and after that the equation will be evaluated and this will be `21`.
+
+We will later look at how this is done in practice.
+
+Below we also have a list of formulas that can be inserted into the line edit. We will make them pickable from a Menu.
+
+```python
+# Formula Templates
+formulas = [
+    ['Pythagoras->c', '(({a}**2)+({b}**2))**0.5 ? a=5 & b=5'],
+    ['Pythagoras->c**2', '({a}**2)+({b}**2) ? a=5 & b=5'],
+    ['pq->(x1, x2)', '-({p}/2) + sqrt(({p}/2)**2 - ({q})), -({p}/2) - sqrt(({p}/2)**2 - ({q})) ? p=-1 & q=-12'],
+    ['abc->(x1, x2)', 'quadratic_formula({a}, {b}, {c}) ? a=1 & b=5 & c=6'],
+    ['Incline->y', '{m}{x} + {q} ? m=4 & x=5 & q=6'],
+]
+```
+
+## History setup
+
+Next, we set up the history feature.
+
+We start by declaring a list that will hold our history items. Then we have a variable that holds the location of the `history.json` file. 
+
+In the end, we have a try and except block, where there is an attempt to make the file at the specified location. This is just done so the file exists in all cases.
+
+```python
+# All the history equations are in this list.
+history = []
+
+# Where the history file is located.
+historyFilePath = 'history.json'
+
+print("Reading history from: ",historyFilePath )
+
+# Creating History file if it does not exist.
+try:
+    with open(historyFilePath, 'x') as fp:
+        pass
+    print("Created file at:", historyFilePath)
+except:
+    print('File already exists')
+```
+
+## RGB to hex and math function.
+
+Now we talk about two functions that hold only minor importance. 
+
+The first one simply converts RGB colors to hex colors because tkinter only allows color names and hex colors.
+
+The second one is a custom math function that can be used in the line edit.
+
+```python
+# converting RGB values to HEX
+def rgb_to_hex(rgb):
+    return "#%02x%02x%02x" % rgb
+
+def quadratic_formula(a, b, c):
+    disc = b**2 - 4 * a * c
+
+    x1 = (-b - math.sqrt(disc)) / (2 * a)
+    x2 = (-b + math.sqrt(disc)) / (2 * a)
+
+    return(x1, x2)
+```
+
+## Helper functions
+
+Now we will go over the several helper functions that are needed to make the program work.
+
+### `addSymbol`
+
+This function will be called from the buttons to insert operators like `*` or `+` and numbers into the line edit. That's where the symbol parameter comes in. Now if the symbol is `<` we won't append it, we will shorten the current input. We actually change the String Variable which holds the current input.
+
+```python
+# Add something to the current calculation
+def addSymbol(event=None, symbol=None):
+
+    if symbol == '<':
+        entryVariable.set(entryVariable.get()[:-1])
+    else:
+        entryVariable.set(entryVariable.get()+symbol)
+```
+
+### `varChange`
+
+This function will be connected to change events on the input variable. In this function, we will also evaluate the equation and insert it into the result label.
+
+Earlier we took a look at how the variable insertion feature functioned and now we look at how we do this in practice.
+
+As you see we first split the input string by the `?` and then we save this to the `evaluationString` variable.
+
+After that, we check if the input string split by `?` would result in a list with two items. If that's the case we know that there are insertion variables. Then we get this side of the string and we loop over another splitted version of this where the separator is `&`. There we modify the `evaluationString` with these variables.
+
+In either case, we will try to insert the evaluated value into the result label. Now it could be that this doesn't work because the input is invalid so we cover that case.
+
+```python
+def varChange(*args):
+    evaluationString = entryVariable.get().replace(' ', '').split('?')[0]
+
+    print('Before insertion: ',evaluationString)
+
+    if len(entryVariable.get().split('?')) == 2:
+
+        parameters = entryVariable.get().replace(' ', '').split('?')[1]
+
+        for param in parameters.split('&'):
+            where, what = param.split('=')
+            evaluationString = re.sub('{'+where+'}', what, evaluationString)
+
+    try:
+        print('After insertion: ', evaluationString)
+        resultLabel.config(text=str(eval(evaluationString)))
+    except:
+        resultLabel.config(text='Invalid Input')
+```
+
+### `saveCurrentInputToHistory`
+
+This function simply saves the current line edit input to the history file. We first check if the value is already in the list so we don't have duplicates. We then save the history list to the history file. Here we use the `json.dump()` function. and in the end, we call the `updateListBox` function, which will be explained later.
+
+```python
+def saveCurrentInputToHistory(event=None):
+    if entryVariable.get() in history:
+        return
+
+    history.append(entryVariable.get())
+
+    with open(historyFilePath, 'w') as file:
+        file.write(json.dumps(history))
+
+    updateListBox()
+```
+
+### `updateListBox`
+
+This function will delete all the contents of the history list and display them again, that's why need the history variable here. We then delete all the stuff in the list with the `delete(start, end)` method. Then we get open the history file and get the json from there. And in the end, we loop over the history list and insert those values into the history list.
+
+```python
+def updateListBox(event=None):
+    global history
+
+    historyList.delete(0, END)
+
+    try:
+        with open(historyFilePath, 'r') as file:
+            history = json.loads(file.read())
+    except json.decoder.JSONDecodeError:
+        print('File does not contain JSON')
+
+    for index, item in enumerate(history):
+        historyList.insert(index, item)
+```
+
+### `setEntryFromHistory` and `addFormula`
+
+These two functions have simple jobs.
+
+The `setEntryFromHistory` enables us to click on a list item and this item will then be inserted into the line edit.
+
+The `addFormula` function will do the same just for the formulas chosen from the dropdownmenu.
+
+```python
+def setEntryFromHistory(event=None):
+    historyItem = historyList.get(historyList.curselection()[0])
+    entryVariable.set(historyItem)
+
+def addFormula(formula=''):
+    saveCurrentInputToHistory()
+    entryVariable.set(formula)
+```
+
+## UI
+
+Now we will make the UI. I wont go into detail to much. There are some different to take away from the code.
+
+The layout is done with the `pack` method of all widgets, and make the two-column setup by using `Frame`'s
+
+```python
+# Work with Frames to split the window in two parts: the calculator and the History Panel.
+
+# Calculation Panel
+calcSide = Frame(root)
+calcSide.pack(side=LEFT, fill=BOTH, expand=1)
+
+# Entry Variable for the calculations
+entryVariable = StringVar(root, '4/2**2')
+entryVariable.trace('w', varChange)
+
+Entry(calcSide, textvariable=entryVariable, font=myFont, borderwidth=0).pack(fill=X, ipady=10, ipadx=10)
+resultLabel = Label(calcSide, text='Result', font=myFont, borderwidth=0,anchor="e")
+resultLabel.pack(fill=X, ipady=10)
+
+# History Panel
+historySide = Frame(root, bg=rgb_to_hex(historyPanelBackground))
+historySide.pack(side=LEFT, fill=BOTH, expand=1)
+
+historyTopBar = Frame(historySide)
+historyTopBar.pack(fill=X)
+Label(historyTopBar, text='History').pack(side=LEFT)
+Button(historyTopBar, text='Save Current Input', bg=rgb_to_hex(buttonColor), borderwidth=0, command=saveCurrentInputToHistory).pack(side=RIGHT)
+
+historyList = Listbox(historySide, borderwidth=0)
+historyList.pack(fill=BOTH, expand=True)
+historyList.bind("<Double-Button-1>", setEntryFromHistory)
+```
+
+We also call this function so the list updates on startup.
+```python
+# Insert stuff into the history
+updateListBox()
+```
+Below you see how the Buttons are made. We first define a list with other lists in it where the symbols on the button are layed out.
+
+Then we loop over this first list and make a new frame for each row. we continue by looping over these inner lists and generating buttons with the given symbols.
+
+We set the background color on these buttons to our button color and then we lower every number from the button color tuple, this will give us a nice gradient for the buttons.
+
+```python
+# Button Symbols (and their position)
+symbols = [
+    ['1', '2', '3', '+'],
+    ['4', '5', '6', '-'],
+    ['7', '8', '9', '/'],
+    ['0', '.', '<', '*'],
+]
+
+for rowList in symbols:
+
+    # Make a row
+    row = Frame(calcSide)
+    row.pack(fill=BOTH, expand=True)
+    for symbol in rowList:
+
+        # Making and packing the Button
+        Button(
+            row,
+            text=symbol,
+            command=partial(addSymbol, symbol=symbol),
+            font=myFont,
+            bg=rgb_to_hex(buttonColor),
+            borderwidth=0
+            ).pack(
+                side=LEFT,
+                fill=BOTH,
+                expand=1
+            )
+
+        # Change button color each iteration for gradient.
+        buttonColor = (buttonColor[0] - 10, buttonColor[1] - 10, buttonColor[1] - 2)
+```
+
+We also make a menu where we have all our formulas ready to be inserted.
+
+```python
+menubar = Menu(root)
+
+filemenu = Menu(menubar, tearoff=0)
+
+# Add all Formulas to the dropdown menu.
+for formula in formulas:
+    filemenu.add_command(label=formula[0], command=partial(addFormula, formula[1]))
+
+filemenu.add_separator()
+
+# Quit command
+filemenu.add_command(label="Exit", command=root.quit)
+
+menubar.add_cascade(menu=filemenu, label='Formulas')
+
+root.config(menu=menubar)
+```
+
+Now, in the end, we call the `valueChange` function so the input is evaluated on startup and we call the `mainloop()` method.
+
+```python
+# Call the var change once so it is evaluated without actual change.
+varChange('foo')
+
+root.mainloop()
+```
+
+## Showcase
+
+Below you see a little showcase of how the calculator works.
+
+![enter image description here](https://raw.githubusercontent.com/Maximinodotpy/calculator/main/showcase%20%282%29.gif)
+
+## Conclusion
+
+Excellent! You have successfully created a calculator using Python code! See how you can add more features to this program such as more formulas or a converter for different things like inches to centimers
+## Conclusion
+
+Excellent! You have successfully created a **...** using Python code! See how you can add more features to this program such as **...** .
