@@ -117,6 +117,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Replace Text in Docx Files in Python](https://www.thepythoncode.com/article/replace-text-in-docx-files-using-python). ([code](general/docx-file-replacer))
     - [How to Make a Text Adventure Game in Python](https://www.thepythoncode.com/article/make-a-text-adventure-game-with-python). ([code](general/text-adventure-game))
     - [Zipf's Word Frequency Plot with Python](https://www.thepythoncode.com/article/plot-zipfs-law-using-matplotlib-python). ([code](general/zipf-curve))
+    - [How to Plot Weather Temperature in Python](https://www.thepythoncode.com/article/interactive-weather-plot-with-matplotlib-and-requests). ([code](general/interactive-weather-plot/))
 
     
     
