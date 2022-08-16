@@ -226,5 +226,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Calculator with Tkinter in Python](https://www.thepythoncode.com/article/make-a-calculator-app-using-tkinter-in-python). ([code](gui-programming/calculator-app))
     - [How to Make a Typing Speed Tester with Tkinter in Python](https://www.thepythoncode.com/article/how-to-make-typing-speed-tester-in-python-using-tkinter). ([code](gui-programming/type-speed-tester))
     - [How to Make a Planet Simulator with PyGame in Python](https://www.thepythoncode.com/article/make-a-planet-simulator-using-pygame-in-python). ([code](gui-programming/planet-simulator))
+    - [How to Make a Markdown Editor using Tkinter in Python](https://www.thepythoncode.com/article/markdown-editor-with-tkinter-in-python). ([code](gui-programming/markdown-editor))
 
 For any feedback, please consider pulling requests.
