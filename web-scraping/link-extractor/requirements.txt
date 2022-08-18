@@ -1,3 +1,4 @@
 requests
 bs4
 colorama
+requests_html
