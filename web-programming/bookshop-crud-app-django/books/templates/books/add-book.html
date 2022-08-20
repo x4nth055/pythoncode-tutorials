@@ -1,0 +1,57 @@
+{% extends 'books/base.html' %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <a href="{% url 'home' %}" class="my-3 btn btn-dark btn-sm">Go Back</a>
+
+        <div class="card shadow-lg">
+
+            <div class="card-body">
+                <!-- the form for adding a book -->
+                <form method="POST" enctype="multipart/form-data" action="">
+
+                    <!-- this is for securing the form from malicious attacks -->
+                    {% csrf_token %}
+
+                    <!-- this is the label and input for the Title -->
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold">Book Title</label>
+                        <input required type="text" name="title" class="form-control" placeholder="Enter Book Title">
+                    </div>
+
+                    <!-- this is the label and input for the Author -->
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold">Author</label>
+                        <input required type="text" name="author" class="form-control" placeholder="Book Author">
+                    </div>
+
+        
+                    <!-- this is the label and input for the Price -->
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold">Price</label>
+                        <input required type="number" name="price" class="form-control" placeholder="Price">
+                    </div>
+
+                    <!-- this is the label and input for the ISBN -->
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold">ISBN</label>
+                        <input required type="text" name="isbn" class="form-control" placeholder="ISBN">
+                    </div>
+    
+                    <!-- this is the label and input for the Image -->
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold">Upload Image:</label>
+                        <input required type="file" name="image-file" class="form-control" id="customFile" />
+                    </div>
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-success btn-block mb-4">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

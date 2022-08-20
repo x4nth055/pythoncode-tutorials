@@ -1,0 +1,25 @@
+{% extends 'books/base.html' %}
+<!-- loads images -->
+{% load static %}
+
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="">
+                <a href="{% url 'home' %}" class="my-3 btn btn-dark btn-sm">Go Back</a>
+            </div>
+            
+
+            <div style="height: 90vh">
+                <img class="img-fluid text-center" style="max-width: 100%; max-height: 100%" src="{{ book.image.url }}" alt="">
+                
+                <h5 class="text-muted">Author: {{ book.author }}</h5>
+                <small>ISBN: {{ book.isbn }}</small><br>
+                <small>Price: {{ book.price }}</small><br>
+                <a href="{% url 'edit-book' book.id %}" class="btn btn-success btn-sm">Edit Book</a>
+                <a href="{% url 'delete-book' book.id %}" class="btn btn-danger btn-sm">Delete Book</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

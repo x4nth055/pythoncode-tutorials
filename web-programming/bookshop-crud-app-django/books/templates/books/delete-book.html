@@ -1,0 +1,28 @@
+{% extends 'books/base.html' %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <a href="{% url 'home' %}" class="my-3 btn btn-dark btn-sm">Go Back</a>
+
+        <div class="card shadow-lg">
+
+            <div class="card-body">
+                <!-- the form for deleting a book -->
+                <form method="POST" action="">
+
+                    <!-- this is for securing the form from malicious attacks -->
+                    {% csrf_token %}
+
+                    <p>Are you sure you want to delete the book '<b>{{ book.title | upper}}</b>'?</p>
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-danger btn-block mb-4">Confirm</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

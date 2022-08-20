@@ -217,6 +217,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Asynchronous Tasks with Celery in Python](https://www.thepythoncode.com/article/async-tasks-with-celery-redis-and-flask-in-python). ([code](https://github.com/bassemmarji/flask_sync_async))
     - [How to Build a CRUD App with Flask and SQLAlchemy in Python](https://www.thepythoncode.com/article/building-crud-app-with-flask-and-sqlalchemy). ([code](web-programming/bookshop-crud-app-flask))
     - [How to Build an English Dictionary App with Django in Python](https://www.thepythoncode.com/article/build-dictionary-app-with-django-and-pydictionary-api-python). ([code](web-programming/djangodictionary))
+    - [How to Build a CRUD Application using Django in Python](https://www.thepythoncode.com/article/build-bookstore-app-with-django-backend-python). ([code](web-programming/bookshop-crud-app-django))
 
 - ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
