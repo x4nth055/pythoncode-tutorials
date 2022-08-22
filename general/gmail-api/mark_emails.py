@@ -2,6 +2,7 @@ from common import gmail_authenticate, search_messages
 
 def mark_as_read(service, query):
     messages_to_mark = search_messages(service, query)
+    print(f"Matched emails: {len(messages_to_mark)}")
     return service.users().messages().batchModify(
       userId='me',
       body={
@@ -12,6 +13,7 @@ def mark_as_read(service, query):
 
 def mark_as_unread(service, query):
     messages_to_mark = search_messages(service, query)
+    print(f"Matched emails: {len(messages_to_mark)}")
     return service.users().messages().batchModify(
         userId='me',
         body={

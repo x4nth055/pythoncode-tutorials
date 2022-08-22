@@ -134,6 +134,7 @@ if __name__ == "__main__":
     service = gmail_authenticate()
     # get emails that match the query you specify from the command lines
     results = search_messages(service, sys.argv[1])
+    print(f"Found {len(results)} results.")
     # for each email matched, read it (output plain/text to console & save HTML and attachments)
     for msg in results:
         read_message(service, msg)
