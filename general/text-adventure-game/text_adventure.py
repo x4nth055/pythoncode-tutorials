@@ -37,8 +37,8 @@ print('Type in the number of the prompt or -i to view your inventory ... have fu
 
 # Prompt Loop
 while True:
-    # Clearing the Console with cls
-    os.system('cls')
+    # Clearing the Console on all platforms
+    os.system('cls' if os.name == 'nt' else 'clear')
     # Get the current prompt all its associated data
     currentPrompt, currentKeys, _, action = storyPrompts[currentKey]
     # Finish the Adventure when the next keys list contains the string 'end'
