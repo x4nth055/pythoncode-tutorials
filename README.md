@@ -230,5 +230,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Planet Simulator with PyGame in Python](https://www.thepythoncode.com/article/make-a-planet-simulator-using-pygame-in-python). ([code](gui-programming/planet-simulator))
     - [How to Make a Markdown Editor using Tkinter in Python](https://www.thepythoncode.com/article/markdown-editor-with-tkinter-in-python). ([code](gui-programming/markdown-editor))
     - [How to Build a GUI Currency Converter using Tkinter in Python](https://www.thepythoncode.com/article/currency-converter-gui-using-tkinter-python). ([code](gui-programming/currency-converter-gui/))
+    - [How to Detect Gender by Name using Python](https://www.thepythoncode.com/article/gender-predictor-gui-app-tkinter-genderize-api-python). ([code](gui-programming/genderize-app))
 
 For any feedback, please consider pulling requests.
