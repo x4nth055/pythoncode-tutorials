@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Fake Access Point Generator")
     parser.add_argument("interface", default="wlan0mon", help="The interface to send beacon frames with, must be in monitor mode")
-    parser.add_argument("-n", "--access-points", dest="n_ap", help="Number of access points to be generated")
+    parser.add_argument("-n", "--access-points", type=int, dest="n_ap", help="Number of access points to be generated")
     args = parser.parse_args()
     n_ap = args.n_ap
     iface = args.interface
