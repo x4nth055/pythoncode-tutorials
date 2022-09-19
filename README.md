@@ -235,5 +235,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a GUI Currency Converter using Tkinter in Python](https://www.thepythoncode.com/article/currency-converter-gui-using-tkinter-python). ([code](gui-programming/currency-converter-gui/))
     - [How to Detect Gender by Name using Python](https://www.thepythoncode.com/article/gender-predictor-gui-app-tkinter-genderize-api-python). ([code](gui-programming/genderize-app))
     - [How to Build a Spreadsheet App with Tkinter in Python](https://www.thepythoncode.com/article/spreadsheet-app-using-tkinter-in-python). ([code](gui-programming/spreadsheet-app))
+    - [How to Make a Rich Text Editor with Tkinter in Python](https://www.thepythoncode.com/article/create-rich-text-editor-with-tkinter-python). ([code](gui-programming/rich-text-editor))
 
 For any feedback, please consider pulling requests.
