@@ -61,6 +61,7 @@ for phrase in phrases:
   print("Input_phrase: ", phrase)
   print("-"*100)
   paraphrases = parrot.augment(input_phrase=phrase)
-  for paraphrase in paraphrases:
-   print(paraphrase)
+  if paraphrases:
+    for paraphrase in paraphrases:
+      print(paraphrase)
 
