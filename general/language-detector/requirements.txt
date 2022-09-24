@@ -1,0 +1,4 @@
+googletrans==3.1.0a0
+langdetect==1.0.9
+langid==1.1.6
+language-detector==5.0.2

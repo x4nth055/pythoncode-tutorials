@@ -175,6 +175,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use Gmail API in Python](https://www.thepythoncode.com/article/use-gmail-api-in-python). ([code](general/gmail-api))
     - [How to Use YouTube API in Python](https://www.thepythoncode.com/article/using-youtube-api-in-python). ([code](general/youtube-api))
     - [Webhooks in Python with Flask](https://www.thepythoncode.com/article/webhooks-in-python-with-flask). ([code](https://github.com/bassemmarji/Flask_Webhook))
+    - [How to Make a Language Detector in Python](https://www.thepythoncode.com/article/language-detector-in-python). ([code](general/language-detector))
 
 - ### [Database](https://www.thepythoncode.com/topic/using-databases-in-python)
     - [How to Use MySQL Database in Python](https://www.thepythoncode.com/article/using-mysql-database-in-python). ([code](database/mysql-connector))

@@ -1,0 +1,1 @@
+# [How to Make a Language Detector Using Python](https://www.thepythoncode.com/article/language-detector-in-python)
