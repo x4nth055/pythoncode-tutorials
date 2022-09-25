@@ -141,6 +141,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Automate Login using Selenium in Python](https://www.thepythoncode.com/article/automate-login-to-websites-using-selenium-in-python). ([code](web-scraping/automate-login))
     - [How to Make a Currency Converter in Python](https://www.thepythoncode.com/article/make-a-currency-converter-in-python). ([code](web-scraping/currency-converter))
     - [How to Extract Google Trends Data in Python](https://www.thepythoncode.com/article/extract-google-trends-data-in-python). ([code](web-scraping/extract-google-trends-data))
+    - [How to Make a YouTube Video Downloader in Python](https://www.thepythoncode.com/article/make-a-youtube-video-downloader-in-python). ([code](web-scraping/youtube-video-downloader))
 
 - ### [Python Standard Library](https://www.thepythoncode.com/topic/python-standard-library)
     - [How to Transfer Files in the Network using Sockets in Python](https://www.thepythoncode.com/article/send-receive-files-using-sockets-python). ([code](general/transfer-files/))
