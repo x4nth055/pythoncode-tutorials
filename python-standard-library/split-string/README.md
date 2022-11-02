@@ -1,0 +1,1 @@
+# [How to Split a String In Python](https://www.thepythoncode.com/article/split-a-string-in-python)
