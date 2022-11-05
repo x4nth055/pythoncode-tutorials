@@ -1,0 +1,44 @@
+
+
+{% extends 'base.html'%}
+{% block content%}
+
+
+
+
+<div class="container mt-5" style="background-color:#BCD4E6;">
+  <section class=" d-flex align-items-center" >
+    <div class=" mb-5 container">
+      <div class="row">
+        <div class="" style = "height:120px;">
+
+        </div>
+
+        <div class="mt-5 col-lg-6 d-flex flex-column justify-content-center" >
+
+          <h1  ><b>This is login and sign up landing page test!</b></h1>
+          <h4 class="mt-5" >Let's try </h4>
+          <div >
+            <div class="mt-5 text-center text-lg-start">
+              <a href="#" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'signup'%}" >Get Started</a>
+                  <a class="btn btn-secondary btn-lg" href="{% url 'login'%}" >Log in</a>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Footer-->
+  <footer class=" container py-2 mt-5 bg-dark">
+      <div class="container px-5 "><p class="m-0 text-center text-white">Copyright &copy; Me 2022</p></div>
+  </footer>
+</div>
+
+{% endblock%}
