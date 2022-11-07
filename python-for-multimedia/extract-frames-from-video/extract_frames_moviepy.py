@@ -13,7 +13,7 @@ def format_timedelta(td):
     try:
         result, ms = result.split(".")
     except ValueError:
-        return result + ".00".replace(":", "-")
+        return (result + ".00").replace(":", "-")
     ms = int(ms)
     ms = round(ms / 1e4)
     return f"{result}.{ms:02}".replace(":", "-")
@@ -35,7 +35,7 @@ def main(video_file):
     # iterate over each possible frame
     for current_duration in np.arange(0, video_clip.duration, step):
         # format the file name and save it
-        frame_duration_formatted = format_timedelta(timedelta(seconds=current_duration)).replace(":", "-")
+        frame_duration_formatted = format_timedelta(timedelta(seconds=current_duration))
         frame_filename = os.path.join(filename, f"frame{frame_duration_formatted}.jpg")
         # save the frame with the current duration
         video_clip.save_frame(frame_filename, current_duration)
