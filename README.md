@@ -243,5 +243,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Rich Text Editor with Tkinter in Python](https://www.thepythoncode.com/article/create-rich-text-editor-with-tkinter-python). ([code](gui-programming/rich-text-editor))
     - [How to Make a Python Code Editor using Tkinter in Python](https://www.thepythoncode.com/article/python-code-editor-using-tkinter-python). ([code](gui-programming/python-code-editor/))
     - [How to Make an Age Calculator in Python](https://www.thepythoncode.com/article/age-calculator-using-tkinter-python). ([code](gui-programming/age-calculator))
+    - [How to Create an Alarm Clock App using Tkinter in Python](https://www.thepythoncode.com/article/build-an-alarm-clock-app-using-tkinter-python). ([code](gui-programming/alarm-clock-app))
 
 For any feedback, please consider pulling requests.
