@@ -227,6 +227,8 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a CRUD Application using Django in Python](https://www.thepythoncode.com/article/build-bookstore-app-with-django-backend-python). ([code](web-programming/bookshop-crud-app-django))
     - [How to Build a Weather App using Django in Python](https://www.thepythoncode.com/article/weather-app-django-openweather-api-using-python). ([code](web-programming/django-weather-app))
     - [How to Build an Authentication System in Django](https://www.thepythoncode.com/article/authentication-system-in-django-python). ([code](web-programming/django-authentication))
+    - [How to Make a Blog using Django in Python](https://www.thepythoncode.com/article/create-a-blog-using-django-in-python). ([code](https://github.com/chepkiruidorothy/simple-blog-site))
+    - [How to Make a Todo App using Django in Python](https://www.thepythoncode.com/article/build-a-todo-app-with-django-in-python). ([code](https://github.com/chepkiruidorothy/todo-app-simple/tree/master))
 
 - ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
