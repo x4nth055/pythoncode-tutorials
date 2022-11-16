@@ -1,0 +1,1 @@
+# [How to Build an Email Address Verifier App using Django in Python](https://www.thepythoncode.com/article/build-an-email-verifier-app-using-django-in-python)

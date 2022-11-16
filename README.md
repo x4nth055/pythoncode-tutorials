@@ -229,6 +229,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build an Authentication System in Django](https://www.thepythoncode.com/article/authentication-system-in-django-python). ([code](web-programming/django-authentication))
     - [How to Make a Blog using Django in Python](https://www.thepythoncode.com/article/create-a-blog-using-django-in-python). ([code](https://github.com/chepkiruidorothy/simple-blog-site))
     - [How to Make a Todo App using Django in Python](https://www.thepythoncode.com/article/build-a-todo-app-with-django-in-python). ([code](https://github.com/chepkiruidorothy/todo-app-simple/tree/master))
+    - [How to Build an Email Address Verifier App using Django in Python](https://www.thepythoncode.com/article/build-an-email-verifier-app-using-django-in-python). ([code](web-programming/webbased-emailverifier))
 
 - ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))

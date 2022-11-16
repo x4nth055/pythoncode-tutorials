@@ -1,0 +1,7 @@
+$ python -m venv project
+$ .\project\Scripts\activate
+$ pip install -r requirements.txt
+$ django-admin startproject webbased_emailverifier
+$ cd webbased_emailverifier\
+$ python manage.py startapp verifier
+$ python manage.py runserver
