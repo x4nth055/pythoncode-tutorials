@@ -121,6 +121,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Generate SVG Country Maps in Python](https://www.thepythoncode.com/article/generate-svg-country-maps-python). ([code](general/generate-svg-country-map))
     - [How to Query the Ethereum Blockchain with Python](https://www.thepythoncode.com/article/query-ethereum-blockchain-with-python). ([code](general/query-ethereum))
     - [Data Cleaning with Pandas in Python](https://www.thepythoncode.com/article/data-cleaning-using-pandas-in-python). ([code](general/data-cleaning-pandas))
+    - [How to Minify CSS with Python](https://www.thepythoncode.com/article/minimize-css-files-in-python). ([code](general/minify-css))
 
     
     

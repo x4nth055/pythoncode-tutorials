@@ -1,0 +1,15 @@
+.page {
+    color: pink
+}
+
+.article {
+    font-size: 1rem;
+}
+
+.button {
+    padding: 1rem;
+}
+
+body {
+    font-family: 'Lucida Sans', sans-serif;
+}
