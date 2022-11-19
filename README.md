@@ -219,7 +219,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Record a Specific Window in Python](https://www.thepythoncode.com/article/record-a-specific-window-in-python). ([code](python-for-multimedia/record-specific-window))
     - [How to Add Audio to Video in Python](https://www.thepythoncode.com/article/add-audio-to-video-in-python). ([code](python-for-multimedia/add-audio-to-video))
     - [How to Compress Images in Python](https://www.thepythoncode.com/article/compress-images-in-python). ([code](python-for-multimedia/compress-image))
-    - [How to Build a GUI Voice Recorder App in Python](https://www.thepythoncode.com/article/make-a-gui-voice-recorder-python). ([code](python-for-multimedia/voice-recorder-app))
 
 - ### [Web Programming](https://www.thepythoncode.com/topic/web-programming)
     - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))
@@ -249,5 +248,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Python Code Editor using Tkinter in Python](https://www.thepythoncode.com/article/python-code-editor-using-tkinter-python). ([code](gui-programming/python-code-editor/))
     - [How to Make an Age Calculator in Python](https://www.thepythoncode.com/article/age-calculator-using-tkinter-python). ([code](gui-programming/age-calculator))
     - [How to Create an Alarm Clock App using Tkinter in Python](https://www.thepythoncode.com/article/build-an-alarm-clock-app-using-tkinter-python). ([code](gui-programming/alarm-clock-app))
+    - [How to Build a GUI Voice Recorder App in Python](https://www.thepythoncode.com/article/make-a-gui-voice-recorder-python). ([code](gui-programming/voice-recorder-app))
 
 For any feedback, please consider pulling requests.
