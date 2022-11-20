@@ -249,5 +249,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make an Age Calculator in Python](https://www.thepythoncode.com/article/age-calculator-using-tkinter-python). ([code](gui-programming/age-calculator))
     - [How to Create an Alarm Clock App using Tkinter in Python](https://www.thepythoncode.com/article/build-an-alarm-clock-app-using-tkinter-python). ([code](gui-programming/alarm-clock-app))
     - [How to Build a GUI Voice Recorder App in Python](https://www.thepythoncode.com/article/make-a-gui-voice-recorder-python). ([code](gui-programming/voice-recorder-app))
+    - [How to Make a Chess Game with Pygame in Python](https://www.thepythoncode.com/article/make-a-chess-game-using-pygame-in-python). ([code](gui-programming/chess-game))
 
 For any feedback, please consider pulling requests.
