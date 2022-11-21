@@ -1,4 +1,4 @@
 matplotlib
 numpy
-tensorflow==2.5.3
+tensorflow==2.9.3
 tensorflow_datasets
