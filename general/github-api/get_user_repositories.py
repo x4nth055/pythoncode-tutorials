@@ -1,6 +1,11 @@
 import base64
-from github import Github
+import github
 import sys
+import os
+
+# make a directory to save the Python files
+if not os.path.exists("python-files"):
+    os.mkdir("python-files")
 
 
 def print_repo(repo):
@@ -23,19 +28,25 @@ def print_repo(repo):
     print("-"*50)
     # repository content (files & directories)
     print("Contents:")
-    for content in repo.get_contents(""):
-        print(content)
     try:
+        for content in repo.get_contents(""):
+            # check if it's a Python file
+            if content.path.endswith(".py"):
+                # save the file
+                filename = os.path.join("python-files", f"{repo.full_name.replace('/', '-')}-{content.path}")
+                with open(filename, "wb") as f:
+                    f.write(content.decoded_content)
+            print(content)
         # repo license
         print("License:", base64.b64decode(repo.get_license().content.encode()).decode())
-    except:
-        pass
+    except Exception as e:
+        print("Error:", e)
     
     
 # Github username from the command line
 username = sys.argv[1]
 # pygithub object
-g = Github()
+g = github.Github()
 # get that user by username
 user = g.get_user(username)
 # iterate over all public repositories

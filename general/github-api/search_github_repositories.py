@@ -1,4 +1,4 @@
-from github import Github
+import github
 import base64
 
 def print_repo(repo):
@@ -21,8 +21,11 @@ def print_repo(repo):
     print("-"*50)
     # repository content (files & directories)
     print("Contents:")
-    for content in repo.get_contents(""):
-        print(content)
+    try:
+        for content in repo.get_contents(""):
+            print(content)
+    except github.GithubException as e:
+        print("Error:", e)
     try:
         # repo license
         print("License:", base64.b64decode(repo.get_license().content.encode()).decode())
@@ -33,7 +36,7 @@ def print_repo(repo):
 username = "username"
 password = "password"
 # initialize github object
-g = Github(username, password)
+g = github.Github(username, password)
 # or use public version
 # g = Github()
 
