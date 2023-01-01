@@ -1,0 +1,1 @@
+# [How to Print Variable Name and Value in Python](https://www.thepythoncode.com/article/print-variable-name-and-value-in-python)

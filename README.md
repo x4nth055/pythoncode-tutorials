@@ -166,6 +166,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Daemon Threads in Python](https://www.thepythoncode.com/article/daemon-threads-in-python). ([code](python-standard-library/daemon-thread))
     - [How to Organize Files by Extension in Python](https://www.thepythoncode.com/article/organize-files-by-extension-with-python). ([code](python-standard-library/extension-separator))
     - [How to Split a String In Python](https://www.thepythoncode.com/article/split-a-string-in-python). ([code](python-standard-library/split-string))
+    - [How to Print Variable Name and Value in Python](https://www.thepythoncode.com/article/print-variable-name-and-value-in-python). ([code](python-standard-library/print-variable-name-and-value))
 
 - ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
