@@ -38,6 +38,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a MAC Address Changer in Python](https://www.thepythoncode.com/article/make-a-mac-address-changer-in-python). ([code](ethical-hacking/mac-address-changer))
     - [How to Make a Password Generator in Python](https://www.thepythoncode.com/article/make-a-password-generator-in-python). ([code](ethical-hacking/password-generator))
     - [How to Make a Ransomware in Python](https://www.thepythoncode.com/article/make-a-ransomware-in-python). ([code](ethical-hacking/ransomware))
+    - [How to Perform DNS Enumeration in Python](https://www.thepythoncode.com/article/dns-enumeration-with-python). ([code](ethical-hacking/dns-enumeration))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
