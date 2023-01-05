@@ -1,0 +1,5 @@
+textblob
+nltk
+huggingface
+tokenizers
+transformers
