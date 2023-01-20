@@ -100,6 +100,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Dimensionality Reduction: Using Feature Selection in Python](https://www.thepythoncode.com/article/dimensionality-reduction-feature-selection). ([code](machine-learning/dimensionality-reduction-feature-selection))
     - [A Guide to Explainable AI Using Python](https://www.thepythoncode.com/article/explainable-ai-model-python). ([code](machine-learning/explainable-ai))
     - [Autoencoders for Dimensionality Reduction using TensorFlow in Python](https://www.thepythoncode.com/article/feature-extraction-dimensionality-reduction-autoencoders-python-keras). ([code](machine-learning/feature-extraction-autoencoders))
+    - [Exploring the Different Types of Clustering Algorithms in Machine Learning with Python](https://www.thepythoncode.com/article/clustering-algorithms-in-machine-learning-with-python). ([code](machine-learning/clustering-algorithms))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
