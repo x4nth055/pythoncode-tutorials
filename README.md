@@ -257,5 +257,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a GUI Voice Recorder App in Python](https://www.thepythoncode.com/article/make-a-gui-voice-recorder-python). ([code](gui-programming/voice-recorder-app))
     - [How to Make a Chess Game with Pygame in Python](https://www.thepythoncode.com/article/make-a-chess-game-using-pygame-in-python). ([code](gui-programming/chess-game))
     - [How to Build a GUI QR Code Generator and Detector Using Python](https://www.thepythoncode.com/article/make-a-qr-code-generator-and-reader-tkinter-python). ([code](gui-programming/qrcode-generator-reader-gui))
+    - [How to Build a GUI Dictionary App with Tkinter in Python](https://www.thepythoncode.com/article/make-a-gui-audio-dictionary-python). ([code](gui-programming/word-dictionary-with-audio))
 
 For any feedback, please consider pulling requests.

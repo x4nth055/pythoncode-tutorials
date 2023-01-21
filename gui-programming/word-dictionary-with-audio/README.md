@@ -1,0 +1,1 @@
+# [How to Build a GUI Dictionary App with Tkinter in Python](https://www.thepythoncode.com/article/make-a-gui-audio-dictionary-python)
