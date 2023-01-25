@@ -1,9 +1,4 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
+# %%
 import tensorflow as tf
 import tensorflow_hub as hub
 import matplotlib.pyplot as plt
@@ -46,12 +41,9 @@ def download_and_extract_dataset():
     os.remove(temp_file)
 
 # comment the below line if you already downloaded the dataset
-# download_and_extract_dataset()
+download_and_extract_dataset()
 
-
-# In[2]:
-
-
+# %%
 # preparing data
 # generate CSV metadata file to read img paths and labels from it
 def generate_csv(folder, label2int):
@@ -73,14 +65,11 @@ def generate_csv(folder, label2int):
 # as 0 (benign), and melanoma as 1 (malignant)
 # you should replace "data" path to your extracted dataset path
 # don't replace if you used download_and_extract_dataset() function
-# generate_csv("data/train", {"nevus": 0, "seborrheic_keratosis": 0, "melanoma": 1})
-# generate_csv("data/valid", {"nevus": 0, "seborrheic_keratosis": 0, "melanoma": 1})
-# generate_csv("data/test", {"nevus": 0, "seborrheic_keratosis": 0, "melanoma": 1})
+generate_csv("data/train", {"nevus": 0, "seborrheic_keratosis": 0, "melanoma": 1})
+generate_csv("data/valid", {"nevus": 0, "seborrheic_keratosis": 0, "melanoma": 1})
+generate_csv("data/test", {"nevus": 0, "seborrheic_keratosis": 0, "melanoma": 1})
 
-
-# In[3]:
-
-
+# %%
 # loading data
 train_metadata_filename = "train.csv"
 valid_metadata_filename = "valid.csv"
@@ -94,10 +83,7 @@ print("Number of validation samples:", n_validation_samples)
 train_ds = tf.data.Dataset.from_tensor_slices((df_train["filepath"], df_train["label"]))
 valid_ds = tf.data.Dataset.from_tensor_slices((df_valid["filepath"], df_valid["label"]))
 
-
-# In[4]:
-
-
+# %%
 # preprocess data
 def decode_img(img):
   # convert the compressed string to a 3D uint8 tensor
@@ -118,22 +104,16 @@ def process_path(filepath, label):
 valid_ds = valid_ds.map(process_path)
 train_ds = train_ds.map(process_path)
 # test_ds = test_ds
-# for image, label in train_ds.take(1):
-#     print("Image shape:", image.shape)
-#     print("Label:", label.numpy())
+for image, label in train_ds.take(1):
+    print("Image shape:", image.shape)
+    print("Label:", label.numpy())
 
-
-# In[5]:
-
-
+# %%
 # training parameters
 batch_size = 64
 optimizer = "rmsprop"
 
-
-# In[6]:
-
-
+# %%
 def prepare_for_training(ds, cache=True, batch_size=64, shuffle_buffer_size=1000):
   if cache:
     if isinstance(cache, str):
@@ -158,10 +138,7 @@ def prepare_for_training(ds, cache=True, batch_size=64, shuffle_buffer_size=1000
 valid_ds = prepare_for_training(valid_ds, batch_size=batch_size, cache="valid-cached-data")
 train_ds = prepare_for_training(train_ds, batch_size=batch_size, cache="train-cached-data")
 
-
-# In[9]:
-
-
+# %%
 batch = next(iter(valid_ds))
 
 def show_batch(batch):
@@ -174,10 +151,7 @@ def show_batch(batch):
         
 show_batch(batch)
 
-
-# In[7]:
-
-
+# %%
 # building the model
 # InceptionV3 model & pre-trained weights
 module_url = "https://tfhub.dev/google/tf2-preview/inception_v3/feature_vector/4"
@@ -190,24 +164,18 @@ m.build([None, 299, 299, 3])
 m.compile(loss="binary_crossentropy", optimizer=optimizer, metrics=["accuracy"])
 m.summary()
 
+# %%
+model_name = f"benign-vs-malignant_{batch_size}_{optimizer}"
+tensorboard = tf.keras.callbacks.TensorBoard(log_dir=os.path.join("logs", model_name))
+# saves model checkpoint whenever we reach better weights
+modelcheckpoint = tf.keras.callbacks.ModelCheckpoint(model_name + "_{val_loss:.3f}.h5", save_best_only=True, verbose=1)
 
-# In[9]:
+history = m.fit(train_ds, validation_data=valid_ds, 
+                steps_per_epoch=n_training_samples // batch_size, 
+                validation_steps=n_validation_samples // batch_size, verbose=1, epochs=100,
+                callbacks=[tensorboard, modelcheckpoint])
 
-
-# model_name = f"benign-vs-malignant_{batch_size}_{optimizer}"
-# tensorboard = tf.keras.callbacks.TensorBoard(log_dir=os.path.join("logs", model_name))
-# # saves model checkpoint whenever we reach better weights
-# modelcheckpoint = tf.keras.callbacks.ModelCheckpoint(model_name + "_{val_loss:.3f}.h5", save_best_only=True, verbose=1)
-
-# history = m.fit(train_ds, validation_data=valid_ds, 
-#                 steps_per_epoch=n_training_samples // batch_size, 
-#                 validation_steps=n_validation_samples // batch_size, verbose=1, epochs=100,
-#                 callbacks=[tensorboard, modelcheckpoint])
-
-
-# In[8]:
-
-
+# %%
 # evaluation
 
 # load testing set
@@ -235,10 +203,7 @@ def prepare_for_testing(ds, cache=True, shuffle_buffer_size=1000):
 test_ds = test_ds.map(process_path)
 test_ds = prepare_for_testing(test_ds, cache="test-cached-data")
 
-
-# In[9]:
-
-
+# %%
 # convert testing set to numpy array to fit in memory (don't do that when testing
 # set is too large)
 y_test = np.zeros((n_testing_samples,))
@@ -250,25 +215,16 @@ for i, (img, label) in enumerate(test_ds.take(n_testing_samples)):
 
 print("y_test.shape:", y_test.shape)
 
-
-# In[10]:
-
-
+# %%
 # load the weights with the least loss
-m.load_weights("benign-vs-malignant_64_rmsprop_0.390.h5")
+m.load_weights("benign-vs-malignant_64_rmsprop_0.399.h5")
 
-
-# In[11]:
-
-
+# %%
 print("Evaluating the model...")
 loss, accuracy = m.evaluate(X_test, y_test, verbose=0)
 print("Loss:", loss, "  Accuracy:", accuracy)
 
-
-# In[14]:
-
-
+# %%
 from sklearn.metrics import accuracy_score
 
 def get_predictions(threshold=None):
@@ -296,10 +252,7 @@ y_pred = get_predictions(threshold)
 accuracy_after = accuracy_score(y_test, y_pred)
 print("Accuracy after setting the threshold:", accuracy_after)
 
-
-# In[16]:
-
-
+# %%
 import seaborn as sns
 from sklearn.metrics import roc_curve, auc, confusion_matrix
 
@@ -351,10 +304,7 @@ specificity = specificity_score(y_test, y_pred)
 print("Melanoma Sensitivity:", sensitivity)
 print("Melanoma Specificity:", specificity)
 
-
-# In[24]:
-
-
+# %%
 def plot_images(X_test, y_pred, y_test):
   predicted_class_names = np.array([class_names[int(round(id))] for id in y_pred])
   # some nice plotting
@@ -379,3 +329,33 @@ def plot_images(X_test, y_pred, y_test):
   plt.show()
 
 plot_images(X_test, y_pred, y_test)
+
+# %%
+# a function given a function, it predicts the class of the image
+def predict_image_class(img_path, model, threshold=0.5):
+  img = tf.keras.preprocessing.image.load_img(img_path, target_size=(299, 299))
+  img = tf.keras.preprocessing.image.img_to_array(img)
+  img = tf.expand_dims(img, 0) # Create a batch
+  img = tf.keras.applications.inception_v3.preprocess_input(img)
+  img = tf.image.convert_image_dtype(img, tf.float32)
+  predictions = model.predict(img)
+  score = predictions.squeeze()
+  if score >= threshold:
+    print(f"This image is {100 * score:.2f}% malignant.")
+  else:
+    print(f"This image is {100 * (1 - score):.2f}% benign.")
+    
+  plt.imshow(img[0])
+  plt.axis('off')
+  plt.show()
+
+# %%
+predict_image_class("data/test/melanoma/ISIC_0013767.jpg", m)
+
+# %%
+predict_image_class("data/test/nevus/ISIC_0012092.jpg", m)
+
+# %%
+predict_image_class("data/test/seborrheic_keratosis/ISIC_0012136.jpg", m)
+
+
