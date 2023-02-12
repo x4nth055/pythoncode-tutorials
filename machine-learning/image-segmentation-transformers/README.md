@@ -1,0 +1,1 @@
+# [How to Perform Image Segmentation using Transformers in Python](https://www.thepythoncode.com/article/image-segmentation-using-huggingface-transformers-python)
