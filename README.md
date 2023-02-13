@@ -212,6 +212,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Split PDF Files in Python](https://www.thepythoncode.com/article/split-pdf-files-in-python). ([code](handling-pdf-files/split-pdf))
     - [How to Extract Text from PDF in Python](https://www.thepythoncode.com/article/extract-text-from-pdf-in-python). ([code](handling-pdf-files/extract-text-from-pdf))
     - [How to Convert HTML to PDF in Python](https://www.thepythoncode.com/article/convert-html-to-pdf-in-python). ([code](handling-pdf-files/convert-html-to-pdf))
+    - [How to Make a GUI PDF Viewer in Python](https://www.thepythoncode.com/article/make-pdf-viewer-with-tktinter-in-python). ([code](gui-programming/pdf-viewer))
     
 - ### [Python for Multimedia](https://www.thepythoncode.com/topic/python-for-multimedia)
     - [How to Make a Screen Recorder in Python](https://www.thepythoncode.com/article/make-screen-recorder-python). ([code](general/screen-recorder))
