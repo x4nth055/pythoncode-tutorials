@@ -1,0 +1,23 @@
+{% extends "app/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	<div class="w-50 mx-auto p-3 bg-primary-subtle border border-primary-subtle rounded-3">
+		<h2 class="text-center">MY PORTFOLIO LIST</h2>
+		<table class="mx-auto">
+			{% for pfl in portfolio.portfolio_set.all %}
+				<tr>
+					<td class="px-2">
+						<h3>
+							<a class="link link-primary" href="{% url 'pfl-detail' pfl.id %}">{{pfl.name}}</a>
+						</h3>
+					</td>
+					<td>
+						<button class="btn btn-danger" onclick="window.location.href='/pfl-delete/pk={{pfl.id}}' ">Delete</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'app/auth_base.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+	<h1 class="text-center">Sign Up</h1> 
+
+	{% for message in messages %}
+		<p class="callout-warning">{{message}}</p>
+	{% endfor %}
+
+	<form method="post" class="mb-1">
+		{% csrf_token %}
+		{% for field in form %}
+			<div class="mb-3">
+				<label for="signupField{{forloop.counter}}" class="form-label">{{field.label}}</label>
+				<p id="signupField{{forloop.counter}}">{{field}}</p>
+			</div>
+		{% endfor %}
+		<div id="passwordHelpBlock" class="form-text mb-3">
+			Your password must be 8-20 characters long, contain letters, numbers, and special characters.
+		</div>
+		<div class="d-grid gap-2">
+			<button type="submit" class="btn btn-primary" name="signup">Sign Up</button>
+		</div>
+	</form>
+	<div class="d-grid gap-2 col-10 mx-auto">
+		<button  class="btn btn-secondary" onclick="location.href = '/login'" class="nxt-pg">Login your Account</button>
+</div>
+{% endblock %}
+
+

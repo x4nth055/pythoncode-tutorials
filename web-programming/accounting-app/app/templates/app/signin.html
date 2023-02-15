@@ -1,0 +1,27 @@
+{% extends 'app/auth_base.html' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block content %}
+	<h1 class="text-center">Log In</h1>
+
+	{% for message in messages %}
+		<p class="callout-warning">{{message}}</p>
+	{% endfor %}
+	
+	<form method="post" class="mb-1">
+		{% csrf_token %}
+		{% for field in form %}
+			<div class="mb-3">
+				<label for="signupField{{forloop.counter}}" class="form-label">{{field.label}}</label>
+				<p id="signupField{{forloop.counter}}">{{field}}</p>
+			</div>
+		{% endfor %}
+		<div class="d-grid gap-2">
+			<button type="submit" class="btn btn-primary" name="signin">Sign in</button>
+		</div>
+	</form>
+	<div class="d-grid gap-2 col-10 mx-auto">
+		<button class="btn btn-secondary" onclick="location.href = '/signup'" class="nxt-pg">Create your Account</button>
+	</div>
+{% endblock %}

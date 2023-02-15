@@ -1,0 +1,98 @@
+{% extends "app/base.html" %}
+{% load app_extras %}
+
+{% block title %}Trial Balance{% endblock %}
+
+{% block content %}
+    <div class="w-75 mx-auto p-2">
+        <h2>{{name}}'s Trial Balance</h2>
+        <table class="mx-auto table border border-primary-subtle">
+            <tr class="bg-info">
+                <th>Transaction</th>
+                <th>Debit</th>
+                <th>Credit</th>
+            </tr>
+            {% for trans in tb %}
+                <tr class="bg-secondary-subtle">
+                    {% for item in trans %}
+                        <td>{{item}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+
+        <div class="table table-striped-columns mb-3" id="t-account">
+            <h2>{{name}}'s T Accounts</h2>
+        </div>  
+
+        <div class="d-grid col-6 mx-auto">
+            <button class="btn btn-emphasis text-primary border-primary-subtle" onclick="window.location.href='/pfl-journal/pk={{pk}}'">Back to Journal</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        var tAccount = JSON.parse("{{ta|escapejs}}");
+        dataNode = document.getElementById('t-account');
+        for (const trans in tAccount) {
+            var sum = 0;
+            const transTable = document.createElement("table");
+            const transCaption = document.createElement("caption");
+            const transRow = document.createElement("tr");
+            const transDb = document.createElement("th");
+            const transCd = document.createElement("th");
+            transTable.classList.add("mx-auto");
+            transTable.classList.add("w-50");
+            transTable.classList.add("border");
+            transTable.classList.add("mb-4");
+            transRow.classList.add("bg-info");
+            transRow.classList.add("text-center");
+            transCaption.innerText = trans;
+            transDb.innerText = 'Debit';
+            transCd.innerText = 'Credit';
+            transRow.appendChild(transDb);
+            transRow.appendChild(transCd);
+            transTable.appendChild(transCaption);
+            transTable.appendChild(transRow);
+
+            tAccount[trans].forEach (data => {
+                sum = sum + data;
+                const tableRow = document.createElement("tr");
+                tableRow.classList.add("text-center");
+                const tableDb = document.createElement("td");
+                tableDb.className = "debit"
+                const tableCd = document.createElement("td");
+                tableCd.className = "credit"
+
+                if (data > 0 ) {
+                    tableDb.innerText = data;
+                    tableCd.innerText = '';
+                }
+
+                else if (data < 0 ) {
+                    tableDb.innerText = '';
+                    tableCd.innerText = data;
+                }
+
+                tableRow.appendChild(tableDb);
+                tableRow.appendChild(tableCd);
+                transTable.append(tableRow);
+            });
+            
+
+            const tableEndRow = document.createElement("tr");
+            tableEndRow.classList.add("bg-info-subtle");
+            const tableEndDb = document.createElement("td");
+            tableEndDb.innerText = "Total"
+            const tableEndCd = document.createElement("td");
+            tableEndCd.innerText = `${sum}`
+
+            tableEndRow.appendChild(tableEndDb);
+            tableEndRow.appendChild(tableEndCd);
+            transTable.append(tableEndRow);
+
+            dataNode.appendChild(transTable);
+        }
+    </script>
+{% endblock %}
