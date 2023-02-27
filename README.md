@@ -243,6 +243,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build an Email Address Verifier App using Django in Python](https://www.thepythoncode.com/article/build-an-email-verifier-app-using-django-in-python). ([code](web-programming/webbased-emailverifier))
     - [How to Build a Web Assistant Using Django and OpenAI GPT-3.5 API in Python](https://www.thepythoncode.com/article/web-assistant-django-with-gpt3-api-python). ([code](web-programming/webassistant))
     - [How to Make an Accounting App with Django in Python](https://www.thepythoncode.com/article/make-an-accounting-app-with-django-in-python). ([code](web-programming/accounting-app))
+    - [How to Build a News Site API with Django Rest Framework in Python](https://www.thepythoncode.com/article/a-news-site-api-with-django-python). ([code](web-programming/news_project))
 
 - ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
