@@ -266,5 +266,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a GUI QR Code Generator and Detector Using Python](https://www.thepythoncode.com/article/make-a-qr-code-generator-and-reader-tkinter-python). ([code](gui-programming/qrcode-generator-reader-gui))
     - [How to Build a GUI Dictionary App with Tkinter in Python](https://www.thepythoncode.com/article/make-a-gui-audio-dictionary-python). ([code](gui-programming/word-dictionary-with-audio))
     - [How to Make a Real-Time GUI Spelling Checker in Python](https://www.thepythoncode.com/article/make-a-realtime-spelling-checker-gui-python). ([code](gui-programming/realtime-spelling-checker))
+    - [How to Create a GUI Hangman Game using PyGame in Python](https://www.thepythoncode.com/article/hangman-gui-game-with-pygame-in-python). ([code](gui-programming/hangman-game-gui))
 
 For any feedback, please consider pulling requests.
