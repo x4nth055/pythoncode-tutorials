@@ -79,6 +79,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Age and Gender Detection using OpenCV in Python](https://www.thepythoncode.com/article/gender-and-age-detection-using-opencv-python). ([code](machine-learning/age-and-gender-detection))
         - [Satellite Image Classification using TensorFlow in Python](https://www.thepythoncode.com/article/satellite-image-classification-using-tensorflow-python). ([code](machine-learning/satellite-image-classification))
         - [How to Perform Image Segmentation using Transformers in Python](https://www.thepythoncode.com/article/image-segmentation-using-huggingface-transformers-python). ([code](machine-learning/image-segmentation-transformers))
+        - [How to Fine Tune ViT for Image Classification using Huggingface Transformers in Python](https://www.thepythoncode.com/article/finetune-vit-for-image-classification-using-transformers-in-python). ([code](machine-learning/finetuning-vit-image-classification))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
