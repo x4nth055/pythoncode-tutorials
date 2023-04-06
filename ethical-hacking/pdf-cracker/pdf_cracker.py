@@ -12,6 +12,6 @@ for password in tqdm(passwords, "Decrypting PDF"):
             # Password decrypted successfully, break out of the loop
             print("[+] Password found:", password)
             break
-    except pikepdf._qpdf.PasswordError as e:
+    except pikepdf._core.PasswordError as e:
         # wrong password, just continue in the loop
         continue
