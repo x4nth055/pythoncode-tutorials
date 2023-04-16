@@ -1,0 +1,1 @@
+Another text file is created in the same directory as the original file.
