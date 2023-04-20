@@ -1,43 +1,35 @@
 {% extends 'assistant/base.html' %}
-
 {% block title %} Home {% endblock %}
-
 {% block content %}
 <div class="row justify-content-center my-4">
-
     <div class="col-md-7 mt-4">
-
         <div class="card">
             <h1 class="card-header text-center">A.I WEB ASSISTANT</h1>
-
             <div class="card-body">
-
-             <pre>Hello, am your web assistant here to help you, what's on your mind?</pre>
-
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-primary mb-3" onclick="location.href='{% url 'new_chat' %}'">New Chat +</button>
+              </div>
+              <div class="chat-history mb-3">
+                {% for message in messages %}
+                  <div class="card mb-2 {% if message.role == 'assistant' %}bg-success text-white{% endif %}">
+                    <div class="card-body p-2">
+                      <strong>{{ message.role|title }}:</strong> {{ message.content|linebreaksbr }}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
               <form action="." method="POST">
                 <!-- this secures the form from malicious attacks during submission -->
                 {% csrf_token %}
-
                 <input class="form-control mb-2" required type="text" autofocus="autofocus" name="prompt" value="{{ prompt }}" id="">
-
+                <label for="temperature" class="form-label">Temperature:</label>
+                <input class="form-control mb-2" type="number" step="0.01" min="0" max="2" name="temperature" value="{{ temperature }}" id="temperature">
                 <button class="btn btn-success fw-bold" type="submit">
-                     GENARATE
+                     GENERATE
                 </button>
-
               </form>
-            
-              <hr>
-
-              <pre>
-                {{ formatted_response }}
-              </pre>
-
             </div>
-
         </div>
-
     </div>
-
-  </div>
 </div>
 {% endblock %}

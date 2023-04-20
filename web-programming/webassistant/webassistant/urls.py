@@ -6,5 +6,5 @@ urlpatterns = [
     # the url to the admin site
     path('admin/', admin.site.urls),
     # registering all the assistant application urls
-    path('webassistant/', include('assistant.urls')),
+    path('', include('assistant.urls')),
 ]
