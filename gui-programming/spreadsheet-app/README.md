@@ -1,1 +1,0 @@
-# [How to Build a Spreadsheet App with Tkinter in Python](https://www.thepythoncode.com/article/spreadsheet-app-using-tkinter-in-python)

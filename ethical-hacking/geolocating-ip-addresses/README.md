@@ -1,1 +1,0 @@
-# [How to Geolocate IP addresses in Python](https://www.thepythoncode.com/article/geolocate-ip-addresses-with-ipinfo-in-python)

@@ -1,1 +1,0 @@
-# [How to Make a Rich Text Editor with Tkinter in Python](https://www.thepythoncode.com/article/create-rich-text-editor-with-tkinter-python)

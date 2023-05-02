@@ -1,5 +1,0 @@
-pytesseract
-numpy
-matplotlib
-opencv-python
-pillow

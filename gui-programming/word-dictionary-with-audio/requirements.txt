@@ -1,2 +1,0 @@
-PyDictionary
-pyttsx3

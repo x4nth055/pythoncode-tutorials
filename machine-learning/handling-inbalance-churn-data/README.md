@@ -1,1 +1,0 @@
-# [Handling Imbalanced Datasets: A Case Study with Customer Churn](https://www.thepythoncode.com/article/handling-imbalanced-datasets-sklearn-in-python)

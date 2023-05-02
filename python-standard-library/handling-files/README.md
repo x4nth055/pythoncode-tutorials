@@ -1,1 +1,0 @@
-# [How to Handle Files in Python using OS Module](https://www.thepythoncode.com/article/file-handling-in-python-using-os-module)

@@ -1,1 +1,0 @@
-# [How to Extract PDF Metadata in Python](https://www.thepythoncode.com/article/extract-pdf-metadata-in-python)

@@ -1,1 +1,0 @@
-# [How to Generate Images from Text using Stable Diffusion in Python](https://www.thepythoncode.com/article/generate-images-from-text-stable-diffusion-python)

@@ -1,1 +1,0 @@
-# [How to Plot Weather Temperature in Python](https://www.thepythoncode.com/article/interactive-weather-plot-with-matplotlib-and-requests)

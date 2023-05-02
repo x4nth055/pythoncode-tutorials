@@ -1,2 +1,0 @@
-Pygtail==0.11.1
-watchdog==2.1.1

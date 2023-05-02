@@ -1,2 +1,0 @@
-Kafka-python==2.0.2
-Flask==1.1.2

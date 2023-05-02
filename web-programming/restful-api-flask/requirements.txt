@@ -1,3 +1,0 @@
-Flask
-Flask-RESTful
-Flask-SQLAlchemy

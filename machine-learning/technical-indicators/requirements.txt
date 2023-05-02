@@ -1,4 +1,0 @@
-pandas-datareader
-yfinance
-mpl-finance
-stockstats

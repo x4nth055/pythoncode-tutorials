@@ -1,1 +1,0 @@
-# [How to Use Regular Expressions in Python](https://www.thepythoncode.com/article/work-with-regular-expressions-in-python)

@@ -1,1 +1,0 @@
-# [How to Make a Hangman Game in Python](https://www.thepythoncode.com/article/make-a-hangman-game-in-python)
