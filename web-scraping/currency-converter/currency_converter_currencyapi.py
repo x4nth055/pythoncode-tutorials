@@ -1,7 +1,7 @@
 import requests
 import urllib.parse as p
 
-API_KEY = "vh2Fth1cu2oe3AFJV5CtTgz50tgjUGUOhlHx0jrk"
+API_KEY = "<YOUR_API_KEY>"
 base_url = "https://api.currencyapi.com/v3/"
 
 # utility function that both functions will use
