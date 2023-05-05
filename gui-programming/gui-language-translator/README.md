@@ -1,0 +1,1 @@
+# [How to Build a GUI Language Translator App in Python](https://www.thepythoncode.com/article/build-a-gui-language-translator-tkinter-python)
