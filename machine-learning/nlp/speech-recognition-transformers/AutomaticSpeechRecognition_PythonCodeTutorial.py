@@ -9,6 +9,8 @@ import soundfile as sf
 import os
 import torchaudio
 
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
 # %% [markdown]
 # # Wav2Vec2.0 Models
 # 
@@ -19,9 +21,9 @@ wav2vec2_model_name = "facebook/wav2vec2-large-960h-lv60-self" # pretrained 1.26
 # wav2vec2_model_name = "jonatasgrosman/wav2vec2-large-xlsr-53-english" # English-only, 1.26GB
 # wav2vec2_model_name = "jonatasgrosman/wav2vec2-large-xlsr-53-arabic" # Arabic-only, 1.26GB
 # wav2vec2_model_name = "jonatasgrosman/wav2vec2-large-xlsr-53-spanish" # Spanish-only, 1.26GB
-# load model and tokenizer
+
 wav2vec2_processor = Wav2Vec2Processor.from_pretrained(wav2vec2_model_name)
-wav2vec2_model = Wav2Vec2ForCTC.from_pretrained(wav2vec2_model_name)
+wav2vec2_model = Wav2Vec2ForCTC.from_pretrained(wav2vec2_model_name).to(device)
 
 # %%
 # audio_url = "http://www.fit.vutbr.cz/~motlicek/sympatex/f2bjrop1.0.wav"
@@ -29,8 +31,8 @@ wav2vec2_model = Wav2Vec2ForCTC.from_pretrained(wav2vec2_model_name)
 # audio_url = "http://www.fit.vutbr.cz/~motlicek/sympatex/f2btrop6.0.wav"
 # audio_url = "https://github.com/x4nth055/pythoncode-tutorials/raw/master/machine-learning/speech-recognition/16-122828-0002.wav"
 audio_url = "https://github.com/x4nth055/pythoncode-tutorials/raw/master/machine-learning/speech-recognition/30-4447-0004.wav"
+# audio_url = "https://www.voiptroubleshooter.com/open_speech/american/OSR_us_000_0060_8k.wav"
 # audio_url = "https://github.com/x4nth055/pythoncode-tutorials/raw/master/machine-learning/speech-recognition/7601-291468-0006.wav"
-# audio_url = "https://file-examples-com.github.io/uploads/2017/11/file_example_WAV_1MG.wav"
 # audio_url = "http://www0.cs.ucl.ac.uk/teaching/GZ05/samples/lathe.wav"
 
 # %%
@@ -49,7 +51,7 @@ speech.shape
 
 # %%
 # tokenize our wav
-input_values = wav2vec2_processor(speech, return_tensors="pt", sampling_rate=16000)["input_values"]
+input_values = wav2vec2_processor(speech, return_tensors="pt", sampling_rate=16000)["input_values"].to(device)
 input_values.shape
 
 # %%
@@ -78,15 +80,12 @@ def load_audio(audio_path):
 
 # %%
 def get_transcription_wav2vec2(audio_path, model, processor):
-  # load our wav file
   speech = load_audio(audio_path)
-  # get the input features
-  input_features = processor(speech, return_tensors="pt", sampling_rate=16000)["input_values"]
+  input_features = processor(speech, return_tensors="pt", sampling_rate=16000)["input_values"].to(device)
   # perform inference
   logits = model(input_features)["logits"]
   # use argmax to get the predicted IDs
   predicted_ids = torch.argmax(logits, dim=-1)
-  # decode the IDs to text
   transcription = processor.batch_decode(predicted_ids)[0]
   return transcription.lower()
 
@@ -108,16 +107,14 @@ get_transcription_wav2vec2("http://www0.cs.ucl.ac.uk/teaching/GZ05/samples/lathe
 # whisper_model_name = "openai/whisper-small" # multilingual, ~ 967 MB
 whisper_model_name = "openai/whisper-medium" # multilingual, ~ 3.06 GB
 # whisper_model_name = "openai/whisper-large-v2" # multilingual, ~ 6.17 GB
-# load the whisper model and tokenizer
+
 whisper_processor = WhisperProcessor.from_pretrained(whisper_model_name)
-whisper_model = WhisperForConditionalGeneration.from_pretrained(whisper_model_name)
+whisper_model = WhisperForConditionalGeneration.from_pretrained(whisper_model_name).to(device)
 
 # %%
-# get the input features
-input_features = whisper_processor(load_audio(audio_url), sampling_rate=16000, return_tensors="pt").input_features
+input_features = whisper_processor(load_audio(audio_url), sampling_rate=16000, return_tensors="pt").input_features.to(device)
 
 # %%
-# get special decoder tokens for the language
 forced_decoder_ids = whisper_processor.get_decoder_prompt_ids(language="english", task="transcribe")
 
 # %%
@@ -127,17 +124,14 @@ forced_decoder_ids
 input_features.shape
 
 # %%
-# perform inference
 predicted_ids = whisper_model.generate(input_features, forced_decoder_ids=forced_decoder_ids)
 predicted_ids.shape
 
 # %%
-# decode the IDs to text
 transcription = whisper_processor.batch_decode(predicted_ids, skip_special_tokens=True)
 transcription
 
 # %%
-# decode the IDs to text with special tokens
 transcription = whisper_processor.batch_decode(predicted_ids, skip_special_tokens=False)
 transcription
 
@@ -145,13 +139,10 @@ transcription
 def get_transcription_whisper(audio_path, model, processor, language="english", skip_special_tokens=True):
   # resample from whatever the audio sampling rate to 16000
   speech = load_audio(audio_path)
-  # get the input features
   input_features = processor(speech, return_tensors="pt", sampling_rate=16000).input_features
-  # get special decoder tokens for the language
   forced_decoder_ids = processor.get_decoder_prompt_ids(language=language, task="transcribe")
-  # perform inference
+  # print(forced_decoder_ids)
   predicted_ids = model.generate(input_features, forced_decoder_ids=forced_decoder_ids)
-  # decode the IDs to text
   transcription = processor.batch_decode(predicted_ids, skip_special_tokens=skip_special_tokens)[0]
   return transcription
 
@@ -208,5 +199,37 @@ display(button)
 # %%
 print("Whisper:", get_transcription_whisper("recorded.wav", whisper_model, whisper_processor))
 print("Wav2vec2:", get_transcription_wav2vec2("recorded.wav", wav2vec2_model, wav2vec2_processor))
+
+# %% [markdown]
+# # Transcribing Long Audio Samples
+
+# %%
+def get_long_transcription_whisper(audio_path, pipe, return_timestamps=True, 
+                                   chunk_length_s=10, stride_length_s=2):
+    """Get the transcription of a long audio file using the Whisper model"""
+    return pipe(load_audio(audio_path).numpy(), return_timestamps=return_timestamps,
+                  chunk_length_s=chunk_length_s, stride_length_s=stride_length_s)
+
+# %%
+# initialize the pipeline
+pipe = pipeline("automatic-speech-recognition", 
+                model=whisper_model_name, device=device)
+
+# %%
+# get the transcription of a sample long audio file
+output = get_long_transcription_whisper(
+    "https://www.voiptroubleshooter.com/open_speech/american/OSR_us_000_0060_8k.wav", 
+    pipe, chunk_length_s=10, stride_length_s=1)
+
+# %%
+output["text"]
+
+# %%
+for chunk in output["chunks"]:
+  # print the timestamp and the text
+  print(chunk["timestamp"], ":", chunk["text"])
+
+# %%
+
 
 
