@@ -1,0 +1,8 @@
+transformers==4.28.1
+soundfile 
+sentencepiece 
+torchaudio 
+pydub
+openai
+SpeechRecognition
+pyaudio
