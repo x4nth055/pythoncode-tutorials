@@ -107,6 +107,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Autoencoders for Dimensionality Reduction using TensorFlow in Python](https://www.thepythoncode.com/article/feature-extraction-dimensionality-reduction-autoencoders-python-keras). ([code](machine-learning/feature-extraction-autoencoders))
     - [Exploring the Different Types of Clustering Algorithms in Machine Learning with Python](https://www.thepythoncode.com/article/clustering-algorithms-in-machine-learning-with-python). ([code](machine-learning/clustering-algorithms))
     - [Image Captioning using PyTorch and Transformers](https://www.thepythoncode.com/article/image-captioning-with-pytorch-and-transformers-in-python). ([code](machine-learning/image-captioning))
+    - [Speech Recognition in Python](https://www.thepythoncode.com/article/speech-recognition-in-python). ([code](machine-learning/asr))
 
 - ### [General Python Topics](https://www.thepythoncode.com/topic/general-python-topics)
     - [How to Make Facebook Messenger bot in Python](https://www.thepythoncode.com/article/make-bot-fbchat-python). ([code](general/messenger-bot))
