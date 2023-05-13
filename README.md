@@ -278,5 +278,6 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build a Tic Tac Toe Game in Python](https://www.thepythoncode.com/article/make-a-tic-tac-toe-game-pygame-in-python). ([code](gui-programming/tictactoe-game))
     - [How to Build a GUI Language Translator App in Python](https://www.thepythoncode.com/article/build-a-gui-language-translator-tkinter-python). ([code](gui-programming/gui-language-translator))
     - [How to Make an Image Editor in Python](https://www.thepythoncode.com/article/make-an-image-editor-in-tkinter-python). ([code](gui-programming/image-editor))
+    - [How to Make a Checkers Game with Pygame in Python](https://www.thepythoncode.com/article/make-a-checkers-game-with-pygame-in-python). ([code](gui-programming/checkers-game))
 
 For any feedback, please consider pulling requests.
