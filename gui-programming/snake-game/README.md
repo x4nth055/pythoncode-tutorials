@@ -1,0 +1,1 @@
+# [How to Make a Snake Game in Python](https://www.thepythoncode.com/article/make-a-snake-game-with-pygame-in-python)
