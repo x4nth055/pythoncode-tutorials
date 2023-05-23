@@ -1,0 +1,1 @@
+# [How to Fine Tune BERT for Semantic Textual Similarity using Transformers in Python](https://www.thepythoncode.com/article/finetune-bert-for-semantic-textual-similarity-in-python)
