@@ -1,0 +1,1 @@
+# [How to Calculate the BLEU Score in Python](https://www.thepythoncode.com/article/bleu-score-in-python)
