@@ -60,6 +60,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Tokenization, Stemming, and Lemmatization in Python](https://www.thepythoncode.com/article/tokenization-stemming-and-lemmatization-in-python). ([code](machine-learning/nlp/tokenization-stemming-lemmatization))
         - [How to Fine Tune BERT for Semantic Textual Similarity using Transformers in Python](https://www.thepythoncode.com/article/finetune-bert-for-semantic-textual-similarity-in-python). ([code](machine-learning/nlp/semantic-textual-similarity))
         - [How to Calculate the BLEU Score in Python](https://www.thepythoncode.com/article/bleu-score-in-python). ([code](machine-learning/nlp/bleu-score))
+        - [Word Error Rate in Python](https://www.thepythoncode.com/article/calculate-word-error-rate-in-python). ([code](machine-learning/nlp/wer-score))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
