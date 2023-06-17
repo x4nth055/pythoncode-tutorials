@@ -15,14 +15,17 @@ class Frame:
 		self.pieces = self._generate_piece()
 
 		self._setup()
+		self.randomize_puzzle()
 
 	def _generate_cell(self):
 		cells = []
 		c_id = 0
 		for col in range(self.grid_size):
+			new_row = []
 			for row in range(self.grid_size):
-				cells.append(Cell(row, col, self.cell_size, c_id))
+				new_row.append(Cell(row, col, self.cell_size, c_id))
 				c_id += 1
+			cells.append(new_row)
 		return cells
 
 	def _generate_piece(self):
@@ -35,40 +38,58 @@ class Frame:
 		return puzzle_pieces
 
 	def _setup(self):
-		for cell in self.grid:
-			piece_choice = random.choice(self.pieces)
-			cell.occupying_piece = piece_choice
-			self.pieces.remove(piece_choice)
+		for row in self.grid:
+			for cell in row:
+				tile_piece = self.pieces[-1]
+				cell.occupying_piece = tile_piece
+				self.pieces.remove(tile_piece)
 
-	def _get_cell_from_id(self, given_id):
-		for cell in self.grid:
-			if cell.c_id == given_id:
-				return cell
+	def randomize_puzzle(self):
+		moves = [(0, 1),(0, -1),(1, 0),(-1, 0)]
+		for i in range(30):
+			shuffle_move = random.choice(moves)
+			for row in self.grid:
+				for cell in row:
+					tile_x = self.grid.index(row) + shuffle_move[0]
+					tile_y = row.index(cell) + shuffle_move[1]
+					if tile_x >= 0 and tile_x <= 2 and tile_y >= 0 and tile_y <= 2:
+						new_cell = self.grid[tile_x][tile_y]
+						if new_cell.occupying_piece.img == None:
+							c = (cell, new_cell)
+							try:
+								c[0].occupying_piece, c[1].occupying_piece = c[1].occupying_piece, c[0].occupying_piece
+							except:
+								return False
+					else:
+						continue
 
 	def _is_move_valid(self, click):
 		moves = {
-			79: 1,
-			80: -1,
-			81: 3,
-			82: -3
+			79: (0, 1),
+			80: (0, -1),
+			81: (1, 0),
+			82: (-1, 0)
 		}
-		for cell in self.grid:
-			move_id = cell.c_id + moves[click.scancode]
-			if move_id >= 0 and move_id <= 8:
-				new_cell = self._get_cell_from_id(move_id)
-				if new_cell.occupying_piece.img == None:
-					return (cell, new_cell)
-			else:
-				continue
+		for row in self.grid:
+			for cell in row:
+				move = moves[click.scancode]
+				tile_x = self.grid.index(row) + move[0]
+				tile_y = row.index(cell) + move[1]
+				if tile_x >= 0 and tile_x <= 2 and tile_y >= 0 and tile_y <= 2:
+					new_cell = self.grid[tile_x][tile_y]
+					if new_cell.occupying_piece.img == None:
+						return (cell, new_cell)
+				else:
+					continue
 
 	def handle_click(self, click):
 		c = self._is_move_valid(click)
 		try:
-			# print(c[0].c_id, c[1].c_id)
 			c[0].occupying_piece, c[1].occupying_piece = c[1].occupying_piece, c[0].occupying_piece
 		except:
 			return False
 
 	def draw(self, display):
-		for cell in self.grid:
-			cell.draw(display)
+		for row in self.grid:
+			for cell in row: 
+				cell.draw(display)
