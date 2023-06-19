@@ -62,6 +62,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [How to Calculate the BLEU Score in Python](https://www.thepythoncode.com/article/bleu-score-in-python). ([code](machine-learning/nlp/bleu-score))
         - [Word Error Rate in Python](https://www.thepythoncode.com/article/calculate-word-error-rate-in-python). ([code](machine-learning/nlp/wer-score))
         - [How to Calculate ROUGE Score in Python](https://www.thepythoncode.com/article/calculate-rouge-score-in-python). ([code](machine-learning/nlp/rouge-score))
+        - [Visual Question Answering with Transformers](https://www.thepythoncode.com/article/visual-question-answering-with-transformers-in-python). ([code](machine-learning/visual-question-answering))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))

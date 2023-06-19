@@ -1,0 +1,6 @@
+torch
+transformers
+accelerate
+scipy
+requests
+Pillow
