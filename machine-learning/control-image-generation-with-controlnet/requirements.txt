@@ -1,0 +1,6 @@
+xformers
+diffusers
+transformers
+accelerate
+controlnet_aux
+opencv-contrib-python
