@@ -257,6 +257,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make an Accounting App with Django in Python](https://www.thepythoncode.com/article/make-an-accounting-app-with-django-in-python). ([code](web-programming/accounting-app))
     - [How to Build a News Site API with Django Rest Framework in Python](https://www.thepythoncode.com/article/a-news-site-api-with-django-python). ([code](web-programming/news_project))
     - [How to Create a RESTful API with Flask in Python](https://www.thepythoncode.com/article/create-a-restful-api-with-flask-in-python). ([code](web-programming/restful-api-flask))
+    - [How to Build a GraphQL API in Python](https://www.thepythoncode.com/article/build-a-graphql-api-with-fastapi-strawberry-and-postgres-python). ([code](https://github.com/menard-codes/PythonGQLArticle))
 
 - ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
