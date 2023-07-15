@@ -1,0 +1,6 @@
+torch
+diffusers 
+transformers 
+accelerate 
+scipy 
+safetensors
