@@ -295,6 +295,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Snake Game in Python](https://www.thepythoncode.com/article/make-a-snake-game-with-pygame-in-python). ([code](gui-programming/snake-game))
     - [How to Create a Slide Puzzle Game in Python](https://www.thepythoncode.com/article/slide-puzzle-game-in-python). ([code](gui-programming/slide-puzzle))
     - [How to Make a Maze Game in Python](https://www.thepythoncode.com/article/build-a-maze-game-in-python). ([code](gui-programming/maze-game))
+    - [How to Create a Platformer Game in Python](https://www.thepythoncode.com/article/platformer-game-with-pygame-in-python). ([code](gui-programming/platformer-game))
 
 
 For any feedback, please consider pulling requests.
