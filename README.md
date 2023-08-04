@@ -261,6 +261,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create a RESTful API with Flask in Python](https://www.thepythoncode.com/article/create-a-restful-api-with-flask-in-python). ([code](web-programming/restful-api-flask))
     - [How to Build a GraphQL API in Python](https://www.thepythoncode.com/article/build-a-graphql-api-with-fastapi-strawberry-and-postgres-python). ([code](https://github.com/menard-codes/PythonGQLArticle))
     - [How to Build a Chat App using Flask in Python](https://thepythoncode.com/article/how-to-build-a-chat-app-in-python-using-flask-and-flasksocketio). ([code](https://github.com/menard-codes/FlaskChatApp))
+    - [How to Build a Full-Stack Web App in Python using FastAPI and React.js](https://thepythoncode.com/article/fullstack-notes-app-with-fastapi-and-reactjs) ([Backend](https://github.com/menard-codes/NotesAppBackend-FastAPI-React), [Frontend](https://github.com/menard-codes/NotesAppFrontend-FastAPI-React))
 
 - ### [GUI Programming](https://www.thepythoncode.com/topic/gui-programming)
     - [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python). ([code](gui-programming/text-editor))
