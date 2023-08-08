@@ -40,6 +40,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Ransomware in Python](https://www.thepythoncode.com/article/make-a-ransomware-in-python). ([code](ethical-hacking/ransomware))
     - [How to Perform DNS Enumeration in Python](https://www.thepythoncode.com/article/dns-enumeration-with-python). ([code](ethical-hacking/dns-enumeration))
     - [How to Geolocate IP addresses in Python](https://www.thepythoncode.com/article/geolocate-ip-addresses-with-ipinfo-in-python). ([code](ethical-hacking/geolocating-ip-addresses))
+    - [How to Crack Hashes in Python](https://thepythoncode.com/article/crack-hashes-in-python). ([code](ethical-hacking/hash-cracker))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
