@@ -1,0 +1,1 @@
+# [How to Cartoonify Images in Python](https://thepythoncode.com/article/make-a-cartoonifier-with-opencv-in-python)
