@@ -1,0 +1,4 @@
+phonenumbers
+folium
+colorama 
+opencage
