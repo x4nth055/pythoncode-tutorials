@@ -43,6 +43,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Crack Hashes in Python](https://thepythoncode.com/article/crack-hashes-in-python). ([code](ethical-hacking/hash-cracker))
     - [How to Make a Phone Number Tracker in Python](https://thepythoncode.com/article/phone-number-tracker-in-python). ([code](ethical-hacking/phone-number-tracker))
     - [How to Make a Login Password Guesser in Python](https://thepythoncode.com/article/make-a-login-password-guesser-in-python). ([code](ethical-hacking/login-password-guesser))
+    - [How to Build a Password Manager in Python](https://thepythoncode.com/article/build-a-password-manager-in-python). ([code](ethical-hacking/password-manager))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
