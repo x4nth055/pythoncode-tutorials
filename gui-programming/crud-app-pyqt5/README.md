@@ -1,0 +1,1 @@
+# [How to Build a CRUD App with PyQt5 and SQLite3 in Python](https://thepythoncode.com/article/build-a-crud-app-using-pyqt5-and-sqlite3-in-python)

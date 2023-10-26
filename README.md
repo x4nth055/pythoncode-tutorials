@@ -289,6 +289,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Real-Time GUI Spelling Checker in Python](https://www.thepythoncode.com/article/make-a-realtime-spelling-checker-gui-python). ([code](gui-programming/realtime-spelling-checker))
     - [How to Build a GUI Language Translator App in Python](https://www.thepythoncode.com/article/build-a-gui-language-translator-tkinter-python). ([code](gui-programming/gui-language-translator))
     - [How to Make an Image Editor in Python](https://www.thepythoncode.com/article/make-an-image-editor-in-tkinter-python). ([code](gui-programming/image-editor))
+    - [How to Build a CRUD App with PyQt5 and SQLite3 in Python](https://thepythoncode.com/article/build-a-crud-app-using-pyqt5-and-sqlite3-in-python). ([code](gui-programming/crud-app-pyqt5))
     
 - ### [Game Development](https://www.thepythoncode.com/topic/game-development)
     - [How to Make a Button using PyGame in Python](https://www.thepythoncode.com/article/make-a-button-using-pygame-in-python). ([code](gui-programming/button-in-pygame))
