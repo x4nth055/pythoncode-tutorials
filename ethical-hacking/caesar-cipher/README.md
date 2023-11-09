@@ -1,0 +1,2 @@
+# [How to Implement the Caesar Cipher in Python](https://thepythoncode.com/article/implement-caesar-cipher-in-python)
+# [How to Crack the Caesar Cipher in Python](https://thepythoncode.com/article/how-to-crack-caesar-cipher-in-python)

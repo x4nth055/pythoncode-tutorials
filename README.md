@@ -47,6 +47,8 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to List Wi-Fi Networks in Python](https://thepythoncode.com/article/list-nearby-wifi-networks-with-python). ([code](ethical-hacking/listing-wifi-networks))
     - [How to Verify File Integrity in Python](https://thepythoncode.com/article/verify-downloaded-files-with-checksum-in-python). ([code](ethical-hacking/verify-file-integrity))
     - [How to Create a Zip File Locker in Python](https://thepythoncode.com/article/build-a-zip-file-locker-in-python). ([code](ethical-hacking/zip-file-locker))
+    - [How to Implement the Caesar Cipher in Python](https://thepythoncode.com/article/implement-caesar-cipher-in-python). ([code](ethical-hacking/caesar-cipher))
+    - [How to Crack the Caesar Cipher in Python](https://thepythoncode.com/article/how-to-crack-caesar-cipher-in-python). ([code](ethical-hacking/caesar-cipher))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
