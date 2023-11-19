@@ -5,3 +5,4 @@ soundfile
 transformers
 datasets
 sentencepiece
+openai
