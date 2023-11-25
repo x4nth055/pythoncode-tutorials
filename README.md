@@ -214,6 +214,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use YouTube API in Python](https://www.thepythoncode.com/article/using-youtube-api-in-python). ([code](general/youtube-api))
     - [Webhooks in Python with Flask](https://www.thepythoncode.com/article/webhooks-in-python-with-flask). ([code](https://github.com/bassemmarji/Flask_Webhook))
     - [How to Make a Language Detector in Python](https://www.thepythoncode.com/article/language-detector-in-python). ([code](general/language-detector))
+    - [How to Build a Twitter (X) Bot in Python](https://thepythoncode.com/article/make-a-twitter-bot-in-python). ([code](https://github.com/menard-codes/dog-fact-tweeter-bot))
 
 - ### [Database](https://www.thepythoncode.com/topic/using-databases-in-python)
     - [How to Use MySQL Database in Python](https://www.thepythoncode.com/article/using-mysql-database-in-python). ([code](database/mysql-connector))
