@@ -49,6 +49,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create a Zip File Locker in Python](https://thepythoncode.com/article/build-a-zip-file-locker-in-python). ([code](ethical-hacking/zip-file-locker))
     - [How to Implement the Caesar Cipher in Python](https://thepythoncode.com/article/implement-caesar-cipher-in-python). ([code](ethical-hacking/caesar-cipher))
     - [How to Crack the Caesar Cipher in Python](https://thepythoncode.com/article/how-to-crack-caesar-cipher-in-python). ([code](ethical-hacking/caesar-cipher))
+    - [How to Lock PDFs in Python](https://thepythoncode.com/article/lock-pdfs-in-python). [(code)](ethical-hacking/pdf-locker)
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
