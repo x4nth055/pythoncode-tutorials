@@ -50,6 +50,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Implement the Caesar Cipher in Python](https://thepythoncode.com/article/implement-caesar-cipher-in-python). ([code](ethical-hacking/caesar-cipher))
     - [How to Crack the Caesar Cipher in Python](https://thepythoncode.com/article/how-to-crack-caesar-cipher-in-python). ([code](ethical-hacking/caesar-cipher))
     - [How to Lock PDFs in Python](https://thepythoncode.com/article/lock-pdfs-in-python). [(code)](ethical-hacking/pdf-locker)
+    - [How to Create a Custom Wordlist in Python](https://thepythoncode.com/article/make-a-wordlist-generator-in-python). ([code](ethical-hacking/bruteforce-wordlist-generator))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
