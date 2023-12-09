@@ -53,6 +53,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create a Custom Wordlist in Python](https://thepythoncode.com/article/make-a-wordlist-generator-in-python). ([code](ethical-hacking/bruteforce-wordlist-generator))
     - [How to Implement the Affine Cipher in Python](https://thepythoncode.com/article/how-to-implement-affine-cipher-in-python). ([code](ethical-hacking/implement-affine-cipher))
     - [How to Crack the Affine Cipher in Python](https://thepythoncode.com/article/how-to-crack-the-affine-cipher-in-python). ([code](ethical-hacking/crack-affine-cipher))
+    - [How to Implement the Vigenère Cipher in Python](https://thepythoncode.com/article/implementing-the-vigenere-cipher-in-python). ([code](ethical-hacking/implement-vigenere-cipher))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
