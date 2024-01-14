@@ -321,6 +321,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make a Flappy Bird Game in Python](https://thepythoncode.com/article/make-a-flappy-bird-game-python). ([code](gui-programming/flappy-bird-game))
     - [How to Create a Pong Game in Python](https://thepythoncode.com/article/build-a-pong-game-in-python). ([code](gui-programming/pong-game))
     - [How to Create a Space Invaders Game in Python](https://thepythoncode.com/article/make-a-space-invader-game-in-python). ([code](gui-programming/space-invaders-game))
+    - [How to Build a Sudoku Game with Python](https://thepythoncode.com/article/make-a-sudoku-game-in-python). ([code](gui-programming/sudoku-game))
 
 
 For any feedback, please consider pulling requests.
