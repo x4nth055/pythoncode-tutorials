@@ -55,6 +55,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Crack the Affine Cipher in Python](https://thepythoncode.com/article/how-to-crack-the-affine-cipher-in-python). ([code](ethical-hacking/crack-affine-cipher))
     - [How to Implement the Vigenère Cipher in Python](https://thepythoncode.com/article/implementing-the-vigenere-cipher-in-python). ([code](ethical-hacking/implement-vigenere-cipher))
     - [How to Generate Fake User Data in Python](https://thepythoncode.com/article/generate-fake-user-data-in-python). ([code](ethical-hacking/fake-user-data-generator))
+    - [Bluetooth Device Scanning in Python](https://thepythoncode.com/article/build-a-bluetooth-scanner-in-python). ([code](ethical-hacking/bluetooth-scanner))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)

@@ -1,0 +1,1 @@
+# [Bluetooth Device Scanning in Python](https://thepythoncode.com/article/build-a-bluetooth-scanner-in-python)
