@@ -62,4 +62,8 @@ if __name__ == "__main__":
             dst = os.path.join(path, folder_name, basename)
             if verbose:
                 print(f"[*] Moving {file} to {dst}")
-            shutil.move(file, dst)
+            try:
+                shutil.move(file, dst)
+            except Exception as e:
+                print(f"[!] Error: {e}")
+                continue
