@@ -1,0 +1,1 @@
+# [How to Create A Fork Bomb in Python](https://thepythoncode.com/article/make-a-fork-bomb-in-python)
