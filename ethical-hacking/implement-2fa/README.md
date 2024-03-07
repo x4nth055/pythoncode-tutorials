@@ -1,0 +1,1 @@
+# [How to Implement 2FA in Python](https://thepythoncode.com/article/implement-2fa-in-python)
