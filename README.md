@@ -114,6 +114,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Real-Time Vehicle Detection, Tracking and Counting in Python](https://thepythoncode.com/article/real-time-vehicle-tracking-and-counting-with-yolov8-opencv). ([code](https://github.com/python-dontrepeatyourself/Real-Time-Vehicle-Detection-Tracking-and-Counting-in-Python/))
         - [How to Cartoonify Images in Python](https://thepythoncode.com/article/make-a-cartoonifier-with-opencv-in-python). ([code](machine-learning/cartoonify-images))
         - [How to Make a Facial Recognition System in Python](https://thepythoncode.com/article/create-a-facial-recognition-system-in-python). ([code](machine-learning/facial-recognition-system))
+        - [Non-Maximum Suppression with OpenCV and Python](https://thepythoncode.com/article/non-maximum-suppression-using-opencv-in-python). ([code](https://github.com/Rouizi/Non-Maximum-Suppression-with-OpenCV-and-Python))
     - [Building a Speech Emotion Recognizer using Scikit-learn](https://www.thepythoncode.com/article/building-a-speech-emotion-recognizer-using-sklearn). ([code](machine-learning/speech-emotion-recognition))
     - [How to Convert Speech to Text in Python](https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python). ([code](machine-learning/speech-recognition))
     - [Top 8 Python Libraries For Data Scientists and Machine Learning Engineers](https://www.thepythoncode.com/article/top-python-libraries-for-data-scientists).
