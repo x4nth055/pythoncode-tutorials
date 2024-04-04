@@ -60,6 +60,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [Bluetooth Device Scanning in Python](https://thepythoncode.com/article/build-a-bluetooth-scanner-in-python). ([code](ethical-hacking/bluetooth-scanner))
     - [How to Create A Fork Bomb in Python](https://thepythoncode.com/article/make-a-fork-bomb-in-python). ([code](ethical-hacking/fork-bomb))
     - [How to Implement 2FA in Python](https://thepythoncode.com/article/implement-2fa-in-python). ([code](ethical-hacking/implement-2fa))
+    - [How to Build a Username Search Tool in Python](https://thepythoncode.com/code/social-media-username-finder-in-python). ([code](ethical-hacking/username-finder))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
