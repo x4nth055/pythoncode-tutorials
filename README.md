@@ -62,6 +62,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Implement 2FA in Python](https://thepythoncode.com/article/implement-2fa-in-python). ([code](ethical-hacking/implement-2fa))
     - [How to Build a Username Search Tool in Python](https://thepythoncode.com/code/social-media-username-finder-in-python). ([code](ethical-hacking/username-finder))
     - [How to Find Past Wi-Fi Connections on Windows in Python](https://thepythoncode.com/article/find-past-wifi-connections-on-windows-in-python). ([code](ethical-hacking/find-past-wifi-connections-on-windows))
+    - [How to Remove Metadata from PDFs in Python](https://thepythoncode.com/article/how-to-remove-metadata-from-pdfs-in-python). ([code](ethical-hacking/pdf-metadata-remover))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)

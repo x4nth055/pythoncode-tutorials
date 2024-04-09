@@ -1,0 +1,1 @@
+# [How to Remove Metadata from PDFs in Python](https://thepythoncode.com/article/how-to-remove-metadata-from-pdfs-in-python)
