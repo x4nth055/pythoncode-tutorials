@@ -214,6 +214,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Print Variable Name and Value in Python](https://www.thepythoncode.com/article/print-variable-name-and-value-in-python). ([code](python-standard-library/print-variable-name-and-value))
     - [How to Make a Hangman Game in Python](https://www.thepythoncode.com/article/make-a-hangman-game-in-python). ([code](python-standard-library/hangman-game))
     - [How to Use the Argparse Module in Python](https://www.thepythoncode.com/article/how-to-use-argparse-in-python). ([code](python-standard-library/argparse))
+    - [How to Make a Grep Clone in Python](https://thepythoncode.com/article/how-to-make-grep-clone-in-python). ([code](python-standard-library/grep-clone))
 
 - ### [Using APIs](https://www.thepythoncode.com/topic/using-apis-in-python)
     - [How to Automate your VPS or Dedicated Server Management in Python](https://www.thepythoncode.com/article/automate-veesp-server-management-in-python). ([code](general/automating-server-management))
