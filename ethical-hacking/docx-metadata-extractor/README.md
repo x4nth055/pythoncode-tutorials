@@ -1,0 +1,1 @@
+# [How to Extract Metadata from Docx Files in Python](https://thepythoncode.com/article/docx-metadata-extractor-in-python)
