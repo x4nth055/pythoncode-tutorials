@@ -64,6 +64,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Find Past Wi-Fi Connections on Windows in Python](https://thepythoncode.com/article/find-past-wifi-connections-on-windows-in-python). ([code](ethical-hacking/find-past-wifi-connections-on-windows))
     - [How to Remove Metadata from PDFs in Python](https://thepythoncode.com/article/how-to-remove-metadata-from-pdfs-in-python). ([code](ethical-hacking/pdf-metadata-remover))
     - [How to Extract Metadata from Docx Files in Python](https://thepythoncode.com/article/docx-metadata-extractor-in-python). ([code](ethical-hacking/docx-metadata-extractor))
+    - [How to Build Spyware in Python](https://thepythoncode.com/article/how-to-build-spyware-in-python). ([code](ethical-hacking/spyware))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
