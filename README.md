@@ -66,6 +66,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Extract Metadata from Docx Files in Python](https://thepythoncode.com/article/docx-metadata-extractor-in-python). ([code](ethical-hacking/docx-metadata-extractor))
     - [How to Build Spyware in Python](https://thepythoncode.com/article/how-to-build-spyware-in-python). ([code](ethical-hacking/spyware))
     - [How to Exploit Command Injection Vulnerabilities in Python](https://thepythoncode.com/article/how-to-exploit-command-injection-vulnerabilities-in-python). ([code](ethical-hacking/exploit-command-injection))
+    - [How to Make Malware Persistent in Python](https://thepythoncode.com/article/how-to-create-malware-persistent-in-python). ([code](ethical-hacking/persistent-malware))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
