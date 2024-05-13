@@ -67,6 +67,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Build Spyware in Python](https://thepythoncode.com/article/how-to-build-spyware-in-python). ([code](ethical-hacking/spyware))
     - [How to Exploit Command Injection Vulnerabilities in Python](https://thepythoncode.com/article/how-to-exploit-command-injection-vulnerabilities-in-python). ([code](ethical-hacking/exploit-command-injection))
     - [How to Make Malware Persistent in Python](https://thepythoncode.com/article/how-to-create-malware-persistent-in-python). ([code](ethical-hacking/persistent-malware))
+    - [How to Remove Persistent Malware in Python](https://thepythoncode.com/article/removingg-persistent-malware-in-python). ([code](ethical-hacking/remove-persistent-malware))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
