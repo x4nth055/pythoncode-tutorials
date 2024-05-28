@@ -113,8 +113,10 @@ def fileManager(event=None, action=None):
 
             ranges = textArea.tag_ranges(tagName)
 
-            for i, tagRange in enumerate(ranges[::2]):
-                document['tags'][tagName].append([str(tagRange), str(ranges[i+1])])
+			assert (len(ranges)%2) == 0, "ranges should have a length multiple of 2"
+			for i in range(0, len(ranges), 2):
+				document['tags'][tagName].append([str(ranges[i]), str(ranges[i + 1])])
+
 
         if not filePath:
             # ask the user for a filename with the native file explorer.
