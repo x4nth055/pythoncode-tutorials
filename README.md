@@ -340,6 +340,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Create a Space Invaders Game in Python](https://thepythoncode.com/article/make-a-space-invader-game-in-python). ([code](gui-programming/space-invaders-game))
     - [How to Build a Sudoku Game with Python](https://thepythoncode.com/article/make-a-sudoku-game-in-python). ([code](gui-programming/sudoku-game))
     - [How to Make a Pacman Game with Python](https://thepythoncode.com/article/creating-pacman-game-with-python). ([code](gui-programming/pacman-game))
+    - [How to Add Sound Effects to your Python Game](https://thepythoncode.com/article/add-sound-effects-to-python-game-with-pygame). ([code](gui-programming/adding-sound-effects-to-games))
 
 
 For any feedback, please consider pulling requests.
