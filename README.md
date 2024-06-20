@@ -69,6 +69,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Make Malware Persistent in Python](https://thepythoncode.com/article/how-to-create-malware-persistent-in-python). ([code](ethical-hacking/persistent-malware))
     - [How to Remove Persistent Malware in Python](https://thepythoncode.com/article/removingg-persistent-malware-in-python). ([code](ethical-hacking/remove-persistent-malware))
     - [How to Check Password Strength with Python](https://thepythoncode.com/article/test-password-strength-with-python). ([code](ethical-hacking/checking-password-strength))
+    - [How to Perform Reverse DNS Lookups Using Python](https://thepythoncode.com/article/reverse-dns-lookup-with-python). ([code](ethical-hacking/reverse-dns-lookup))
 
 - ### [Machine Learning](https://www.thepythoncode.com/topic/machine-learning)
     - ### [Natural Language Processing](https://www.thepythoncode.com/topic/nlp)
