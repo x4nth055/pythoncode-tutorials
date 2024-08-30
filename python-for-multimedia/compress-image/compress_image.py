@@ -28,12 +28,12 @@ def compress_img(image_name, new_size_ratio=0.9, quality=90, width=None, height=
     print("[*] Size before compression:", get_size_format(image_size))
     if new_size_ratio < 1.0:
         # if resizing ratio is below 1.0, then multiply width & height with this ratio to reduce image size
-        img = img.resize((int(img.size[0] * new_size_ratio), int(img.size[1] * new_size_ratio)), Image.ANTIALIAS)
+        img = img.resize((int(img.size[0] * new_size_ratio), int(img.size[1] * new_size_ratio)), Image.LANCZOS)
         # print new image shape
         print("[+] New Image shape:", img.size)
     elif width and height:
         # if width and height are set, resize with them instead
-        img = img.resize((width, height), Image.ANTIALIAS)
+        img = img.resize((width, height), Image.LANCZOS)
         # print new image shape
         print("[+] New Image shape:", img.size)
     # split the filename and extension
