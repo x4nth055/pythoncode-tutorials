@@ -1,0 +1,1 @@
+# [Crafting Dummy Packets with Scapy Using Python](https://thepythoncode.com/article/crafting-packets-with-scapy-in-python)
