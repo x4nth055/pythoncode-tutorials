@@ -68,7 +68,7 @@ changeLocation('Schaffhausen')
 # Making the Radio Buttons
 buttons = RadioButtons(
     ax=plt.axes([0.1, 0.1, 0.2, 0.2]),
-    labels=locations.keys()
+    labels=list(locations.keys())
 )
 
 # Connect click event on the buttons to the function that changes location.
