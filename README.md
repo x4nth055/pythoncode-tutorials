@@ -1,4 +1,4 @@
-<a href="https://iproyal.com/?r=835844"><img src="images/iproyal-1.png" alt="IPRoyal Banner" width="530" height="250" style="vertical-align: middle; margin-left: 10px;"/></a>
+<a href="https://iproyal.com/?r=835844"><img src="images/iproyal-1.png" alt="IPRoyal Banner" width="550" height="250" style="vertical-align: middle; margin-left: 10px;"/></a>
 
 
 # Python Code Tutorials
