@@ -288,6 +288,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Compress Images in Python](https://www.thepythoncode.com/article/compress-images-in-python). ([code](python-for-multimedia/compress-image))
     - [How to Remove Metadata from an Image in Python](https://thepythoncode.com/article/how-to-clear-image-metadata-in-python). ([code](python-for-multimedia/remove-metadata-from-images))
     - [How to Create Videos from Images in Python](https://thepythoncode.com/article/create-a-video-from-images-opencv-python). ([code](python-for-multimedia/create-video-from-images))
+    - [How to Recover Deleted Files with Python](https://thepythoncode.com/article/how-to-recover-deleted-file-with-python). ([code](python-for-multimedia/recover-deleted-files))
 
 - ### [Web Programming](https://www.thepythoncode.com/topic/web-programming)
     - [Detecting Fraudulent Transactions in a Streaming Application using Kafka in Python](https://www.thepythoncode.com/article/detect-fraudulent-transactions-with-apache-kafka-in-python). ([code](general/detect-fraudulent-transactions))

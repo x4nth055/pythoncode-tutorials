@@ -1,0 +1,1 @@
+# [How to Recover Deleted Files with Python](https://thepythoncode.com/article/how-to-recover-deleted-file-with-python)
