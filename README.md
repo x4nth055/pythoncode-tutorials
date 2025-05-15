@@ -98,6 +98,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
         - [Word Error Rate in Python](https://www.thepythoncode.com/article/calculate-word-error-rate-in-python). ([code](machine-learning/nlp/wer-score))
         - [How to Calculate ROUGE Score in Python](https://www.thepythoncode.com/article/calculate-rouge-score-in-python). ([code](machine-learning/nlp/rouge-score))
         - [Visual Question Answering with Transformers](https://www.thepythoncode.com/article/visual-question-answering-with-transformers-in-python). ([code](machine-learning/visual-question-answering))
+        - [Building a Full-Stack RAG Chatbot with FastAPI, OpenAI, and Streamlit](https://thepythoncode.com/article/build-rag-chatbot-fastapi-openai-streamlit). ([code](https://github.com/mahdjourOussama/python-learning/tree/master/chatbot-rag))
     - ### [Computer Vision](https://www.thepythoncode.com/topic/computer-vision)
         - [How to Detect Human Faces in Python using OpenCV](https://www.thepythoncode.com/article/detect-faces-opencv-python). ([code](machine-learning/face_detection))
         - [How to Make an Image Classifier in Python using TensorFlow and Keras](https://www.thepythoncode.com/article/image-classification-keras-python). ([code](machine-learning/image-classifier))
