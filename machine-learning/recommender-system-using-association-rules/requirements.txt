@@ -1,6 +1,6 @@
 pandas==1.1.5
 mlxtend==0.14.0
-numpy==1.19.5
+numpy==1.22.0
 seaborn==0.11.1
 matplotlib==3.2.2
 matplotlib-inline==0.1.3
