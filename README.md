@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://codingfleet.com/code-generator/python/?utm_source=github-repo&utm_medium=banner-2">
-    <img src="images/codingfleet-banner-2.png" alt="CodingFleet Code Generator" width="384" height="384">
+    <img src="images/codingfleet-banner-2.png" alt="CodingFleet Code Generator" width="350" height="350">
   </a><a href="https://codingfleet.com/code-converter/python/?utm_source=github-repo&utm_medium=banner-3">
-    <img src="images/codingfleet-banner-3.png" alt="CodingFleet Code Converter" width="384" height="384">
+    <img src="images/codingfleet-banner-3.png" alt="CodingFleet Code Converter" width="350" height="350">
   </a>
 </p>
 
