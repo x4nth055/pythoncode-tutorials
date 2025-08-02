@@ -1,4 +1,4 @@
-<a href="https://iproyal.com/?r=835844"><img src="images/iproyal-1.png" alt="IPRoyal Banner" width="550" height="250" style="vertical-align: middle; margin-left: 10px;"/></a>
+<a href="https://codingfleet.com/code-generator/python/?utm_source=github-repo&utm_medium=banner-2"><img src="images/codingfleet-banner-2" alt="CodingFleet Banner" width="512" height="512" style="vertical-align: middle; margin-left: 10px;"/></a>
 
 
 # Python Code Tutorials
