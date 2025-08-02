@@ -1,4 +1,4 @@
-<a href="https://codingfleet.com/code-generator/python/?utm_source=github-repo&utm_medium=banner-2"><img src="images/codingfleet-banner-2.png" alt="CodingFleet Banner" width="512" height="512" style="vertical-align: middle; margin-left: 10px;"/></a>
+<a href="https://codingfleet.com/code-generator/python/?utm_source=github-repo&utm_medium=banner-2"><img src="images/codingfleet-banner-2.png" alt="CodingFleet Banner" width="256" height="256" style="vertical-align: middle; margin-left: 10px;"/></a>
 
 
 # Python Code Tutorials
