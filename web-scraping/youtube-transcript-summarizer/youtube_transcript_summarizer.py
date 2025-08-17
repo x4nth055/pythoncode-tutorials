@@ -1,8 +1,7 @@
 import os
-import re
+import sys
 import nltk
 import pytube
-import youtube_transcript_api
 from youtube_transcript_api import YouTubeTranscriptApi
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
@@ -21,11 +20,17 @@ nltk.download('punkt_tab', quiet=True)
 nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
 
-# Initialize OpenAI client
-client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key="<api_key>", # Add your OpenRouter API key here
-)
+# Initialize OpenAI client from environment variable
+# Expect the OpenRouter API key to be provided via OPENROUTER_API_KEY
+api_key = os.getenv("OPENROUTER_API_KEY")
+if not api_key:
+    print(Fore.RED + "Error: OPENROUTER_API_KEY environment variable is not set or is still the placeholder ('<api_key>').")
+    sys.exit(1)
+else:
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=api_key,
+    )
 
 def extract_video_id(youtube_url):
     """Extract the video ID from a YouTube URL."""
@@ -48,8 +53,10 @@ def extract_video_id(youtube_url):
 def get_transcript(video_id):
     """Get the transcript of a YouTube video."""
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
-        return ' '.join([entry['text'] for entry in transcript])
+        youtube_transcript_api = YouTubeTranscriptApi()
+        fetched_transcript = youtube_transcript_api.fetch(video_id)
+        full_transcript = " ".join([snippet.text for snippet in fetched_transcript.snippets])
+        return full_transcript.strip()
     except Exception as e:
         return f"Error retrieving transcript: {str(e)}."
 
