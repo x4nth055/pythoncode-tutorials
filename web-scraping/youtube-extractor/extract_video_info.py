@@ -53,7 +53,7 @@ def get_video_info(url):
     channel_name = soup.find("span", itemprop="author").next.next['content']
     # channel URL
     # channel_url = soup.find("span", itemprop="author").next['href']
-    channel_url = f"https://www.youtube.com/{channel_tag}"
+    channel_url = f"https://www.youtube.com/channel/{channel_tag}"
     # number of subscribers as str
     channel_subscribers = videoSecondaryInfoRenderer['owner']['videoOwnerRenderer']['subscriberCountText']['accessibility']['accessibilityData']['label']
     # channel details (old way)
