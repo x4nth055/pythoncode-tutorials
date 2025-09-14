@@ -1,1 +1,0 @@
-# [How to Perform DNS Enumeration in Python](https://www.thepythoncode.com/article/dns-enumeration-with-python)

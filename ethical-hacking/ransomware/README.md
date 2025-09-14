@@ -1,1 +1,0 @@
-# [How to Make a Ransomware in Python](https://www.thepythoncode.com/article/make-a-ransomware-in-python)

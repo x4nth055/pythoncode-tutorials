@@ -1,8 +1,0 @@
-pyttsx3
-gTTS
-playsound
-soundfile
-transformers
-datasets
-sentencepiece
-openai

@@ -1,4 +1,0 @@
-ttkbootstrap
-googletrans==3.1.0a0
-pyttsx3
-pyperclip

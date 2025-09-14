@@ -1,1 +1,0 @@
-# [How to Make a Pacman Game with Python](https://thepythoncode.com/article/creating-pacman-game-with-python)

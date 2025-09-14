@@ -1,1 +1,0 @@
-# [How to Create a Platformer Game in Python](https://www.thepythoncode.com/article/platformer-game-with-pygame-in-python)

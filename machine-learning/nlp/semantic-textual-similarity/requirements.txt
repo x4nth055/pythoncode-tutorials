@@ -1,6 +1,0 @@
-transformers
-sentence-transformers
-datasets
-tqdm
-numpy
-pandas

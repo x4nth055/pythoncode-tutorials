@@ -1,1 +1,0 @@
-# [How to Make a Clickjacking Vulnerability Scanner in Python](https://thepythoncode.com/article/make-a-clickjacking-vulnerability-scanner-with-python)

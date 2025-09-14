@@ -1,1 +1,0 @@
-# [Speech Recognition in Python](https://www.thepythoncode.com/article/speech-recognition-in-python)

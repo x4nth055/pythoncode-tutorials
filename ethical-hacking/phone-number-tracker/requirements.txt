@@ -1,4 +1,0 @@
-phonenumbers
-folium
-colorama 
-opencage

@@ -1,6 +1,0 @@
-sklearn
-tensorflow
-matplotlib
-numpy
-pandas
-yahoo_fin

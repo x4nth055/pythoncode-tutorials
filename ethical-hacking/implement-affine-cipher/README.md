@@ -1,1 +1,0 @@
-# [How to Implement the Affine Cipher in Python](https://thepythoncode.com/article/how-to-implement-affine-cipher-in-python)

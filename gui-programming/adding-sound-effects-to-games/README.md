@@ -1,1 +1,0 @@
-# [How to Add Sound Effects to your Python Game](https://thepythoncode.com/article/add-sound-effects-to-python-game-with-pygame)

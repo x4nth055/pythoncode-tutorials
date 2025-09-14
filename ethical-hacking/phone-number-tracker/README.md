@@ -1,1 +1,0 @@
-# [How to Make a Phone Number Tracker in Python](https://thepythoncode.com/article/phone-number-tracker-in-python)

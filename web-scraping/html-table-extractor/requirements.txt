@@ -1,3 +1,0 @@
-requests
-bs4
-pandas

@@ -1,1 +1,0 @@
-# [How to Detect Gender by Name using Python](https://www.thepythoncode.com/article/gender-predictor-gui-app-tkinter-genderize-api-python)

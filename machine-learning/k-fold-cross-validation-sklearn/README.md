@@ -1,1 +1,0 @@
-# [K-Fold Cross Validation using Scikit-Learn in Python](https://www.thepythoncode.com/article/kfold-cross-validation-using-sklearn-in-python)

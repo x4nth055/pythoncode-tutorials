@@ -1,1 +1,0 @@
-# [How to Make an Accounting App with Django in Python](https://www.thepythoncode.com/article/make-an-accounting-app-with-django-in-python)

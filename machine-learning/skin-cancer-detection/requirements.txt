@@ -1,8 +1,0 @@
-tensorflow
-tensorflow_hub
-matplotlib
-numpy
-pandas
-seaborn
-sklearn
-imblearn

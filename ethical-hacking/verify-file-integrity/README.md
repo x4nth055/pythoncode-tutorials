@@ -1,1 +1,0 @@
-# [How to Verify File Integrity in Python](https://thepythoncode.com/article/verify-downloaded-files-with-checksum-in-python)

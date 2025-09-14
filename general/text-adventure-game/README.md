@@ -1,1 +1,0 @@
-# [How to Make a Text Adventure Game in Python](https://www.thepythoncode.com/article/make-a-text-adventure-game-with-python)

@@ -1,1 +1,0 @@
-# [How to Build a GUI Voice Recorder App in Python](https://www.thepythoncode.com/article/make-a-gui-voice-recorder-python)

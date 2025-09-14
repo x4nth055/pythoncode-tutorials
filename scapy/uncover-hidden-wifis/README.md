@@ -1,1 +1,0 @@
-# [How to See Hidden Wi-Fi Networks in Python](https://thepythoncode.com/article/uncovering-hidden-ssids-with-scapy-in-python)

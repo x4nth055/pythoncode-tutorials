@@ -1,1 +1,0 @@
-# [How to Extract Audio from Video in Python](https://www.thepythoncode.com/article/extract-audio-from-video-in-python)

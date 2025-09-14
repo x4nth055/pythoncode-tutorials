@@ -1,1 +1,0 @@
-# [How to Remove Metadata from an Image in Python](https://thepythoncode.com/article/how-to-clear-image-metadata-in-python)

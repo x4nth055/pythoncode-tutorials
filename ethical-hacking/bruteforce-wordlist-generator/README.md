@@ -1,1 +1,0 @@
-# [How to Create a Custom Wordlist in Python](https://thepythoncode.com/article/make-a-wordlist-generator-in-python)

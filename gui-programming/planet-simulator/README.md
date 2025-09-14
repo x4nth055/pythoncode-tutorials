@@ -1,1 +1,0 @@
-# [How to Make a Planet Simulator with PyGame in Python](https://www.thepythoncode.com/article/make-a-planet-simulator-using-pygame-in-python)

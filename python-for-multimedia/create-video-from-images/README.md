@@ -1,1 +1,0 @@
-# [How to Create Videos from Images in Python](https://thepythoncode.com/article/create-a-video-from-images-opencv-python)

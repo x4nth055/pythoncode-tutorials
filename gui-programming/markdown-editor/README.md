@@ -1,1 +1,0 @@
-# [How to Make a Markdown Editor using Tkinter in Python](https://www.thepythoncode.com/article/markdown-editor-with-tkinter-in-python)

@@ -1,4 +1,0 @@
-matplotlib
-numpy
-tensorflow==2.5.3
-tensorflow_datasets
