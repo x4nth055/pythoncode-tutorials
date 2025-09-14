@@ -1,5 +1,0 @@
-matplotlib
-numpy
-pandas
-scikit_learn==1.0.2
-torch==1.10.1

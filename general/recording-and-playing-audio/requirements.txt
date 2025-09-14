@@ -1,4 +1,0 @@
-playsound
-pyaudio
-pydub
-ffmpeg-python

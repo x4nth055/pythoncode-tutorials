@@ -1,1 +1,0 @@
-# [How to Upscale Images using Stable Diffusion in Python](https://www.thepythoncode.com/article/upscale-images-using-stable-diffusion-x4-upscaler-huggingface)

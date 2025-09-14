@@ -1,7 +1,0 @@
-transformers
-nltk
-pandas
-numpy
-matplotlib
-seaborn
-wordcloud

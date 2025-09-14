@@ -1,1 +1,0 @@
-# [How to Make a File Explorer using Tkinter in Python](https://www.thepythoncode.com/article/create-a-simple-file-explorer-using-tkinter-in-python)

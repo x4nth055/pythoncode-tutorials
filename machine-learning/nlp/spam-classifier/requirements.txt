@@ -1,4 +1,0 @@
-sklearn
-tqdm
-numpy
-tensorflow

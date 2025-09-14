@@ -1,2 +1,0 @@
-camelot-py[cv]
-tabula-py

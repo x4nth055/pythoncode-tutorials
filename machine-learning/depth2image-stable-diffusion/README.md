@@ -1,1 +1,0 @@
-# [How to Perform Image to Image Generation with Stable Diffusion in Python](https://www.thepythoncode.com/article/generate-images-using-depth-to-image-huggingface-python)

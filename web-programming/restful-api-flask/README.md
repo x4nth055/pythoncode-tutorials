@@ -1,1 +1,0 @@
-# [How to Create a RESTful API with Flask in Python](https://www.thepythoncode.com/article/create-a-restful-api-with-flask-in-python)

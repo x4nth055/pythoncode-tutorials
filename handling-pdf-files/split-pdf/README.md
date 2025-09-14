@@ -1,1 +1,0 @@
-# [How to Split PDF Files in Python](https://www.thepythoncode.com/article/split-pdf-files-in-python)

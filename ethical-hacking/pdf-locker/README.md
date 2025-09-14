@@ -1,1 +1,0 @@
-# [How to Lock PDFs in Python](https://thepythoncode.com/article/lock-pdfs-in-python)

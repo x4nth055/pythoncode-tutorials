@@ -1,1 +1,0 @@
-# [How to Edit Images using InstructPix2Pix in Python](https://www.thepythoncode.com/article/edit-images-using-instruct-pix2pix-with-huggingface)

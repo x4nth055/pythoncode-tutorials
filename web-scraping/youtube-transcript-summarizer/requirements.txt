@@ -1,5 +1,0 @@
-nltk
-pytube
-youtube_transcript_api
-colorama
-openai

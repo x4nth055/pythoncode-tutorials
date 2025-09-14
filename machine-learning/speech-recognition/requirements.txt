@@ -1,3 +1,0 @@
-speech_recognition
-pyaudio
-pydub

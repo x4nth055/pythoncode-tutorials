@@ -1,1 +1,0 @@
-# [How to Change Text Color in Python](https://www.thepythoncode.com/article/change-text-color-in-python)

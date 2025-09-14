@@ -1,1 +1,0 @@
-# [How to Perform Reverse DNS Lookups Using Python](https://thepythoncode.com/article/reverse-dns-lookup-with-python)

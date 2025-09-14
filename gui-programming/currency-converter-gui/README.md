@@ -1,1 +1,0 @@
-# [How to Build a GUI Currency Converter using Tkinter in Python](https://www.thepythoncode.com/article/currency-converter-gui-using-tkinter-python)

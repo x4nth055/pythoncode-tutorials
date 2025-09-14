@@ -1,1 +1,0 @@
-# [How to Use MongoDB Database in Python](https://www.thepythoncode.com/article/introduction-to-mongodb-in-python)

@@ -1,1 +1,0 @@
-# [How to Build a Custom NetCat with Python](https://thepythoncode.com/article/create-a-custom-netcat-in-python)

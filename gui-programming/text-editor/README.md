@@ -1,1 +1,0 @@
-# [How to Make a Text Editor using Tkinter in Python](https://www.thepythoncode.com/article/text-editor-using-tkinter-python)

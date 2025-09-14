@@ -1,1 +1,0 @@
-# [How to Implement the Vigenère Cipher in Python](https://thepythoncode.com/article/implementing-the-vigenere-cipher-in-python)

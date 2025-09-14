@@ -1,1 +1,0 @@
-# [How to Calculate ROUGE Score in Python](https://www.thepythoncode.com/article/calculate-rouge-score-in-python)

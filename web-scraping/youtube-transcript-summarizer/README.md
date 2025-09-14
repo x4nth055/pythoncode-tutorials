@@ -1,1 +1,0 @@
-# [YouTube Video Transcription Summarization with Python](https://thepythoncode.com/article/youtube-video-transcription-and-summarization-with-python)
