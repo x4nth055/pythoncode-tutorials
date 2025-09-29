@@ -1,92 +1,150 @@
-from requests_html import HTMLSession
-from bs4 import BeautifulSoup as bs
+import requests
+from bs4 import BeautifulSoup
 import re
 import json
-
-# init session
-session = HTMLSession()
-
+import argparse
 
 def get_video_info(url):
-    # download HTML code
-    response = session.get(url)
-    # execute Javascript
-    response.html.render(timeout=60)
-    # create beautiful soup object to parse HTML
-    soup = bs(response.html.html, "html.parser")
-    # open("index.html", "w").write(response.html.html)
-    # initialize the result
-    result = {}
-    # video title
-    result["title"] = soup.find("meta", itemprop="name")['content']
-    # video views
-    result["views"] = soup.find("meta", itemprop="interactionCount")['content']
-    # video description
-    result["description"] = soup.find("meta", itemprop="description")['content']
-    # date published
-    result["date_published"] = soup.find("meta", itemprop="datePublished")['content']
-    # get the duration of the video
-    result["duration"] = soup.find("span", {"class": "ytp-time-duration"}).text
-    # get the video tags
-    result["tags"] = ', '.join([ meta.attrs.get("content") for meta in soup.find_all("meta", {"property": "og:video:tag"}) ])
-
-    # Additional video and channel information (with help from: https://stackoverflow.com/a/68262735)
-    data = re.search(r"var ytInitialData = ({.*?});", soup.prettify()).group(1)
-    data_json = json.loads(data)
-    videoPrimaryInfoRenderer = data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][0]['videoPrimaryInfoRenderer']
-    videoSecondaryInfoRenderer = data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][1]['videoSecondaryInfoRenderer']
-    # number of likes
-    likes_label = videoPrimaryInfoRenderer['videoActions']['menuRenderer']['topLevelButtons'][0]['toggleButtonRenderer']['defaultText']['accessibility']['accessibilityData']['label'] # "No likes" or "###,### likes"
-    likes_str = likes_label.split(' ')[0].replace(',','')
-    result["likes"] = '0' if likes_str == 'No' else likes_str
-    # number of likes (old way) doesn't always work
-    # text_yt_formatted_strings = soup.find_all("yt-formatted-string", {"id": "text", "class": "ytd-toggle-button-renderer"})
-    # result["likes"] = ''.join([ c for c in text_yt_formatted_strings[0].attrs.get("aria-label") if c.isdigit() ])
-    # result["likes"] = 0 if result['likes'] == '' else int(result['likes'])
-    # number of dislikes - YouTube does not publish this anymore...
-    # result["dislikes"] = ''.join([ c for c in text_yt_formatted_strings[1].attrs.get("aria-label") if c.isdigit() ])	
-    # result["dislikes"] = '0' if result['dislikes'] == '' else result['dislikes']
-    result['dislikes'] = 'UNKNOWN'
-    # channel details
-    channel_tag = soup.find("meta", itemprop="channelId")['content']
-    # channel name
-    channel_name = soup.find("span", itemprop="author").next.next['content']
-    # channel URL
-    # channel_url = soup.find("span", itemprop="author").next['href']
-    channel_url = f"https://www.youtube.com/{channel_tag}"
-    # number of subscribers as str
-    channel_subscribers = videoSecondaryInfoRenderer['owner']['videoOwnerRenderer']['subscriberCountText']['accessibility']['accessibilityData']['label']
-    # channel details (old way)
-    # channel_tag = soup.find("yt-formatted-string", {"class": "ytd-channel-name"}).find("a")
-    # # channel name (old way)
-    # channel_name = channel_tag.text
-    # # channel URL (old way)
-    # channel_url = f"https://www.youtube.com{channel_tag['href']}"
-    # number of subscribers as str (old way)
-    # channel_subscribers = soup.find("yt-formatted-string", {"id": "owner-sub-count"}).text.strip()
-    result['channel'] = {'name': channel_name, 'url': channel_url, 'subscribers': channel_subscribers}
-    return result
+    """
+    Extract video information from YouTube using modern approach
+    """
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    
+    try:
+        # Download HTML code
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        
+        # Create beautiful soup object to parse HTML
+        soup = BeautifulSoup(response.text, "html.parser")
+        
+        # Initialize the result
+        result = {}
+        
+        # Extract ytInitialData which contains all the video information
+        data_match = re.search(r'var ytInitialData = ({.*?});', response.text)
+        if not data_match:
+            raise Exception("Could not find ytInitialData in page")
+            
+        data_json = json.loads(data_match.group(1))
+        
+        # Get the main content sections
+        contents = data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents']
+        
+        # Extract video information from videoPrimaryInfoRenderer
+        if 'videoPrimaryInfoRenderer' in contents[0]:
+            primary = contents[0]['videoPrimaryInfoRenderer']
+            
+            # Video title
+            result["title"] = primary['title']['runs'][0]['text']
+            
+            # Video views
+            result["views"] = primary['viewCount']['videoViewCountRenderer']['viewCount']['simpleText']
+            
+            # Date published
+            result["date_published"] = primary['dateText']['simpleText']
+        
+        # Extract channel information from videoSecondaryInfoRenderer
+        secondary = None
+        if 'videoSecondaryInfoRenderer' in contents[1]:
+            secondary = contents[1]['videoSecondaryInfoRenderer']
+            owner = secondary['owner']['videoOwnerRenderer']
+            
+            # Channel name
+            channel_name = owner['title']['runs'][0]['text']
+            
+            # Channel ID
+            channel_id = owner['navigationEndpoint']['browseEndpoint']['browseId']
+            
+            # Channel URL - FIXED with proper /channel/ path
+            channel_url = f"https://www.youtube.com/channel/{channel_id}"
+            
+            # Number of subscribers
+            channel_subscribers = owner['subscriberCountText']['accessibility']['accessibilityData']['label']
+            
+            result['channel'] = {
+                'name': channel_name, 
+                'url': channel_url, 
+                'subscribers': channel_subscribers
+            }
+        
+        # Extract video description
+        if secondary and 'attributedDescription' in secondary:
+            description_runs = secondary['attributedDescription']['content']
+            result["description"] = description_runs
+        else:
+            result["description"] = "Description not available"
+        
+        # Try to extract video duration from player overlay
+        # This is a fallback approach since the original method doesn't work
+        duration_match = re.search(r'"approxDurationMs":"(\d+)"', response.text)
+        if duration_match:
+            duration_ms = int(duration_match.group(1))
+            minutes = duration_ms // 60000
+            seconds = (duration_ms % 60000) // 1000
+            result["duration"] = f"{minutes}:{seconds:02d}"
+        else:
+            result["duration"] = "Duration not available"
+        
+        # Extract video tags if available
+        video_tags = []
+        if 'keywords' in data_json.get('metadata', {}).get('videoMetadataRenderer', {}):
+            video_tags = data_json['metadata']['videoMetadataRenderer']['keywords']
+        result["tags"] = ', '.join(video_tags) if video_tags else "No tags available"
+        
+        # Extract likes (modern approach)
+        result["likes"] = "Likes count not available"
+        result["dislikes"] = "UNKNOWN"  # YouTube no longer shows dislikes
+        
+        # Try to find likes in the new structure
+        for content in contents:
+            if 'compositeVideoPrimaryInfoRenderer' in content:
+                composite = content['compositeVideoPrimaryInfoRenderer']
+                if 'likeButton' in composite:
+                    like_button = composite['likeButton']
+                    if 'toggleButtonRenderer' in like_button:
+                        toggle = like_button['toggleButtonRenderer']
+                        if 'defaultText' in toggle:
+                            default_text = toggle['defaultText']
+                            if 'accessibility' in default_text:
+                                accessibility = default_text['accessibility']
+                                if 'accessibilityData' in accessibility:
+                                    label = accessibility['accessibilityData']['label']
+                                    if 'like' in label.lower():
+                                        result["likes"] = label
+        
+        return result
+        
+    except Exception as e:
+        raise Exception(f"Error extracting video info: {str(e)}")
 
 if __name__ == "__main__":
-    import argparse
     parser = argparse.ArgumentParser(description="YouTube Video Data Extractor")
     parser.add_argument("url", help="URL of the YouTube video")
 
     args = parser.parse_args()
+    
     # parse the video URL from command line
     url = args.url
     
-    data = get_video_info(url)
+    try:
+        data = get_video_info(url)
 
-    # print in nice format
-    print(f"Title: {data['title']}")
-    print(f"Views: {data['views']}")
-    print(f"Published at: {data['date_published']}")
-    print(f"Video Duration: {data['duration']}")
-    print(f"Video tags: {data['tags']}")
-    print(f"Likes: {data['likes']}")
-    print(f"Dislikes: {data['dislikes']}")
-    print(f"\nDescription: {data['description']}\n")
-    print(f"\nChannel Name: {data['channel']['name']}")
-    print(f"Channel URL: {data['channel']['url']}")
-    print(f"Channel Subscribers: {data['channel']['subscribers']}")
+        # print in nice format
+        print(f"Title: {data['title']}")
+        print(f"Views: {data['views']}")
+        print(f"Published at: {data['date_published']}")
+        print(f"Video Duration: {data['duration']}")
+        print(f"Video tags: {data['tags']}")
+        print(f"Likes: {data['likes']}")
+        print(f"Dislikes: {data['dislikes']}")
+        print(f"\nDescription: {data['description']}\n")
+        print(f"\nChannel Name: {data['channel']['name']}")
+        print(f"Channel URL: {data['channel']['url']}")
+        print(f"Channel Subscribers: {data['channel']['subscribers']}")
+        
+    except Exception as e:
+        print(f"Error: {e}")
+        print("\nNote: YouTube frequently changes its structure, so this script may need updates.")
