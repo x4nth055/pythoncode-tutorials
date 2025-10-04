@@ -28,10 +28,16 @@ def get_windows_saved_wifi_passwords(verbose=1):
         [list]: list of extracted profiles, a profile has the fields ["ssid", "ciphers", "key"]
     """
     ssids = get_windows_saved_ssids()
-    Profile = namedtuple("Profile", ["ssid", "ciphers", "key"])
+    Profile = namedtuple("Profile", ["ssid", "security", "ciphers", "key"])
     profiles = []
     for ssid in ssids:
         ssid_details = subprocess.check_output(f"""netsh wlan show profile "{ssid}" key=clear""").decode()
+
+        #get the security type
+        security = re.findall(r"Authentication\s(.*)", ssid_details)
+        # clear spaces and colon
+        security = "/".join(dict.fromkeys(c.strip().strip(":").strip() for c in security))
+
         # get the ciphers
         ciphers = re.findall(r"Cipher\s(.*)", ssid_details)
         # clear spaces and colon
@@ -43,7 +49,7 @@ def get_windows_saved_wifi_passwords(verbose=1):
             key = key[0].strip().strip(":").strip()
         except IndexError:
             key = "None"
-        profile = Profile(ssid=ssid, ciphers=ciphers, key=key)
+        profile = Profile(ssid=ssid, security=security, ciphers=ciphers, key=key)
         if verbose >= 1:
             print_windows_profile(profile)
         profiles.append(profile)
@@ -52,12 +58,13 @@ def get_windows_saved_wifi_passwords(verbose=1):
 
 def print_windows_profile(profile):
     """Prints a single profile on Windows"""
-    print(f"{profile.ssid:25}{profile.ciphers:15}{profile.key:50}")
+    #print(f"{profile.ssid:25}{profile.ciphers:15}{profile.key:50}")
+    print(f"{profile.ssid:25}{profile.security:30}{profile.ciphers:35}{profile.key:50}")
 
 
 def print_windows_profiles(verbose):
     """Prints all extracted SSIDs along with Key on Windows"""
-    print("SSID                     CIPHER(S)      KEY")
+    print("SSID                     Securities                    CIPHER(S)                         KEY")
     print("-"*50)
     get_windows_saved_wifi_passwords(verbose)
 
