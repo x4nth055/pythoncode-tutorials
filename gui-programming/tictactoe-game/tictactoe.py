@@ -36,6 +36,11 @@ class TicTacToe():
 		self.font = pygame.font.SysFont("Courier New", 35)
 		self.FPS = pygame.time.Clock()
 
+		img = pygame.image.load("images/Tc-O.png")
+		self.mark_o = pygame.transform.scale(img, (self.cell_size, self.cell_size))
+		img = pygame.image.load("images/Tc-X.png")
+		self.mark_x = pygame.transform.scale(img, (self.cell_size, self.cell_size))
+
 
 	# draws table representation
 	def _draw_table(self):
@@ -57,7 +62,7 @@ class TicTacToe():
 			x, y = pos[0] // self.cell_size, pos[1] // self.cell_size
 			if self.table[x][y] == "-":
 				self.table[x][y] = self.player
-				self._draw_char(x,y,self.player)
+				self._draw_char(x, y)
 				self._game_check()
 				self._change_player()
 		except:
@@ -65,12 +70,11 @@ class TicTacToe():
 
 
 	# draws character of the recent player to the selected table cell
-	def _draw_char(self, x, y, player):
+	def _draw_char(self, x, y):
 		if self.player == "O":
-			img = pygame.image.load("images/Tc-O.png")
+			img = self.mark_o
 		elif self.player == "X":
-			img = pygame.image.load("images/Tc-X.png")
-		img = pygame.transform.scale(img, (self.cell_size, self.cell_size))
+			img = self.mark_x
 		screen.blit(img, (x * self.cell_size, y * self.cell_size, self.cell_size, self.cell_size))
 
 
