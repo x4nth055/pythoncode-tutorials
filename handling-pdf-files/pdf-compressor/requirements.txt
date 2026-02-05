@@ -1,1 +1,7 @@
-PDFNetPython3==8.1.0
+# No Python dependencies required for Ghostscript-based compressor.
+# System dependency: Ghostscript
+# - macOS:   brew install ghostscript
+# - Debian:  sudo apt-get install -y ghostscript
+# - Windows: https://ghostscript.com/releases/
+#
+# The legacy script (pdf_compressor.py) depends on PDFNet (commercial) and a license key.

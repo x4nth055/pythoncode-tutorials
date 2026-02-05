@@ -1,4 +1,11 @@
-<a href="https://iproyal.com/?r=835844"><img src="images/iproyal-1.png" alt="IPRoyal Banner" width="550" height="250" style="vertical-align: middle; margin-left: 10px;"/></a>
+<p align="center">
+  <a href="https://codingfleet.com/code-generator/python/?utm_source=github-repo&utm_medium=banner-2">
+    <img src="images/codingfleet-banner-2.png" alt="CodingFleet Code Generator" width="350" height="350">
+  </a><a href="https://codingfleet.com/code-converter/python/?utm_source=github-repo&utm_medium=banner-3">
+    <img src="images/codingfleet-banner-3.png" alt="CodingFleet Code Converter" width="350" height="350">
+  </a>
+</p>
+
 
 
 # Python Code Tutorials
@@ -182,6 +189,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Query the Ethereum Blockchain with Python](https://www.thepythoncode.com/article/query-ethereum-blockchain-with-python). ([code](general/query-ethereum))
     - [Data Cleaning with Pandas in Python](https://www.thepythoncode.com/article/data-cleaning-using-pandas-in-python). ([code](general/data-cleaning-pandas))
     - [How to Minify CSS with Python](https://www.thepythoncode.com/article/minimize-css-files-in-python). ([code](general/minify-css))
+    - [Build a real MCP client and server in Python with FastMCP (Todo Manager example)](https://www.thepythoncode.com/article/fastmcp-mcp-client-server-todo-manager). ([code](general/fastmcp-mcp-client-server-todo-manager))
 
     
     
