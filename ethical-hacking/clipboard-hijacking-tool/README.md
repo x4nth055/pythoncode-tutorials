@@ -1,0 +1,2 @@
+# [Building a ClipBoard Hijacking Malware with Python](https://thepythoncode.com/article/build-a-clipboard-hijacking-tool-with-python)
+This project demonstrates how to create a clipboard hijacking malware using Python. The malware monitors the clipboard for any changes and replaces the copied content with a predefined message or malicious link.
