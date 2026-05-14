@@ -262,6 +262,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Use MySQL Database in Python](https://www.thepythoncode.com/article/using-mysql-database-in-python). ([code](database/mysql-connector))
     - [How to Connect to a Remote MySQL Database in Python](https://www.thepythoncode.com/article/connect-to-a-remote-mysql-server-in-python). ([code](database/connect-to-remote-mysql-server))
     - [How to Use MongoDB Database in Python](https://www.thepythoncode.com/article/introduction-to-mongodb-in-python). ([code](database/mongodb-client))
+ - [SQL Analytics at Lightning Speed: Getting Started with DuckDB in Python](https://www.thepythoncode.com/article/duckdb-python-getting-started). ([code](database/duckdb-python))
 
 - ### [Handling PDF Files](https://www.thepythoncode.com/topic/handling-pdf-files)
     - [How to Extract All PDF Links in Python](https://www.thepythoncode.com/article/extract-pdf-links-with-python). ([code](web-scraping/pdf-url-extractor))
