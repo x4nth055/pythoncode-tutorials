@@ -146,6 +146,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Predict Stock Prices in Python using TensorFlow 2 and Keras](https://www.thepythoncode.com/article/stock-price-prediction-in-python-using-tensorflow-2-and-keras). ([code](machine-learning/stock-prediction))
     - [How to Convert Text to Speech in Python](https://www.thepythoncode.com/article/convert-text-to-speech-in-python). ([code](machine-learning/text-to-speech))
     - [How to Perform Voice Gender Recognition using TensorFlow in Python](https://www.thepythoncode.com/article/gender-recognition-by-voice-using-tensorflow-in-python). ([code](https://github.com/x4nth055/gender-recognition-by-voice))
+ - [How to Build a Semantic Search Engine with FAISS and Sentence Transformers in Python](https://www.thepythoncode.com/article/semantic-search-engine-faiss-python). ([code](machine-learning/semantic-search-faiss))
     - [Introduction to Finance and Technical Indicators with Python](https://www.thepythoncode.com/article/introduction-to-finance-and-technical-indicators-with-python). ([code](machine-learning/technical-indicators))
     - [Algorithmic Trading with FXCM Broker in Python](https://www.thepythoncode.com/article/trading-with-fxcm-broker-using-fxcmpy-library-in-python). ([code](machine-learning/trading-with-fxcm))
     - [How to Create Plots With Plotly In Python](https://www.thepythoncode.com/article/creating-dynamic-plots-with-plotly-visualization-tool-in-python). ([code](machine-learning/plotly-visualization))
