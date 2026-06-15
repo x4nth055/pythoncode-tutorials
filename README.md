@@ -195,6 +195,7 @@ This is a repository of all the tutorials of [The Python Code](https://www.thepy
     - [How to Minify CSS with Python](https://www.thepythoncode.com/article/minimize-css-files-in-python). ([code](general/minify-css))
  - [How to Build a File Deduplication Tool in Python](https://www.thepythoncode.com/article/file-deduplication-tool-python). ([code](general/file-deduplication-tool))
     - [Build a real MCP client and server in Python with FastMCP (Todo Manager example)](https://www.thepythoncode.com/article/fastmcp-mcp-client-server-todo-manager). ([code](general/fastmcp-mcp-client-server-todo-manager))
+    - [How to Automate Excel Reports in Python using Openpyxl](https://www.thepythoncode.com/article/automate-excel-reports-python-openpyxl). ([code](general/sales-report-generator))
 
     
     
