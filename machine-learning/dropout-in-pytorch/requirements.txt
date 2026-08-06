@@ -1,4 +1,4 @@
 matplotlib==3.4.3
-numpy==1.21.5
+numpy==1.22.0
 torch==1.10.1
 torchvision
