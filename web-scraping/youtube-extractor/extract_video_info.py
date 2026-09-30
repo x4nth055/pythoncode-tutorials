@@ -1,15 +1,36 @@
+import sys
 import requests
 from bs4 import BeautifulSoup
 import re
 import json
 import argparse
 
+def _find_key(obj, key):
+    """Recursively search a nested dict/list structure for the first occurrence of `key`."""
+    if isinstance(obj, dict):
+        if key in obj:
+            return obj[key]
+        for value in obj.values():
+            found = _find_key(value, key)
+            if found is not None:
+                return found
+    elif isinstance(obj, list):
+        for item in obj:
+            found = _find_key(item, key)
+            if found is not None:
+                return found
+    return None
+
+
 def get_video_info(url):
     """
     Extract video information from YouTube using modern approach
     """
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        # Without this, YouTube serves the page in the visitor's locale (e.g. Arabic),
+        # so views/dates/subscribers come back in the wrong language
+        'Accept-Language': 'en-US,en;q=0.9',
     }
     
     try:
@@ -17,18 +38,20 @@ def get_video_info(url):
         response = requests.get(url, headers=headers)
         response.raise_for_status()
         
-        # Create beautiful soup object to parse HTML
-        soup = BeautifulSoup(response.text, "html.parser")
-        
         # Initialize the result
         result = {}
         
-        # Extract ytInitialData which contains all the video information
+        # Extract ytInitialData which contains the video/watch page information
         data_match = re.search(r'var ytInitialData = ({.*?});', response.text)
         if not data_match:
             raise Exception("Could not find ytInitialData in page")
             
         data_json = json.loads(data_match.group(1))
+        
+        # Extract ytInitialPlayerResponse (video metadata: keywords, duration, view count)
+        player_match = re.search(r'var ytInitialPlayerResponse = ({.*?});', response.text)
+        player_json = json.loads(player_match.group(1)) if player_match else {}
+        video_details = player_json.get('videoDetails', {})
         
         # Get the main content sections
         contents = data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents']
@@ -77,43 +100,40 @@ def get_video_info(url):
         else:
             result["description"] = "Description not available"
         
-        # Try to extract video duration from player overlay
-        # This is a fallback approach since the original method doesn't work
-        duration_match = re.search(r'"approxDurationMs":"(\d+)"', response.text)
-        if duration_match:
-            duration_ms = int(duration_match.group(1))
-            minutes = duration_ms // 60000
-            seconds = (duration_ms % 60000) // 1000
+        # Extract video duration from the player response (accurate, e.g. "19" seconds),
+        # with a fallback regex on the page HTML
+        if 'lengthSeconds' in video_details:
+            duration_s = int(video_details['lengthSeconds'])
+            minutes = duration_s // 60
+            seconds = duration_s % 60
             result["duration"] = f"{minutes}:{seconds:02d}"
         else:
-            result["duration"] = "Duration not available"
+            duration_match = re.search(r'"approxDurationMs":"(\d+)"', response.text)
+            if duration_match:
+                duration_ms = int(duration_match.group(1))
+                minutes = duration_ms // 60000
+                seconds = (duration_ms % 60000) // 1000
+                result["duration"] = f"{minutes}:{seconds:02d}"
+            else:
+                result["duration"] = "Duration not available"
         
-        # Extract video tags if available
-        video_tags = []
-        if 'keywords' in data_json.get('metadata', {}).get('videoMetadataRenderer', {}):
-            video_tags = data_json['metadata']['videoMetadataRenderer']['keywords']
+        # Extract video tags (they live in ytInitialPlayerResponse.videoDetails.keywords,
+        # NOT in ytInitialData.metadata like the old code assumed)
+        video_tags = video_details.get('keywords', [])
         result["tags"] = ', '.join(video_tags) if video_tags else "No tags available"
         
-        # Extract likes (modern approach)
+        # Extract likes (2026 structure):
+        # videoActions.menuRenderer.topLevelButtons[0].segmentedLikeDislikeButtonViewModel
+        #   .likeButtonViewModel.likeButtonViewModel.toggleButtonViewModel
+        #   .toggleButtonViewModel.defaultButtonViewModel.buttonViewModel.title
         result["likes"] = "Likes count not available"
-        result["dislikes"] = "UNKNOWN"  # YouTube no longer shows dislikes
+        if 'videoPrimaryInfoRenderer' in contents[0]:
+            button = _find_key(contents[0]['videoPrimaryInfoRenderer'], 'buttonViewModel')
+            if button and button.get('iconName') == 'LIKE' and 'title' in button:
+                result["likes"] = button['title'].replace('\xa0', ' ')
         
-        # Try to find likes in the new structure
-        for content in contents:
-            if 'compositeVideoPrimaryInfoRenderer' in content:
-                composite = content['compositeVideoPrimaryInfoRenderer']
-                if 'likeButton' in composite:
-                    like_button = composite['likeButton']
-                    if 'toggleButtonRenderer' in like_button:
-                        toggle = like_button['toggleButtonRenderer']
-                        if 'defaultText' in toggle:
-                            default_text = toggle['defaultText']
-                            if 'accessibility' in default_text:
-                                accessibility = default_text['accessibility']
-                                if 'accessibilityData' in accessibility:
-                                    label = accessibility['accessibilityData']['label']
-                                    if 'like' in label.lower():
-                                        result["likes"] = label
+        # Dislikes are not published by YouTube anymore
+        result["dislikes"] = "UNKNOWN"
         
         return result
         
@@ -121,6 +141,10 @@ def get_video_info(url):
         raise Exception(f"Error extracting video info: {str(e)}")
 
 if __name__ == "__main__":
+    # Avoid UnicodeEncodeError crashes on Windows consoles (cp1252)
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
     parser = argparse.ArgumentParser(description="YouTube Video Data Extractor")
     parser.add_argument("url", help="URL of the YouTube video")
 
