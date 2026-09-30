@@ -1,73 +1,119 @@
+import sys
 import requests
-from bs4 import BeautifulSoup
 import re
 import json
 import argparse
+
+def _find_button_by_icon(obj, icon_name):
+    """Find the first nested button view model with the requested icon."""
+    if isinstance(obj, dict):
+        if obj.get('iconName') == icon_name and 'title' in obj:
+            return obj
+        for value in obj.values():
+            button = _find_button_by_icon(value, icon_name)
+            if button is not None:
+                return button
+    elif isinstance(obj, list):
+        for item in obj:
+            button = _find_button_by_icon(item, icon_name)
+            if button is not None:
+                return button
+    return None
+
+
+def _format_duration(total_seconds):
+    """Format a duration as M:SS or H:MM:SS."""
+    hours, remainder = divmod(total_seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    if hours:
+        return f"{hours}:{minutes:02d}:{seconds:02d}"
+    return f"{total_seconds // 60}:{seconds:02d}"
+
 
 def get_video_info(url):
     """
     Extract video information from YouTube using modern approach
     """
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        # Without this, YouTube serves the page in the visitor's locale (e.g. Arabic),
+        # so views/dates/subscribers come back in the wrong language
+        'Accept-Language': 'en-US,en;q=0.9',
     }
     
     try:
         # Download HTML code
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
-        
-        # Create beautiful soup object to parse HTML
-        soup = BeautifulSoup(response.text, "html.parser")
         
         # Initialize the result
         result = {}
         
-        # Extract ytInitialData which contains all the video information
+        # Extract ytInitialData which contains the video/watch page information
         data_match = re.search(r'var ytInitialData = ({.*?});', response.text)
         if not data_match:
             raise Exception("Could not find ytInitialData in page")
             
         data_json = json.loads(data_match.group(1))
         
-        # Get the main content sections
-        contents = data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents']
+        # Extract ytInitialPlayerResponse (video metadata: keywords, duration, view count)
+        player_match = re.search(r'var ytInitialPlayerResponse = ({.*?});', response.text)
+        player_json = {}
+        if player_match:
+            try:
+                player_json = json.loads(player_match.group(1))
+            except json.JSONDecodeError:
+                pass
+        if not isinstance(player_json, dict):
+            player_json = {}
+        video_details = player_json.get('videoDetails', {})
+        if not isinstance(video_details, dict):
+            video_details = {}
         
-        # Extract video information from videoPrimaryInfoRenderer
-        if 'videoPrimaryInfoRenderer' in contents[0]:
-            primary = contents[0]['videoPrimaryInfoRenderer']
-            
-            # Video title
-            result["title"] = primary['title']['runs'][0]['text']
-            
-            # Video views
-            result["views"] = primary['viewCount']['videoViewCountRenderer']['viewCount']['simpleText']
-            
-            # Date published
-            result["date_published"] = primary['dateText']['simpleText']
+        # Get the main content sections, and locate renderers by type rather than position.
+        try:
+            contents = data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents']
+        except (KeyError, TypeError):
+            raise ValueError("Could not find video details; the video may be unavailable")
+        if not isinstance(contents, list):
+            raise ValueError("Could not find video details; the video may be unavailable")
+
+        primary = next(
+            (item['videoPrimaryInfoRenderer'] for item in contents
+             if isinstance(item, dict) and 'videoPrimaryInfoRenderer' in item),
+            None,
+        )
+        if primary is None:
+            raise ValueError("Could not find video details; the video may be unavailable")
+
+        # Video title, views, and publication date
+        result["title"] = primary['title']['runs'][0]['text']
+        result["views"] = primary['viewCount']['videoViewCountRenderer']['viewCount']['simpleText']
+        result["date_published"] = primary['dateText']['simpleText']
         
-        # Extract channel information from videoSecondaryInfoRenderer
-        secondary = None
-        if 'videoSecondaryInfoRenderer' in contents[1]:
-            secondary = contents[1]['videoSecondaryInfoRenderer']
+        # Extract channel information from videoSecondaryInfoRenderer, if present.
+        secondary = next(
+            (item['videoSecondaryInfoRenderer'] for item in contents
+             if isinstance(item, dict) and 'videoSecondaryInfoRenderer' in item),
+            None,
+        )
+        if secondary:
             owner = secondary['owner']['videoOwnerRenderer']
-            
-            # Channel name
             channel_name = owner['title']['runs'][0]['text']
-            
-            # Channel ID
             channel_id = owner['navigationEndpoint']['browseEndpoint']['browseId']
-            
-            # Channel URL - FIXED with proper /channel/ path
             channel_url = f"https://www.youtube.com/channel/{channel_id}"
-            
-            # Number of subscribers
             channel_subscribers = owner['subscriberCountText']['accessibility']['accessibilityData']['label']
-            
+
             result['channel'] = {
-                'name': channel_name, 
-                'url': channel_url, 
+                'name': channel_name,
+                'url': channel_url,
                 'subscribers': channel_subscribers
+            }
+        else:
+            result['channel'] = {
+                'name': 'Channel not available',
+                'url': 'Channel not available',
+                'subscribers': 'Channel subscribers not available'
             }
         
         # Extract video description
@@ -77,43 +123,43 @@ def get_video_info(url):
         else:
             result["description"] = "Description not available"
         
-        # Try to extract video duration from player overlay
-        # This is a fallback approach since the original method doesn't work
-        duration_match = re.search(r'"approxDurationMs":"(\d+)"', response.text)
-        if duration_match:
-            duration_ms = int(duration_match.group(1))
-            minutes = duration_ms // 60000
-            seconds = (duration_ms % 60000) // 1000
-            result["duration"] = f"{minutes}:{seconds:02d}"
+        # Live streams report elapsed time in lengthSeconds, not media duration.
+        if video_details.get('isLiveContent'):
+            result["duration"] = "LIVE"
         else:
-            result["duration"] = "Duration not available"
+            try:
+                duration_s = int(video_details['lengthSeconds'])
+            except (KeyError, TypeError, ValueError):
+                duration_s = None
+
+            if duration_s is not None:
+                result["duration"] = _format_duration(duration_s)
+            else:
+                duration_match = re.search(r'"approxDurationMs":"(\d+)"', response.text)
+                if duration_match:
+                    duration_ms = int(duration_match.group(1))
+                    result["duration"] = _format_duration(duration_ms // 1000)
+                else:
+                    result["duration"] = "Duration not available"
         
-        # Extract video tags if available
-        video_tags = []
-        if 'keywords' in data_json.get('metadata', {}).get('videoMetadataRenderer', {}):
-            video_tags = data_json['metadata']['videoMetadataRenderer']['keywords']
+        # Extract video tags (they live in ytInitialPlayerResponse.videoDetails.keywords,
+        # NOT in ytInitialData.metadata like the old code assumed)
+        video_tags = video_details.get('keywords', [])
         result["tags"] = ', '.join(video_tags) if video_tags else "No tags available"
         
-        # Extract likes (modern approach)
+        # Extract the exact count from the LIKE button's accessibility label when available.
         result["likes"] = "Likes count not available"
-        result["dislikes"] = "UNKNOWN"  # YouTube no longer shows dislikes
+        button = _find_button_by_icon(primary, 'LIKE')
+        if button:
+            accessibility_text = button.get('accessibilityText', '')
+            count_match = re.search(r'([\d,]+)\s+other people', accessibility_text, re.IGNORECASE)
+            if count_match:
+                result["likes"] = count_match.group(1).replace(',', '')
+            else:
+                result["likes"] = button['title'].replace('\xa0', ' ')
         
-        # Try to find likes in the new structure
-        for content in contents:
-            if 'compositeVideoPrimaryInfoRenderer' in content:
-                composite = content['compositeVideoPrimaryInfoRenderer']
-                if 'likeButton' in composite:
-                    like_button = composite['likeButton']
-                    if 'toggleButtonRenderer' in like_button:
-                        toggle = like_button['toggleButtonRenderer']
-                        if 'defaultText' in toggle:
-                            default_text = toggle['defaultText']
-                            if 'accessibility' in default_text:
-                                accessibility = default_text['accessibility']
-                                if 'accessibilityData' in accessibility:
-                                    label = accessibility['accessibilityData']['label']
-                                    if 'like' in label.lower():
-                                        result["likes"] = label
+        # Dislikes are not published by YouTube anymore
+        result["dislikes"] = "UNKNOWN"
         
         return result
         
@@ -121,6 +167,10 @@ def get_video_info(url):
         raise Exception(f"Error extracting video info: {str(e)}")
 
 if __name__ == "__main__":
+    # Avoid UnicodeEncodeError crashes on Windows consoles (cp1252)
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
     parser = argparse.ArgumentParser(description="YouTube Video Data Extractor")
     parser.add_argument("url", help="URL of the YouTube video")
 
